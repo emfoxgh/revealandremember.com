@@ -27,8 +27,17 @@ body {
   overflow-x: hidden;
 }
 
+body.nav-open {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -87,6 +96,23 @@ section,
   background: rgba(255, 248, 240, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(212, 102, 62, 0.2);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 2000;
+  padding: 0.85rem 1.1rem;
+  background: var(--deep-terracotta);
+  color: var(--cream);
+  text-decoration: none;
+  border-radius: 0.35rem;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
 }
 
 .site-nav {
@@ -156,6 +182,22 @@ section,
 .header-contact:hover {
   background: var(--deep-terracotta);
   transform: translateY(-1px);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(168, 70, 50, 0.45);
+  outline-offset: 3px;
+}
+
+.card-link:focus-visible,
+.cta-button:focus-visible,
+.header-contact:focus-visible,
+.nav-links a:focus-visible,
+.site-logo:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(168, 70, 50, 0.45);
+  outline-offset: 4px;
 }
 
 .nav-toggle {

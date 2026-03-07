@@ -85,10 +85,37 @@
   margin: 0 auto;
 }
 
-.pull-quote {
+.about-copy--center {
+  text-align: center;
+}
+
+.about-copy .pull-quote {
   margin: 1rem 0 0;
   font-family: 'Cormorant Garamond', serif;
   color: var(--deep-terracotta);
+}
+
+.about-copy .pull-quote--strong {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-copy .pull-quote--accent {
+  font-size: 2rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: var(--burnt-orange);
+}
+
+.about-copy .pull-quote--medium {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.cta-button--spaced {
+  margin-top: 1rem;
 }
 
 .left-rule {
@@ -107,6 +134,11 @@
 .credential {
   padding: 1rem 0;
   border-bottom: 1px solid rgba(58, 58, 58, 0.08);
+}
+
+.belief-item strong {
+  font-weight: 600;
+  color: var(--burnt-orange);
 }
 
 .note {

@@ -74,9 +74,10 @@
   background: white;
 }
 
-.about-intro {
+.home-section .about-intro {
   margin-bottom: 3rem;
-  font-size: 1.3rem;
+  font-size: clamp(1.9rem, 3vw, 2.2rem);
+  line-height: 1.4;
   font-style: italic;
   color: var(--burnt-orange);
   font-family: 'Cormorant Garamond', serif;
@@ -119,6 +120,11 @@
   font-family: 'Cormorant Garamond', serif;
   color: var(--deep-terracotta);
   font-size: 1.8rem;
+}
+
+.status-text {
+  color: var(--burnt-orange);
+  font-weight: 500;
 }
 
 .teacher-item .method {

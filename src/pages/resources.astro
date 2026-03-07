@@ -95,7 +95,7 @@ const tools = [
 ---
 <BaseLayout title="Resources">
   <div class="resources-page page-shell">
-    <main>
+    <main id="main-content">
       <div class="page-header">
         <h1>Resources</h1>
         <p>Tools for your journey - my audio offerings and the books and podcasts that have shaped my path.</p>
@@ -119,12 +119,12 @@ const tools = [
           ))}
         </div>
 
-        <div class="section-intro" style="margin-top: 6rem;">
+        <div class="section-intro section-intro--spaced">
           <h2>Emily's Bookshelf</h2>
           <p>Books and podcasts that have deeply informed my journey and continue to inspire the work I do.</p>
         </div>
 
-        <div style="margin-bottom: 4rem;">
+        <div class="resource-section-block">
           <h3 class="books-title">Books</h3>
           <div class="resource-list">
             {books.map((book) => (
@@ -145,7 +145,7 @@ const tools = [
           </div>
         </div>
 
-        <div style="margin-bottom: 4rem;">
+        <div class="resource-section-block">
           <h3 class="books-title">Podcasts</h3>
           <div class="resource-list">
             {bookshelfPodcasts.map((podcast) => (
@@ -166,7 +166,7 @@ const tools = [
           </div>
         </div>
 
-        <div class="section-intro" style="margin-top: 6rem;">
+        <div class="section-intro section-intro--spaced">
           <h2>Tools for Practice</h2>
           <p>Resources I love, rely on, and would recommend to anyone.</p>
         </div>

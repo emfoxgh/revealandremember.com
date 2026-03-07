@@ -10,6 +10,10 @@
   margin-bottom: 4rem;
 }
 
+.section-intro--spaced {
+  margin-top: 6rem;
+}
+
 .section-intro h2,
 .books-title,
 .resource-card h4 {
@@ -81,6 +85,10 @@
 .resource-list {
   display: grid;
   gap: 2rem;
+}
+
+.resource-section-block {
+  margin-bottom: 4rem;
 }
 
 .resource-card {

@@ -5,7 +5,7 @@ import { site } from '../data/site';
 import '../styles/home.css';
 ---
 <BaseLayout>
-  <main class="page-shell">
+  <main id="main-content" class="page-shell">
     <section class="hero">
       <div class="hero-image"></div>
       <div class="hero-content wide-container">
@@ -17,7 +17,7 @@ import '../styles/home.css';
     <section class="home-section about-block">
       <div class="container">
         <h2>You've done the work.<br />Now you're ready to live it.</h2>
-        <p class="about-intro">This is a space to remember what's already inside you and let it bloom.</p>
+        <p class="about-intro">This is a space to remember what's already inside of you... and let it bloom.</p>
         <p>
           Reveal &amp; Remember is a place to rest. A place to feel held and heard. A place to feel safe
           enough to finally remember who you've always been beneath the layers of conditioning,
@@ -34,7 +34,7 @@ import '../styles/home.css';
           <div class="pathway-card">
             <h3>Traditional Therapy</h3>
             <p>Licensed clinical work (PSY35370) for those needing the structure and support of evidence-based practice.</p>
-            <p style="color: var(--burnt-orange); font-weight: 500;">Waitlist currently closed | CA residents only</p>
+            <p class="status-text">Waitlist currently closed | CA residents only</p>
           </div>
           <div class="pathway-card">
             <h3>Guided Healing</h3>
@@ -43,7 +43,7 @@ import '../styles/home.css';
               exists outside the clinical frame and may integrate somatic practices, energy work, and
               alternative healing modalities.
             </p>
-            <p style="color: var(--burnt-orange); font-weight: 500;">Accepting new clients</p>
+            <p class="status-text">Accepting new clients</p>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@ import '../styles/home.css';
           <p>
             Curious if we're a fit?<br />
             I offer free 20-minute consults so we can feel into what's right.<br /><br />
-            <a href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a consult →</a>
+            <a href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a Consult →</a>
           </p>
         </div>
       </div>
