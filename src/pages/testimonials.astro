@@ -21,14 +21,10 @@ const floatingTestimonials = [
       </div>
 
       <div class="testimonials-landscape">
-        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="" class="embedded-image image-1" />
-        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80" alt="" class="embedded-image image-2" />
-        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80" alt="" class="embedded-image image-3" />
-        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="" class="embedded-image image-4" />
+        <div class="embedded-image image-1" style="--image-url: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80');"></div>
+        <div class="embedded-image image-2" style="--image-url: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80');"></div>
+        <div class="embedded-image image-3" style="--image-url: url('https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80');"></div>
 
-        <svg class="desert-element cactus-1" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg"><path d="M 50 140 L 50 60 M 35 80 L 35 100 L 50 100 M 50 90 L 65 90 L 65 70" stroke="#D4663E" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
-        <svg class="desert-element sun-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" stroke="#A84632" stroke-width="3" fill="none"/><line x1="50" y1="10" x2="50" y2="20" stroke="#A84632" stroke-width="2"/><line x1="50" y1="80" x2="50" y2="90" stroke="#A84632" stroke-width="2"/><line x1="10" y1="50" x2="20" y2="50" stroke="#A84632" stroke-width="2"/><line x1="80" y1="50" x2="90" y2="50" stroke="#A84632" stroke-width="2"/></svg>
-        <svg class="desert-element mountain-1" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg"><path d="M 0 80 L 50 20 L 100 60 L 150 80" stroke="#D4663E" stroke-width="3" fill="none"/></svg>
 
         {floatingTestimonials.map((item, index) => (
           <div class={`testimonial-cloud cloud-${index + 1}`}>{item}</div>

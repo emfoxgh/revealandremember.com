@@ -39,25 +39,40 @@ const books = [
     title: 'The Surrender Experiment',
     description: 'A guide to loosening your grip and seeing what becomes possible when life is allowed to move through you.',
     href: 'https://www.amazon.com/The-Surrender-Experiment-audiobook/dp/B00YOJ9RV6',
-    coverText: 'The Surrender Experiment'
+    image: '/images/surrender-experiment-book-cover.jpg'
   },
   {
     title: 'Abundant Ever After',
     description: 'A prosperity-minded invitation to create a life that feels aligned, not merely accomplished.',
     href: 'https://www.amazon.com/Abundant-Ever-After-Creating-Prosperity/dp/B0D47QY1B9',
-    coverText: 'Abundant Ever After'
+    image: '/images/abundant-ever-after-book-cover.jpg'
   },
   {
     title: 'Receive',
     description: 'A permission slip to slow down and embrace your feminine essence, and an invitation to come home to yourself.',
     href: 'https://www.amazon.com/Receive-Dance-Feminine-Power-Forgot/dp/B0G2HPFYB3',
     image: '/images/receive-book-cover.png'
+  }
+];
+
+const bookshelfPodcasts = [
+  {
+    title: 'The David Ghiyam Podcast',
+    description: 'Practical spiritual wisdom and energetic teachings on abundance, relationships, and purpose.',
+    href: 'https://podcasts.apple.com/us/podcast/the-david-ghiyam-podcast/id1775548374',
+    image: '/images/david-ghiyam-podcast.webp'
+  },
+  {
+    title: 'Everything is Energy with Cathy Heller',
+    description: "Inspiring conversations about building a meaningful life - Cathy's warmth and wisdom are infectious.",
+    href: 'https://podcasts.apple.com/us/podcast/everything-is-energy-with-cathy-heller/id1460263362',
+    image: '/images/everything-is-energy.png'
   },
   {
     title: 'Know Thyself',
     description: 'Deep dives into self-discovery and personal transformation for those ready to look inward.',
     href: 'https://podcasts.apple.com/us/podcast/know-thyself/id1633725927',
-    coverText: 'Know Thyself'
+    image: '/images/know-thyself-podcast.webp'
   }
 ];
 
@@ -123,6 +138,27 @@ const tools = [
                   <div>
                     <h4>{book.title}</h4>
                     <p>{book.description}</p>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div style="margin-bottom: 4rem;">
+          <h3 class="books-title">Podcasts</h3>
+          <div class="resource-list">
+            {bookshelfPodcasts.map((podcast) => (
+              <a href={podcast.href} target="_blank" rel="noreferrer" class="card-link">
+                <article class="resource-card resource-card--podcast">
+                  {podcast.image ? (
+                    <img src={podcast.image} alt={podcast.title} class="resource-thumb resource-thumb--podcast" />
+                  ) : (
+                    <div class="resource-thumb resource-thumb--text resource-thumb--podcast">{podcast.coverText}</div>
+                  )}
+                  <div>
+                    <h4>{podcast.title}</h4>
+                    <p>{podcast.description}</p>
                   </div>
                 </article>
               </a>

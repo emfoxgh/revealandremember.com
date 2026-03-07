@@ -13,20 +13,39 @@
 
 .embedded-image {
   position: absolute;
-  width: min(35vw, 500px);
+  width: min(34vw, 470px);
   aspect-ratio: 10 / 7;
-  object-fit: cover;
-  border-radius: 50%;
-  opacity: 0.35;
   pointer-events: none;
-  filter: sepia(40%) hue-rotate(-10deg) saturate(0.9);
-  mask-image: radial-gradient(ellipse 50% 50% at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0.2) 70%, transparent 100%);
+  opacity: 0.12;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255, 248, 240, 0) 40%,
+      rgba(255, 248, 240, 0.22) 64%,
+      rgba(255, 248, 240, 0.88) 100%
+    ),
+    linear-gradient(rgba(232, 196, 168, 0.05), rgba(232, 196, 168, 0.05)),
+    var(--image-url) center/cover no-repeat;
+  filter: sepia(34%) hue-rotate(-8deg) saturate(0.86);
+  border-radius: 46% / 38%;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(58, 58, 58, 0.06);
 }
 
-.image-1 { top: 60px; right: 5%; }
-.image-2 { top: 280px; left: 2%; }
-.image-3 { top: 520px; right: 8%; }
-.image-4 { top: 120px; left: 28%; }
+.image-1 {
+  top: 30px;
+  right: 16%;
+}
+
+.image-2 {
+  top: 190px;
+  left: 9%;
+}
+
+.image-3 {
+  top: 620px;
+  right: 17%;
+}
 
 .desert-element {
   position: absolute;
@@ -34,13 +53,28 @@
   pointer-events: none;
 }
 
-.cactus-1 { top: 120px; right: 5%; width: 80px; height: 120px; }
-.sun-1 { top: 350px; left: 3%; width: 100px; height: 100px; }
-.mountain-1 { top: 680px; left: 6%; width: 150px; height: 80px; }
+.cactus-1 {
+  top: 120px;
+  right: 5%;
+  width: 80px;
+  height: 120px;
+}
+.sun-1 {
+  top: 350px;
+  left: 3%;
+  width: 100px;
+  height: 100px;
+}
+.mountain-1 {
+  top: 680px;
+  left: 6%;
+  width: 150px;
+  height: 80px;
+}
 
 .testimonial-cloud {
   position: absolute;
-  max-width: 450px;
+  max-width: 420px;
   padding: 1.5rem;
   font-size: 1.15rem;
   line-height: 1.8;
@@ -48,12 +82,30 @@
   font-weight: 300;
 }
 
-.cloud-1 { top: 20px; left: 8%; }
-.cloud-2 { top: 120px; right: 12%; }
-.cloud-3 { top: 240px; left: 10%; }
-.cloud-4 { top: 360px; right: 8%; }
-.cloud-5 { top: 500px; left: 15%; }
-.cloud-6 { top: 620px; right: 15%; }
+.cloud-1 {
+  top: 36px;
+  left: 9%;
+}
+.cloud-2 {
+  top: 132px;
+  right: 16%;
+}
+.cloud-3 {
+  top: 286px;
+  left: 12%;
+}
+.cloud-4 {
+  top: 430px;
+  right: 7%;
+}
+.cloud-5 {
+  top: 574px;
+  left: 20%;
+}
+.cloud-6 {
+  top: 688px;
+  right: 18%;
+}
 
 .themed-testimonials {
   padding: 5rem 0;
@@ -67,7 +119,7 @@
 .themed-container h2,
 .heart-section h2 {
   margin: 0 0 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(2.4rem, 5vw, 3rem);
   color: var(--deep-terracotta);
 }
@@ -88,7 +140,7 @@
 
 .theme-group h3 {
   margin: 0 0 1rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.8rem;
   color: var(--deep-terracotta);
 }
@@ -130,7 +182,7 @@
 .client-quote blockquote,
 .featured-quote {
   margin: 0 0 1.5rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.8rem, 4vw, 2rem);
   line-height: 1.6;
   color: var(--deep-terracotta);
@@ -152,7 +204,7 @@
 
 .cta-strip p {
   margin: 0 0 2rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-size: 1.8rem;
 }
 

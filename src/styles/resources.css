@@ -84,6 +84,10 @@
   padding: 2rem;
 }
 
+.resource-card--podcast {
+  align-items: center;
+}
+
 .resource-card--center {
   align-items: center;
 }
@@ -114,6 +118,14 @@
   min-width: 200px;
   height: auto;
   border-radius: 4px;
+}
+
+.resource-thumb--podcast {
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .resource-thumb--text {
