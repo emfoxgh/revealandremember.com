@@ -1,0 +1,36 @@
+---
+import { site } from '../data/site';
+const currentPath = Astro.url.pathname;
+---
+<header class="site-header">
+  <nav class="site-nav">
+    <a href="/" class="site-logo">R&amp;R</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul id="nav-menu" class="nav-links">
+      {site.nav.map((item) => (
+        <li>
+          <a href={item.href} class={currentPath === item.href ? 'is-active' : undefined}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const button = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('#nav-menu');
+
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isOpen));
+      menu.classList.toggle('is-open');
+      document.body.classList.toggle('nav-open', !isOpen);
+    });
+  }
+</script>

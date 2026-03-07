@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import { site } from '../data/site';
+import '../styles/about.css';
+---
+<BaseLayout title="About">
+  <div class="about-page page-shell">
+    <main>
+      <section class="emily-section-wrapper">
+        <div class="wide-container emily-section">
+          <div>
+            <img src="/images/emily-photo.jpg" alt="Emily with turquoise earrings" class="emily-photo" />
+          </div>
+          <div class="emily-content">
+            <h1>Hi, I'm Emily:</h1>
+            <p class="subtitle">burnt-out clinical psychologist, aspiring soul guide, and human being</p>
+            <p>
+              In the Fall of 2024, I had finally "done it". I'd completed the checklist: fancy degree<span class="checklist-item">✓</span>
+              partner<span class="checklist-item">✓</span> house<span class="checklist-item">✓</span>
+              career plan<span class="checklist-item">✓</span>. Then it hit me...
+            </p>
+            <p class="highlight">I'm not happy.</p>
+            <p><em>That's when my real work started.</em></p>
+            <p>
+              I'm probably not your average clinical psychologist. I don't believe all the books. I probably
+              won't use the manual. I genuinely believe that, in your heart of hearts, <em>you already know what you need to know.</em>
+            </p>
+            <p>
+              I can't give you the answers, but I have walked the path. Over the past year, I have come home
+              to myself. <strong>If you feel guided to do the same, walk with me. I'd love to walk you home.</strong>
+            </p>
+            <div class="cta-box">
+              <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="card-link"><p>Ready to drop the masks?</p></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-copy">
+          <p>You've done your work (practically and emotionally). You're "successful" on paper. But for some reason, something just doesn't feel "right".</p>
+          <p>You're (almost) ready to admit it....</p>
+          <p class="pull-quote" style="font-size: 2rem; font-weight: 700; letter-spacing: 1px;">You hate your perfect life.</p>
+          <div class="left-rule">
+            <p>You wake up next to your partner in the middle of the night going… <em>"I'm supposed to feel different, aren't I?"</em></p>
+            <p>You stare at your laptop in the middle of the day going, <em>"This was my dream, right?"</em></p>
+          </div>
+          <p>When you read a new self-help book or listen to a new podcast, the feeling eases for a moment… but it always comes back.</p>
+          <p>That whisper that says:</p>
+          <p class="pull-quote" style="font-size: 2rem; font-weight: 600; letter-spacing: 3px; color: var(--burnt-orange);">This. Ain't. It.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-copy">
+          <h2>Who I Work With</h2>
+          <p>High-functioning women whose lives look right, but feel wrong.</p>
+          <p>Women who did everything they were supposed to do:</p>
+          <div class="left-rule">
+            <p>Built the career.</p>
+            <p>Made the responsible choices.</p>
+            <p>Created a life that works on paper.</p>
+          </div>
+          <p>And are starting to realize:</p>
+          <p class="pull-quote" style="font-size: 1.6rem; font-weight: 600;">Something about this life isn't actually me.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-copy" style="text-align: center;">
+          <h2>Why Now?</h2>
+          <p>It's time to get engaged… or leave</p>
+          <p>It's time to sign the contract… or quit</p>
+          <p class="pull-quote" style="font-size: 2rem; font-weight: 600; letter-spacing: 3px; color: var(--burnt-orange);">It's time to choose.</p>
+          <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button" style="margin-top: 1rem;">Schedule Your Free Consult Now</a>
+        </div>
+      </section>
+
+      <section class="beliefs-section">
+        <div class="beliefs-content">
+          <h2>Some Things I Believe That Inform My Work</h2>
+          <div class="belief-item">The universe is always <strong>conspiring for your highest good</strong></div>
+          <div class="belief-item">Most things worth knowing are a <strong>paradox</strong></div>
+          <div class="belief-item">What life presents to us is ultimately <em>for us</em></div>
+          <div class="belief-item">Life flows better when we <strong>surrender</strong> <span class="note">(note: this does not mean being passive)</span></div>
+          <div class="belief-item">We are <strong>co-creators</strong> with the divine</div>
+          <div class="belief-item">Healing often happens when we stop trying to force it</div>
+        </div>
+      </section>
+
+      <section class="education-section">
+        <div class="education-content">
+          <h2>Education</h2>
+          <div class="education-subsection">
+            <h3>Academic Credentials</h3>
+            <div class="credential"><strong>Bachelor of Arts in Psychology (BA)</strong> - University of California, Berkeley</div>
+            <div class="credential"><strong>Doctor of Clinical Psychology (PsyD)</strong> - PGSP-Stanford PsyD Consortium</div>
+          </div>
+          <div class="education-subsection">
+            <h3>Alternative Healing Credentials</h3>
+            <div class="credential"><strong>Master Level Transformational Neurolinguistic Programming Practitioner</strong> - NLP Marin</div>
+            <div class="credential"><strong>Advanced Somatic Healer</strong> <span class="note">(advanced training in progress)</span> - Alchemy Somatics</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <QuoteBanner quote="Courage is not the absence of fear. Courage is fear walking." author="Susan David, PhD" tone="sage" />
+  </div>
+</BaseLayout>

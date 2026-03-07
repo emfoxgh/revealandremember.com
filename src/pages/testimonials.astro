@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import '../styles/testimonials.css';
+
+const floatingTestimonials = [
+  'A lot of things we spoke about... suddenly, it all seems so clear.',
+  'Emily has an intuitive sense for how energy moves through the body.',
+  "I feel an internal softness, spaciousness, and care that I didn't have before.",
+  "I've never felt this connected to myself or understood myself as deeply as I do now.",
+  "I've tried other therapists, but none have been as insightful or as helpful as the experience I had working with Emily.",
+  'Working with Emily is like being in a warm bath. She has such a welcoming presence, it really feels like I could never do or say the wrong thing.'
+];
+---
+<BaseLayout title="Testimonials">
+  <div class="testimonials-page page-shell">
+    <main>
+      <div class="page-header">
+        <h1>Testimonials</h1>
+        <p>Reflections from the journey</p>
+      </div>
+
+      <div class="testimonials-landscape">
+        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="" class="embedded-image image-1" />
+        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80" alt="" class="embedded-image image-2" />
+        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80" alt="" class="embedded-image image-3" />
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="" class="embedded-image image-4" />
+
+        <svg class="desert-element cactus-1" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg"><path d="M 50 140 L 50 60 M 35 80 L 35 100 L 50 100 M 50 90 L 65 90 L 65 70" stroke="#D4663E" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
+        <svg class="desert-element sun-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" stroke="#A84632" stroke-width="3" fill="none"/><line x1="50" y1="10" x2="50" y2="20" stroke="#A84632" stroke-width="2"/><line x1="50" y1="80" x2="50" y2="90" stroke="#A84632" stroke-width="2"/><line x1="10" y1="50" x2="20" y2="50" stroke="#A84632" stroke-width="2"/><line x1="80" y1="50" x2="90" y2="50" stroke="#A84632" stroke-width="2"/></svg>
+        <svg class="desert-element mountain-1" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg"><path d="M 0 80 L 50 20 L 100 60 L 150 80" stroke="#D4663E" stroke-width="3" fill="none"/></svg>
+
+        {floatingTestimonials.map((item, index) => (
+          <div class={`testimonial-cloud cloud-${index + 1}`}>{item}</div>
+        ))}
+      </div>
+
+      <section class="themed-testimonials">
+        <div class="themed-container">
+          <h2>What Shifts</h2>
+          <p class="themed-intro">The specifics vary, but the themes are clear: relief, clarity, and a return to self.</p>
+
+          <div class="theme-group">
+            <h3>I finally feel calm and clear.</h3>
+            <ul>
+              <li>The anxiety I used to live with daily - it's just not running the show anymore.</li>
+              <li>I stopped blaming myself for the assault. I feel peace in my body again.</li>
+              <li>I love myself now. I've never been able to say that before.</li>
+            </ul>
+          </div>
+
+          <div class="theme-group">
+            <h3>My relationship changed - or I left, and I'm okay.</h3>
+            <ul>
+              <li>We were on the brink of divorce. Now we're connected again.</li>
+              <li>I finally left the relationship that was draining me. I feel at home in myself.</li>
+              <li>We weren't even fighting anymore, just numb. Now we're exploring desire again.</li>
+            </ul>
+          </div>
+
+          <div class="theme-group">
+            <h3>I understand what was driving me.</h3>
+            <ul>
+              <li>No one could get through to this stuck place - but this work did.</li>
+              <li>I saw how old trauma with my dad was playing out with every man I dated.</li>
+              <li>I can name it now - and because I can name it, it doesn't run me.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="heart-section">
+        <h2>The Heart of This Work</h2>
+        <p class="heart-copy">
+          The real gift of this work isn't just the outcomes, it's how it feels to come home to yourself.
+          Clients often arrive carrying pain, confusion, or disconnection, and leave feeling clear, rooted,
+          self-loving, and alive. Whether it's a major life decision or a tender shift in how they relate to
+          themselves, what emerges is always deeply human, deeply earned, and deeply theirs. <em>Clients report feeling...</em>
+        </p>
+
+        <ul class="feeling-list">
+          <li>🌿 More connected to themselves</li>
+          <li>🌿 More self-loving and present</li>
+          <li>🌿 No longer afraid of their emotions</li>
+          <li>🌿 Seeing old wounds with fresh perspective</li>
+          <li>🌿 Letting go of self-blame and old narratives</li>
+          <li>🌿 Able to stay with themselves through hard things</li>
+          <li>🌿 Feeling lovable, safe, and seen</li>
+        </ul>
+
+        <div class="client-quote">
+          <blockquote>"I can jump higher because my feet are more firmly planted on the ground."</blockquote>
+          <p>Past Client</p>
+        </div>
+
+        <div class="client-quote">
+          <blockquote>"I felt so seen by you, it made it easier to see myself."</blockquote>
+          <p>Past Client</p>
+        </div>
+      </section>
+
+      <section class="cta-strip">
+        <p>Ready to start your journey?</p>
+        <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
+      </section>
+
+      <div class="featured-quote-section">
+        <p class="featured-quote">"And the time came when the risk to remain tight in a bud was more painful than the risk it took to blossom"</p>
+        <p class="quote-author">Anais Nin</p>
+      </div>
+    </main>
+  </div>
+</BaseLayout>

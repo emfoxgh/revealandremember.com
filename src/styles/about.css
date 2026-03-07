@@ -1,0 +1,134 @@
+.about-page main section {
+  padding: 4rem 0;
+}
+
+.emily-section-wrapper,
+.beliefs-section {
+  background: var(--desert-sand);
+}
+
+.emily-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 4rem;
+  align-items: start;
+  padding: 5rem 0;
+}
+
+.emily-photo {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.emily-content h1,
+.about-copy h2,
+.beliefs-content h2,
+.education-content h2 {
+  margin: 0 0 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  letter-spacing: 1px;
+}
+
+.emily-content .subtitle {
+  margin-bottom: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--deep-terracotta);
+  line-height: 1.8;
+}
+
+.about-page p,
+.belief-item,
+.credential {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--deep-terracotta);
+}
+
+.checklist-item {
+  display: inline-block;
+  margin-left: 0.2rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: rgba(212, 102, 62, 0.2);
+  color: var(--burnt-orange);
+  font-size: 0.9rem;
+}
+
+.cta-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 4px;
+  background: var(--burnt-orange);
+  color: var(--cream);
+}
+
+.cta-box p {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  color: inherit;
+}
+
+.about-copy {
+  width: min(calc(100% - 3rem), 900px);
+  margin: 0 auto;
+}
+
+.pull-quote {
+  margin: 1rem 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--deep-terracotta);
+}
+
+.left-rule {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--desert-sand);
+}
+
+.beliefs-content,
+.education-content {
+  width: min(calc(100% - 3rem), 900px);
+  margin: 0 auto;
+}
+
+.belief-item,
+.credential {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.08);
+}
+
+.note {
+  color: var(--deep-terracotta);
+  font-size: 0.95rem;
+}
+
+.education-subsection h3 {
+  margin: 0 0 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  color: var(--deep-terracotta);
+}
+
+.education-subsection + .education-subsection {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .emily-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3.5rem 0;
+  }
+}

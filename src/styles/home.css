@@ -1,0 +1,189 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(212, 102, 62, 0.3) 0%, rgba(168, 70, 50, 0.5) 50%, rgba(58, 58, 58, 0.7) 100%),
+    url('/images/mountain-home-page.jpg') center/cover no-repeat;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(58, 58, 58, 0.72) 0%, rgba(58, 58, 58, 0.36) 50%, transparent 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 9rem 1.5rem 3rem;
+  text-align: center;
+  color: white;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.hero h1 {
+  margin: 0 0 5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 10vw, 5.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero .subtitle {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: rgba(255, 248, 240, 0.9);
+}
+
+.home-section {
+  padding: 8rem 0;
+}
+
+.home-section h2 {
+  margin: 0 0 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  font-weight: 400;
+  color: var(--deep-terracotta);
+  letter-spacing: 0.05em;
+}
+
+.home-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.about-block {
+  background: white;
+}
+
+.about-intro {
+  margin-bottom: 3rem;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--burnt-orange);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.pathways {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--desert-sand) 100%);
+}
+
+.pathway-cards,
+.teacher-list,
+.work-options {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pathway-cards,
+.teacher-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pathway-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pathway-card,
+.teacher-item,
+.work-option {
+  background: white;
+  padding: 2.25rem;
+  border-left: 4px solid var(--burnt-orange);
+  box-shadow: var(--shadow-soft);
+}
+
+.pathway-card h3,
+.teacher-item h3,
+.work-option h4 {
+  margin: 0 0 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--deep-terracotta);
+  font-size: 1.8rem;
+}
+
+.teacher-item .method {
+  margin: 0 0 1rem;
+  color: var(--burnt-orange);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.work-options {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-panel {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 2.5rem;
+  background: var(--burnt-orange);
+  color: var(--cream);
+  border-radius: 8px;
+}
+
+.contact-panel p {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+}
+
+.contact-panel a {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-section {
+    padding: 5rem 0;
+  }
+
+  .pathway-cards,
+  .teacher-list,
+  .work-options {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    margin-bottom: 2.5rem;
+  }
+}

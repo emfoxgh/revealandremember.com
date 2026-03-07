@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import { site } from '../data/site';
+import '../styles/home.css';
+---
+<BaseLayout>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-image"></div>
+      <div class="hero-content wide-container">
+        <h1>Remember Who You Are</h1>
+        <p class="subtitle">Reveal &amp; Remember: Therapy and Guided Healing</p>
+      </div>
+    </section>
+
+    <section class="home-section about-block">
+      <div class="container">
+        <h2>You've done the work.<br />Now you're ready to live it.</h2>
+        <p class="about-intro">This is a space to remember what's already inside you and let it bloom.</p>
+        <p>
+          Reveal &amp; Remember is a place to rest. A place to feel held and heard. A place to feel safe
+          enough to finally remember who you've always been beneath the layers of conditioning,
+          expectation, and survival strategies. Take my hand, and let's unwind.
+        </p>
+      </div>
+    </section>
+
+    <section class="home-section pathways">
+      <div class="container">
+        <h2>Two Pathways</h2>
+        <p>I offer two distinct ways of working, each serving different needs and stages of the journey.</p>
+        <div class="pathway-cards">
+          <div class="pathway-card">
+            <h3>Traditional Therapy</h3>
+            <p>Licensed clinical work (PSY35370) for those needing the structure and support of evidence-based practice.</p>
+            <p style="color: var(--burnt-orange); font-weight: 500;">Waitlist currently closed | CA residents only</p>
+          </div>
+          <div class="pathway-card">
+            <h3>Guided Healing</h3>
+            <p>
+              For high-functioning individuals ready to move beyond maintenance into expansion. This work
+              exists outside the clinical frame and may integrate somatic practices, energy work, and
+              alternative healing modalities.
+            </p>
+            <p style="color: var(--burnt-orange); font-weight: 500;">Accepting new clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="container">
+        <h2>My Teachers</h2>
+        <p>The methods that shape my work come from pioneers who've dared to see healing differently.</p>
+        <div class="teacher-list">
+          <div class="teacher-item">
+            <h3>Dick Schwartz</h3>
+            <p class="method">Internal Family Systems (IFS)</p>
+            <p>
+              A revolutionary therapeutic approach that views the psyche as composed of multiple parts,
+              each with its own perspective and protective function.
+            </p>
+          </div>
+          <div class="teacher-item">
+            <h3>Stacy Matulis</h3>
+            <p class="method">Alchemy Somatics</p>
+            <p>
+              Body-centered work that recognizes the wisdom held in our physical form. Through somatic
+              practices, we access memories, emotions, and patterns stored beneath conscious awareness.
+            </p>
+          </div>
+          <div class="teacher-item">
+            <h3>Carl Buchheit</h3>
+            <p class="method">Transformational NLP (tNLP)</p>
+            <p>
+              An evolution of traditional NLP that works with the unconscious mind to resolve limiting
+              beliefs and patterns at their root.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="container">
+        <h2>Ways to Work With Me</h2>
+        <p>Whether you're seeking traditional therapeutic support or are ready for guided healing, I offer several formats to meet you where you are.</p>
+        <div class="work-options">
+          <div class="work-option">
+            <h4>Individual Sessions</h4>
+            <p>One-on-one work tailored to your unique journey, available in both therapy and guided healing formats.</p>
+          </div>
+          <div class="work-option">
+            <h4>Group Offerings</h4>
+            <p>One-time workshops and ongoing groups exploring specific themes through embodied practice.</p>
+            <p><em>(Coming soon)</em></p>
+          </div>
+          <a href="/resources" class="card-link">
+            <div class="work-option">
+              <h4>Resources</h4>
+              <p>Meditations, energetic tools, movement practices, and interviews with alternative healers available through my Spotify podcasts.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section contact-section">
+      <div class="container">
+        <h2>Begin the Conversation</h2>
+        <p>If something here resonates, I'd love to hear from you.</p>
+        <div class="contact-panel">
+          <p>
+            Curious if we're a fit?<br />
+            I offer free 20-minute consults so we can feel into what's right.<br /><br />
+            <a href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a consult →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <QuoteBanner quote="You are a masterpiece - a piece of the master." author="Rabbi David Aaron" />
+</BaseLayout>

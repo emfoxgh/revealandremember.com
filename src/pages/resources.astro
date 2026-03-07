@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import '../styles/resources.css';
+
+const podcasts = [
+  {
+    title: 'Mindful Energetics',
+    description: "Guided meditations to help you come home to yourself and navigate life's moments.",
+    href: 'https://open.spotify.com/show/5F7dwNlD5ql6wF91OZtcSh?go=1',
+    image: '/images/me-logo-transparent.png',
+    alt: 'Mindful Energetics Podcast'
+  },
+  {
+    title: 'Guided Kundalini',
+    description: 'Kundalini yoga informed movement practices to help you get embodied and clear.',
+    href: 'https://open.spotify.com/show/7eaFw04VOjlfGxv1WfyvxM?go=1',
+    image: '/images/guided-kundalini-logo-updated.png',
+    alt: 'Guided Kundalini Podcast'
+  },
+  {
+    title: 'Wisdom for Wisdom Seekers (coming soon)',
+    description: 'Conversations with alternative healers, practitioners, and guides.',
+    href: 'https://open.spotify.com/show/1lyukuS3Xytao7UtPTUxOj?go=1',
+    image: '/images/wisdom-for-wisdom-seekers.png',
+    alt: 'Wisdom for Wisdom Seekers Podcast'
+  },
+  {
+    title: 'Basic Energetics (coming soon)',
+    description: 'Energetic tools to support you in clearing your energy, holding energetic boundaries, and moving through life open and protected.',
+    href: 'https://open.spotify.com/show/4x8gbDK481K1ssso7nWpzu?go=1',
+    image: '/images/be-logo-transparent-background.png',
+    alt: 'Basic Energetics Podcast'
+  }
+];
+
+const books = [
+  {
+    title: 'The Surrender Experiment',
+    description: 'A guide to loosening your grip and seeing what becomes possible when life is allowed to move through you.',
+    href: 'https://www.amazon.com/The-Surrender-Experiment-audiobook/dp/B00YOJ9RV6',
+    coverText: 'The Surrender Experiment'
+  },
+  {
+    title: 'Abundant Ever After',
+    description: 'A prosperity-minded invitation to create a life that feels aligned, not merely accomplished.',
+    href: 'https://www.amazon.com/Abundant-Ever-After-Creating-Prosperity/dp/B0D47QY1B9',
+    coverText: 'Abundant Ever After'
+  },
+  {
+    title: 'Receive',
+    description: 'A permission slip to slow down and embrace your feminine essence, and an invitation to come home to yourself.',
+    href: 'https://www.amazon.com/Receive-Dance-Feminine-Power-Forgot/dp/B0G2HPFYB3',
+    image: '/images/receive-book-cover.png'
+  },
+  {
+    title: 'Know Thyself',
+    description: 'Deep dives into self-discovery and personal transformation for those ready to look inward.',
+    href: 'https://podcasts.apple.com/us/podcast/know-thyself/id1633725927',
+    coverText: 'Know Thyself'
+  }
+];
+
+const tools = [
+  {
+    title: 'The Breath Channel',
+    author: 'by Stevie Wright',
+    description: 'An expansive library of breathwork videos for every occasion, great for those new to breathwork or hoping to incorporate it into daily life.',
+    href: 'https://www.stevie-wright.com/the-breath-channel',
+    image: '/images/the-breath-channel-cropped.webp'
+  },
+  {
+    title: 'Free Energy Healing & Reprogramming',
+    author: 'by Zach Luz',
+    description: "Free energy healings to clear what's blocking you and open the path forward.",
+    href: 'https://www.youtube.com/@zachluz/videos',
+    image: '/images/free-energy-healing-reprogramming.png'
+  }
+];
+---
+<BaseLayout title="Resources">
+  <div class="resources-page page-shell">
+    <main>
+      <div class="page-header">
+        <h1>Resources</h1>
+        <p>Tools for your journey - my audio offerings and the books and podcasts that have shaped my path.</p>
+      </div>
+
+      <section class="resources-section">
+        <div class="section-intro">
+          <h2>Audio Resources on Spotify</h2>
+          <p>Each of these audio resources offers a distinct way to get in rapport with yourself, whether through meditation, movement, energetic tools, or new perspectives.</p>
+        </div>
+
+        <div class="podcasts-grid">
+          {podcasts.map((podcast) => (
+            <a href={podcast.href} target="_blank" rel="noreferrer" class="card-link">
+              <article class="podcast-card">
+                <img src={podcast.image} alt={podcast.alt} />
+                <h3>{podcast.title}</h3>
+                <p>{podcast.description}</p>
+              </article>
+            </a>
+          ))}
+        </div>
+
+        <div class="section-intro" style="margin-top: 6rem;">
+          <h2>Emily's Bookshelf</h2>
+          <p>Books and podcasts that have deeply informed my journey and continue to inspire the work I do.</p>
+        </div>
+
+        <div style="margin-bottom: 4rem;">
+          <h3 class="books-title">Books</h3>
+          <div class="resource-list">
+            {books.map((book) => (
+              <a href={book.href} target="_blank" rel="noreferrer" class="card-link">
+                <article class="resource-card">
+                  {book.image ? (
+                    <img src={book.image} alt={book.title} class="resource-thumb" />
+                  ) : (
+                    <div class="resource-thumb resource-thumb--text">{book.coverText}</div>
+                  )}
+                  <div>
+                    <h4>{book.title}</h4>
+                    <p>{book.description}</p>
+                  </div>
+                </article>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="section-intro" style="margin-top: 6rem;">
+          <h2>Tools for Practice</h2>
+          <p>Resources I love, rely on, and would recommend to anyone.</p>
+        </div>
+
+        <div class="resource-list">
+          {tools.map((tool) => (
+            <a href={tool.href} target="_blank" rel="noreferrer" class="card-link">
+              <article class="resource-card resource-card--center">
+                <img src={tool.image} alt={tool.title} class="resource-thumb resource-thumb--square" />
+                <div>
+                  <h4>{tool.title}</h4>
+                  <p class="resource-author">{tool.author}</p>
+                  <p>{tool.description}</p>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+
+        <div class="coming-soon">
+          <h3>More Resources Coming Soon</h3>
+          <p>Additional tools, writings, and offerings are in development. Subscribe to stay connected.</p>
+        </div>
+      </section>
+    </main>
+
+    <QuoteBanner quote="If your compassion does not include yourself, it is incomplete." author="Jack Kornfield" />
+  </div>
+</BaseLayout>
