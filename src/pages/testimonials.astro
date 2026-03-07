@@ -1,15 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
 import { site } from '../data/site';
 import '../styles/testimonials.css';
 
 const floatingTestimonials = [
-  'A lot of things we spoke about... suddenly, it all seems so clear.',
-  'Emily has an intuitive sense for how energy moves through the body.',
-  "I feel an internal softness, spaciousness, and care that I didn't have before.",
-  "I've never felt this connected to myself or understood myself as deeply as I do now.",
-  "I've tried other therapists, but none have been as insightful or as helpful as the experience I had working with Emily.",
-  'Working with Emily is like being in a warm bath. She has such a welcoming presence, it really feels like I could never do or say the wrong thing.'
+  `"A lot of things we spoke about... suddenly, it all seems so clear."`,
+  `"Emily has an intuitive sense for how energy moves through the body."`,
+  `"I feel an internal softness, spaciousness, and care that I didn't have before."`,
+  `"I've never felt this connected to myself or understood myself as deeply as I do now."`,
+  `"I've tried other therapists, but none have been as insightful or as helpful as the experience I had working with Emily."`,
+  `"Working with Emily is like being in a warm bath. She has such a welcoming presence, it really feels like I could never do or say the wrong thing."`
 ];
 ---
 <BaseLayout title="Testimonials">
@@ -100,10 +101,11 @@ const floatingTestimonials = [
         <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
       </section>
 
-      <div class="featured-quote-section">
-        <p class="featured-quote">"And the time came when the risk to remain tight in a bud was more painful than the risk it took to blossom"</p>
-        <p class="quote-author">Anais Nin</p>
-      </div>
     </main>
+
+    <QuoteBanner
+      quote=`"And the time came when the risk to remain tight in a bud was more painful than the risk it took to blossom"`
+      author="Anais Nin"
+    />
   </div>
 </BaseLayout>
