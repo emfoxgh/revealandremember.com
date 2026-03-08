@@ -127,8 +127,7 @@
   margin-top: 3rem;
 }
 
-.pathway-card,
-.work-option {
+.pathway-card {
   background: #fff;
   padding: 2.25rem;
   border-left: 4px solid var(--burnt-orange);
@@ -150,6 +149,10 @@
 .work-option h4 {
   margin: 0 0 1rem;
   font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+}
+
+.pathway-card h3 {
   color: var(--deep-terracotta);
   font-size: 1.8rem;
 }
@@ -171,6 +174,58 @@
   font-style: italic;
   color: var(--sage);
   font-weight: 300;
+}
+
+.home-section.work-section {
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+.home-section.work-section h2 {
+  color: var(--desert-sand);
+}
+
+.home-section.work-section p {
+  color: var(--cream);
+}
+
+.home-section.work-section .work-options {
+  margin-top: 3rem;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.home-section.work-section .work-options > * {
+  height: 100%;
+}
+
+.home-section.work-section .work-options > .card-link {
+  display: block;
+}
+
+.home-section.work-section .work-option {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: rgba(255, 248, 240, 0.1);
+  border: 1px solid rgba(232, 196, 168, 0.3);
+  border-radius: 0;
+  box-shadow: none;
+  transition: background 0.3s ease;
+}
+
+.home-section.work-section .work-option h4 {
+  color: var(--burnt-orange);
+}
+
+.home-section.work-section .work-option:hover {
+  background: rgba(255, 248, 240, 0.15);
+}
+
+.work-section .card-link:hover .work-option {
+  transform: none;
+  box-shadow: none;
 }
 
 .contact-section {
