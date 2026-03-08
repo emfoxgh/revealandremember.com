@@ -55,6 +55,10 @@
   line-height: 1.82;
 }
 
+.emily-content p strong {
+  font-weight: 600;
+}
+
 .highlight {
   font-size: clamp(2rem, 5vw, 2.8rem);
   color: var(--deep-terracotta);
@@ -82,14 +86,16 @@
 
 .cta-box p {
   margin: 0;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.65rem;
+  font-weight: 400;
   color: inherit;
 }
 
 .about-copy,
 .beliefs-content,
 .education-content {
-  width: min(calc(100% - 3rem), 900px);
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
 }
 
@@ -145,7 +151,7 @@
 
 .belief-item strong {
   font-weight: 700;
-  color: var(--deep-terracotta);
+  color: var(--burnt-orange);
 }
 
 .note {
@@ -157,7 +163,16 @@
   margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.9rem;
+  color: var(--burnt-orange);
+}
+
+.credential strong {
+  color: var(--charcoal);
+}
+
+.credential .note {
   color: var(--deep-terracotta);
+  font-style: italic;
 }
 
 .education-subsection + .education-subsection {
@@ -172,6 +187,6 @@
   .about-copy,
   .beliefs-content,
   .education-content {
-    width: min(calc(100% - 2rem), 900px);
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 }

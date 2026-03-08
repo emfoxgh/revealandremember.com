@@ -257,7 +257,9 @@
 
 .contact-panel p {
   margin: 0;
-  font-size: 1.3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
 
 .contact-panel a {

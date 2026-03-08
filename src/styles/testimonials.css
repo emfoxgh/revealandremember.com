@@ -26,7 +26,7 @@
 }
 
 .testimonials-grid {
-  width: min(calc(100% - 3rem), var(--wide-width));
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -62,7 +62,7 @@
 }
 
 .themed-container {
-  width: min(calc(100% - 3rem), 900px);
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
 }
 
@@ -138,7 +138,7 @@
 .heart-copy,
 .feeling-list,
 .client-quote {
-  max-width: 860px;
+  max-width: var(--content-width);
   margin-inline: auto;
   text-align: left;
 }
@@ -190,13 +190,13 @@
 
 @media (max-width: 900px) {
   .testimonials-grid {
-    width: min(calc(100% - 2rem), var(--wide-width));
+    width: min(calc(100% - 2rem), var(--content-width));
     grid-template-columns: 1fr;
     gap: 0.9rem;
   }
 
   .themed-container {
-    width: min(calc(100% - 2rem), 900px);
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 }
 
