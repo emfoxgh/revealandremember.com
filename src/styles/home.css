@@ -69,8 +69,15 @@
 }
 
 .home-section {
-  padding: 8rem 0;
-  background: #fff;
+  padding: var(--section-space) 0;
+}
+
+.home-section:nth-of-type(even) {
+  background: var(--panel-2);
+}
+
+.home-section:nth-of-type(odd) {
+  background: var(--panel-3);
 }
 
 .home-section h2 {
@@ -88,21 +95,12 @@
   font-weight: 300;
 }
 
-.about-block {
-  background: #fff;
-}
-
 .home-section .about-intro {
   margin-bottom: 3rem;
   font-size: clamp(1.9rem, 3vw, 2.2rem);
   line-height: 1.4;
   font-style: italic;
   color: var(--burnt-orange);
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.pathways {
-  background: linear-gradient(135deg, var(--cream) 0%, var(--desert-sand) 100%);
 }
 
 .pathway-cards,
@@ -110,7 +108,7 @@
 .work-options {
   display: grid;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2.2rem;
 }
 
 .pathway-cards {
@@ -168,7 +166,6 @@
 
 .contact-panel p {
   margin: 0;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
 }
 
@@ -209,7 +206,7 @@
   }
 
   .home-section {
-    padding: 5rem 0;
+    padding: var(--section-space-tight) 0;
   }
 
   .pathway-cards,

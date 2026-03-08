@@ -1,18 +1,17 @@
 .about-page main > section {
-  padding: clamp(3.8rem, 7vw, 5.5rem) 0;
-}
-
-.about-page main > section:nth-of-type(odd) {
-  background: #fff;
+  padding: var(--section-space) 0;
 }
 
 .about-page main > section:nth-of-type(even) {
-  background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 196, 168, 0.62) 100%);
+  background: var(--panel-2);
 }
 
-.emily-section-wrapper,
-.beliefs-section {
-  background: linear-gradient(135deg, rgba(232, 196, 168, 0.75), rgba(255, 248, 240, 0.95)) !important;
+.about-page main > section:first-of-type {
+  background: var(--desert-sand);
+}
+
+.about-page main > section:nth-of-type(odd):not(:first-of-type) {
+  background: var(--panel-3);
 }
 
 .emily-section {
@@ -43,7 +42,6 @@
 
 .emily-content .subtitle {
   margin: 0 0 1.4rem;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.35rem;
   font-style: italic;
   color: var(--burnt-orange);
@@ -58,7 +56,6 @@
 }
 
 .highlight {
-  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 5vw, 2.8rem);
   color: var(--deep-terracotta);
 }
@@ -78,14 +75,13 @@
   padding: 1.3rem;
   text-align: center;
   border-radius: 0.35rem;
-  background: linear-gradient(130deg, var(--burnt-orange), var(--deep-terracotta));
+  background: var(--burnt-orange);
   color: var(--cream);
   box-shadow: var(--shadow-card);
 }
 
 .cta-box p {
   margin: 0;
-  font-family: 'Cormorant Garamond', serif;
   font-size: 1.65rem;
   color: inherit;
 }
@@ -103,7 +99,6 @@
 
 .about-copy .pull-quote {
   margin: 0.7rem 0 0;
-  font-family: 'Cormorant Garamond', serif;
   color: var(--deep-terracotta);
 }
 
@@ -111,6 +106,8 @@
   font-size: clamp(2rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
+  font-family: 'Cormorant Garamond', serif !important;
+  color: var(--deep-terracotta) !important;
 }
 
 .about-copy .pull-quote--accent {
@@ -118,7 +115,8 @@
   font-weight: 700;
   font-style: italic;
   letter-spacing: 0.08em;
-  color: var(--burnt-orange);
+  color: var(--deep-terracotta) !important;
+  font-family: 'Cormorant Garamond', serif !important;
 }
 
 .about-copy .pull-quote--medium {

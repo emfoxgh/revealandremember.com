@@ -21,16 +21,15 @@ const floatingTestimonials = [
         <p>Reflections from the journey</p>
       </div>
 
-      <div class="testimonials-landscape">
-        <div class="embedded-image image-1" style="--image-url: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80');"></div>
-        <div class="embedded-image image-2" style="--image-url: url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80');"></div>
-        <div class="embedded-image image-3" style="--image-url: url('https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80');"></div>
-
-
-        {floatingTestimonials.map((item, index) => (
-          <div class={`testimonial-cloud cloud-${index + 1}`}>{item}</div>
-        ))}
-      </div>
+      <section class="testimonials-showcase" aria-label="Client reflections">
+        <div class="testimonials-grid">
+          {floatingTestimonials.map((item) => (
+            <article class="testimonial-card">
+              <p>{item}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section class="themed-testimonials">
         <div class="themed-container">

@@ -37,19 +37,19 @@ const podcasts = [
 const books = [
   {
     title: 'The Surrender Experiment',
-    description: 'A guide to loosening your grip and seeing what becomes possible when life is allowed to move through you.',
+    description: 'A profound exploration of what happens when we stop fighting life and start surrendering to its flow',
     href: 'https://www.amazon.com/The-Surrender-Experiment-audiobook/dp/B00YOJ9RV6',
     image: '/images/surrender-experiment-book-cover.jpg'
   },
   {
     title: 'Abundant Ever After',
-    description: 'A prosperity-minded invitation to create a life that feels aligned, not merely accomplished.',
+    description: 'For women ready to step into abundance — a beautiful guide to creating a life of purpose and joy.',
     href: 'https://www.amazon.com/Abundant-Ever-After-Creating-Prosperity/dp/B0D47QY1B9',
     image: '/images/abundant-ever-after-book-cover.jpg'
   },
   {
     title: 'Receive',
-    description: 'A permission slip to slow down and embrace your feminine essence, and an invitation to come home to yourself.',
+    description: 'A permission slip to slow down and embrace your feminine essence — a love story to the woman beneath the performance and an invitation to come home to yourself.',
     href: 'https://www.amazon.com/Receive-Dance-Feminine-Power-Forgot/dp/B0G2HPFYB3',
     image: '/images/receive-book-cover.png'
   }
@@ -58,7 +58,7 @@ const books = [
 const bookshelfPodcasts = [
   {
     title: 'The David Ghiyam Podcast',
-    description: 'Practical spiritual wisdom and energetic teachings on abundance, relationships, and purpose.',
+    description: `'Ancient wisdom meets modern life — David's teachings on Kabbalah offer profound shifts in perspective.'`,
     href: 'https://podcasts.apple.com/us/podcast/the-david-ghiyam-podcast/id1775548374',
     image: '/images/david-ghiyam-podcast.webp'
   },
@@ -70,7 +70,7 @@ const bookshelfPodcasts = [
   },
   {
     title: 'Know Thyself',
-    description: 'Deep dives into self-discovery and personal transformation for those ready to look inward.',
+    description: 'Deep dives into self-discovery and personal transformation — for those ready to look inward.',
     href: 'https://podcasts.apple.com/us/podcast/know-thyself/id1633725927',
     image: '/images/know-thyself-podcast.webp'
   }
@@ -80,7 +80,7 @@ const tools = [
   {
     title: 'The Breath Channel',
     author: 'by Stevie Wright',
-    description: 'An expansive library of breathwork videos for every occasion, great for those new to breathwork or hoping to incorporate it into daily life.',
+    description: 'An expansive library of breathwork videos for every occasion, great for those new to breathwork or hoping to incorporate it into daily lives.',
     href: 'https://www.stevie-wright.com/the-breath-channel',
     image: '/images/the-breath-channel-cropped.webp'
   },
@@ -101,7 +101,7 @@ const tools = [
         <p>Tools for your journey - my audio offerings and the books and podcasts that have shaped my path.</p>
       </div>
 
-      <section class="resources-section">
+      <section class="resources-section resources-section--panel-1">
         <div class="section-intro">
           <h2>Audio Resources on Spotify</h2>
           <p>Each of these audio resources offers a distinct way to get in rapport with yourself, whether through meditation, movement, energetic tools, or new perspectives.</p>
@@ -118,8 +118,10 @@ const tools = [
             </a>
           ))}
         </div>
+      </section>
 
-        <div class="section-intro section-intro--spaced">
+      <section class="resources-section resources-section--panel-2">
+        <div class="section-intro">
           <h2>Emily's Bookshelf</h2>
           <p>Books and podcasts that have deeply informed my journey and continue to inspire the work I do.</p>
         </div>
@@ -165,8 +167,10 @@ const tools = [
             ))}
           </div>
         </div>
+      </section>
 
-        <div class="section-intro section-intro--spaced">
+      <section class="resources-section resources-section--panel-3">
+        <div class="section-intro">
           <h2>Tools for Practice</h2>
           <p>Resources I love, rely on, and would recommend to anyone.</p>
         </div>

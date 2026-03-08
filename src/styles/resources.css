@@ -2,10 +2,33 @@
   padding-bottom: 0;
 }
 
+.resources-page .page-header {
+  background: var(--desert-sand);
+}
+
+.resources-page .page-header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
 .resources-section {
-  padding: clamp(4rem, 7vw, 5.8rem) 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 240, 0.94) 40%, rgba(232, 196, 168, 0.28) 100%);
+  padding: var(--section-space) 0;
+}
+
+.resources-section--panel-1 {
+  background: var(--panel-2);
+}
+
+.resources-section--panel-2 {
+  background: var(--panel-3);
+}
+
+.resources-section--panel-3 {
+  background: var(--panel-2);
 }
 
 .resources-section > * {
@@ -18,15 +41,14 @@
 }
 
 .section-intro--spaced {
-  margin-top: 4.5rem;
+  margin-top: 2.8rem;
 }
 
 .section-intro h2,
-.books-title,
-.resource-card h4 {
+.books-title {
   margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
-  color: var(--deep-terracotta);
+  color: var(--burnt-orange);
 }
 
 .section-intro h2 {
@@ -39,7 +61,7 @@
   grid-auto-rows: 1fr;
   gap: 1.3rem;
   max-width: 980px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2.8rem;
 }
 
 .podcast-card,
@@ -67,20 +89,33 @@
 }
 
 .podcast-card h3 {
-  margin: 0.9rem 0 0.65rem;
+  margin: 0.5rem 0 0.75rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.55rem;
+  font-size: 1.3rem;
   color: var(--deep-terracotta);
 }
 
 .podcast-card p,
 .resource-card p,
-.section-intro p,
 .coming-soon p {
   line-height: 1.7;
 }
 
+.section-intro p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+
 .podcast-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 1rem;
+  font-weight: 300;
   flex-grow: 1;
 }
 
@@ -95,7 +130,7 @@
 }
 
 .resource-section-block {
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
 }
 
 .resource-card {
@@ -159,6 +194,7 @@
 }
 
 .resource-card h4 {
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.8rem;
   line-height: 1.05;
   color: var(--deep-terracotta);
@@ -171,7 +207,7 @@
 }
 
 .coming-soon {
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 2rem 1.5rem;
   text-align: center;
   background: linear-gradient(140deg, #3f3534, #2d2524);

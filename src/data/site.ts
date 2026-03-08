@@ -5,7 +5,7 @@ export const site = {
   siteUrl: 'https://revealandremember.com',
   ogImage: '/images/rr-logo-no-text-updated.png',
   themeColor: '#fff8f0',
-  calendlyUrl: 'https://calendly.com/emilyfoxpsyd/20min-consultation',
+  calendlyUrl: 'https://calendly.com/revealandremember/20min-consultation',
   nav: [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About Me & You' },
