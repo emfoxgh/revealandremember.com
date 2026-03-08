@@ -22,37 +22,51 @@
       to bottom,
       rgba(212, 102, 62, 0.3) 0%,
       rgba(168, 70, 50, 0.5) 50%,
-      rgba(58, 58, 58, 0.72) 100%
+      rgba(58, 58, 58, 0.7) 100%
     ),
-    url('/images/mountain-home-page.jpg') center/cover no-repeat;
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'><defs><linearGradient id='sky' x1='0%' y1='0%' x2='0%' y2='100%'><stop offset='0%' style='stop-color:%23D4663E;stop-opacity:1' /><stop offset='50%' style='stop-color:%23E8C4A8;stop-opacity:1' /><stop offset='100%' style='stop-color:%23A84632;stop-opacity:1' /></linearGradient></defs><rect width='1200' height='800' fill='url(%23sky)'/><path d='M 0 500 Q 300 400 600 450 T 1200 500 L 1200 800 L 0 800 Z' fill='%233A3A3A' opacity='0.9'/><path d='M 100 550 Q 350 480 600 520 T 1100 600 L 1100 800 L 100 800 Z' fill='%23524A45' opacity='0.7'/><path d='M 200 600 Q 450 550 700 580 T 1000 650 L 1000 800 L 200 800 Z' fill='%236B5F55' opacity='0.5'/></svg>");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
   animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
-.hero-image::after {
-  content: '';
+.mountain-overlay {
   position: absolute;
-  inset: auto 0 0;
-  height: 42%;
-  background: linear-gradient(to top, rgba(58, 58, 58, 0.7), transparent);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: url('/images/mountain-home-page.jpg') center/cover no-repeat;
+  z-index: 1;
+  opacity: 0.6;
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
   width: min(calc(100% - 2.4rem), var(--wide-width));
+  margin-inline: auto;
   padding: clamp(7rem, 16vw, 10rem) 0 clamp(3rem, 7vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   color: #fff;
   animation: fadeInUp 1.5s ease-out;
 }
 
 .hero h1 {
-  margin: 0 0 clamp(2.5rem, 8vw, 7rem);
+  margin: 0 0 8rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.4rem, 10vw, 5.8rem);
+  font-size: 5rem;
   font-weight: 300;
   letter-spacing: 0.1em;
-  line-height: 0.95;
+  color: rgba(255, 248, 240, 0.96);
   text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
   animation: fadeInUp 1.5s ease-out 0.3s both;
 }
@@ -60,7 +74,7 @@
 .hero .subtitle {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
   letter-spacing: 0.12em;
@@ -279,7 +293,7 @@
   }
 
   .hero-content {
-    padding-top: 7rem;
+    padding: clamp(5.25rem, 17vw, 7rem) 0 clamp(2.25rem, 7vw, 3rem);
   }
 
   .home-section {
@@ -294,5 +308,6 @@
 
   .hero h1 {
     margin-bottom: 2.5rem;
+    font-size: 3rem;
   }
 }
