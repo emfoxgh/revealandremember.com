@@ -147,12 +147,18 @@ section {
 }
 
 .site-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  color: var(--deep-terracotta);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  line-height: 1;
+}
+
+.site-logo img {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: min(22vw, 160px);
 }
 
 .nav-actions {
