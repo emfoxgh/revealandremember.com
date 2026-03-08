@@ -1,21 +1,18 @@
-.about-page main {
-  display: grid;
-  gap: 1.9rem;
+.about-page main > section {
+  padding: clamp(3.8rem, 7vw, 5.5rem) 0;
 }
 
-.about-page main section {
-  width: min(calc(100% - 2.6rem), var(--content-width));
-  margin: 0 auto;
-  padding: clamp(2.1rem, 4.4vw, 3.4rem) 0;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-soft);
+.about-page main > section:nth-of-type(odd) {
+  background: #fff;
+}
+
+.about-page main > section:nth-of-type(even) {
+  background: linear-gradient(135deg, var(--cream) 0%, rgba(232, 196, 168, 0.62) 100%);
 }
 
 .emily-section-wrapper,
 .beliefs-section {
-  background:
-    linear-gradient(140deg, rgba(232, 196, 168, 0.56), rgba(255, 248, 240, 0.85));
+  background: linear-gradient(135deg, rgba(232, 196, 168, 0.75), rgba(255, 248, 240, 0.95)) !important;
 }
 
 .emily-section {
@@ -27,7 +24,7 @@
 
 .emily-photo {
   width: 100%;
-  border-radius: 1.4rem;
+  border-radius: 0.9rem;
   box-shadow: var(--shadow-card);
   object-fit: cover;
 }
@@ -70,7 +67,7 @@
   display: inline-block;
   margin-left: 0.25rem;
   padding: 2px 6px;
-  border-radius: 0.3rem;
+  border-radius: 0.25rem;
   background: rgba(212, 102, 62, 0.18);
   color: var(--deep-terracotta);
   font-size: 0.9rem;
@@ -80,7 +77,7 @@
   margin-top: 2rem;
   padding: 1.3rem;
   text-align: center;
-  border-radius: 1.2rem;
+  border-radius: 0.35rem;
   background: linear-gradient(130deg, var(--burnt-orange), var(--deep-terracotta));
   color: var(--cream);
   box-shadow: var(--shadow-card);
@@ -96,7 +93,7 @@
 .about-copy,
 .beliefs-content,
 .education-content {
-  width: min(calc(100% - 2.6rem), 900px);
+  width: min(calc(100% - 3rem), 900px);
   margin: 0 auto;
 }
 
@@ -167,15 +164,6 @@
 }
 
 @media (max-width: 900px) {
-  .about-page main {
-    gap: 1.2rem;
-  }
-
-  .about-page main section {
-    width: min(calc(100% - 1.2rem), var(--content-width));
-    border-radius: 1.4rem;
-  }
-
   .emily-section {
     grid-template-columns: 1fr;
   }
@@ -183,6 +171,6 @@
   .about-copy,
   .beliefs-content,
   .education-content {
-    width: min(calc(100% - 1.6rem), 900px);
+    width: min(calc(100% - 2rem), 900px);
   }
 }

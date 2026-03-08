@@ -3,11 +3,14 @@
 }
 
 .resources-section {
-  margin-top: 2rem;
-  padding: clamp(2.2rem, 5vw, 4rem) 0;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-soft);
+  padding: clamp(4rem, 7vw, 5.8rem) 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 240, 0.94) 40%, rgba(232, 196, 168, 0.28) 100%);
+}
+
+.resources-section > * {
+  width: min(calc(100% - 3rem), var(--content-width));
+  margin-inline: auto;
 }
 
 .section-intro {
@@ -41,10 +44,10 @@
 
 .podcast-card,
 .resource-card {
-  border-radius: 1.4rem;
-  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(168, 70, 50, 0.16);
-  box-shadow: 0 10px 30px rgba(58, 58, 58, 0.08);
+  box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
 }
 
 .podcast-card {
@@ -60,7 +63,7 @@
   width: 175px;
   height: 175px;
   object-fit: contain;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
 }
 
 .podcast-card h3 {
@@ -122,7 +125,7 @@
   width: 132px;
   min-width: 132px;
   height: 188px;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   background: linear-gradient(160deg, var(--desert-sand), var(--burnt-orange));
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   object-fit: cover;
@@ -132,14 +135,14 @@
   width: 180px;
   min-width: 180px;
   height: auto;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
 }
 
 .resource-thumb--podcast {
   width: 110px;
   min-width: 110px;
   height: 110px;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   object-fit: cover;
 }
 
@@ -170,7 +173,6 @@
 .coming-soon {
   margin-top: 3rem;
   padding: 2rem 1.5rem;
-  border-radius: 1.4rem;
   text-align: center;
   background: linear-gradient(140deg, #3f3534, #2d2524);
   color: var(--cream);
@@ -184,9 +186,8 @@
 }
 
 @media (max-width: 900px) {
-  .resources-section {
-    margin-top: 1.2rem;
-    border-radius: 1.4rem;
+  .resources-section > * {
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 
   .podcasts-grid {

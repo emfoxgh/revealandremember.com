@@ -4,16 +4,14 @@
 
 .testimonials-landscape {
   position: relative;
-  width: min(calc(100% - 2.6rem), var(--wide-width));
-  min-height: 870px;
-  margin: 2rem auto 0;
-  padding: 2.4rem 0;
-  border-radius: 2rem;
+  width: 100%;
+  min-height: 860px;
+  margin: 0;
+  padding: 3.2rem 0;
   background:
     radial-gradient(circle at 12% 22%, rgba(232, 196, 168, 0.22), transparent 38%),
     radial-gradient(circle at 82% 18%, rgba(156, 168, 156, 0.16), transparent 35%),
-    rgba(255, 255, 255, 0.8);
-  box-shadow: var(--shadow-soft);
+    rgba(255, 255, 255, 0.92);
   overflow: hidden;
 }
 
@@ -57,7 +55,6 @@
   position: absolute;
   max-width: 460px;
   padding: 1.3rem 1.4rem;
-  border-radius: 1.2rem;
   border: 1px solid rgba(168, 70, 50, 0.14);
   background: rgba(255, 255, 255, 0.84);
   box-shadow: 0 12px 26px rgba(58, 58, 58, 0.07);
@@ -99,18 +96,17 @@
 .themed-testimonials,
 .heart-section,
 .cta-strip {
-  margin-top: 2rem;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: var(--shadow-soft);
+  margin: 0;
+  box-shadow: none;
 }
 
 .themed-testimonials {
-  padding: 3rem 0;
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 248, 240, 0.92) 100%);
 }
 
 .themed-container {
-  width: min(calc(100% - 2.6rem), 900px);
+  width: min(calc(100% - 3rem), 900px);
   margin: 0 auto;
 }
 
@@ -130,9 +126,8 @@
 .theme-group {
   margin-top: 1.2rem;
   padding: 1.3rem;
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(168, 70, 50, 0.16);
+  background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 8px 20px rgba(58, 58, 58, 0.06);
 }
 
@@ -152,8 +147,9 @@
 }
 
 .heart-section {
-  padding: 3rem 1.5rem;
+  padding: 5rem 1.5rem;
   text-align: center;
+  background: linear-gradient(180deg, rgba(232, 196, 168, 0.28), rgba(255, 248, 240, 0.9));
 }
 
 .heart-copy,
@@ -196,10 +192,11 @@
 }
 
 .cta-strip {
-  padding: 2.8rem 1.5rem;
+  padding: 3.2rem 1.5rem;
   text-align: center;
-  background: linear-gradient(135deg, rgba(255, 248, 240, 0.95), rgba(232, 196, 168, 0.58));
-  border: 1px solid rgba(212, 102, 62, 0.16);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--desert-sand) 100%);
+  border-top: 1px solid rgba(212, 102, 62, 0.16);
+  border-bottom: 1px solid rgba(212, 102, 62, 0.16);
 }
 
 .cta-strip p {
@@ -211,12 +208,10 @@
 
 @media (max-width: 900px) {
   .testimonials-landscape {
-    width: min(calc(100% - 1.2rem), var(--wide-width));
     min-height: auto;
     display: grid;
     gap: 0.9rem;
     padding: 1rem;
-    border-radius: 1.4rem;
   }
 
   .embedded-image,
@@ -232,10 +227,7 @@
     max-width: none;
   }
 
-  .themed-testimonials,
-  .heart-section,
-  .cta-strip {
-    margin-top: 1.2rem;
-    border-radius: 1.4rem;
+  .themed-container {
+    width: min(calc(100% - 2rem), 900px);
   }
 }
