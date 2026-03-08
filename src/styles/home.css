@@ -97,7 +97,7 @@
 
 .home-section .about-intro {
   margin-bottom: 3rem;
-  font-size: clamp(1.9rem, 3vw, 2.2rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.65rem);
   line-height: 1.4;
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
