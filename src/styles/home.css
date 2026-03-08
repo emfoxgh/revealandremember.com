@@ -1,117 +1,116 @@
+.page-shell {
+  padding-top: 0;
+}
+
 .hero {
   position: relative;
-  min-height: calc(100dvh - 1.5rem);
-  border-radius: 2.2rem;
-  margin: 0 auto;
-  width: min(calc(100% - 2.6rem), var(--wide-width));
+  min-height: 100dvh;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  box-shadow: var(--shadow-card);
+  background: #1f1b1a;
 }
 
 .hero-image {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(170deg, rgba(58, 58, 58, 0.2) 0%, rgba(58, 58, 58, 0.52) 45%, rgba(35, 30, 29, 0.8) 100%),
-    linear-gradient(120deg, rgba(102, 123, 109, 0.25), rgba(212, 102, 62, 0.2)),
+    linear-gradient(
+      to bottom,
+      rgba(212, 102, 62, 0.3) 0%,
+      rgba(168, 70, 50, 0.5) 50%,
+      rgba(58, 58, 58, 0.72) 100%
+    ),
     url('/images/mountain-home-page.jpg') center/cover no-repeat;
-  transform: scale(1.04);
-  animation: heroDrift 16s ease-in-out infinite alternate;
+  animation: slowZoom 20s ease-in-out infinite alternate;
 }
 
 .hero-image::after {
   content: '';
   position: absolute;
   inset: auto 0 0;
-  height: 45%;
-  background: linear-gradient(to top, rgba(26, 22, 21, 0.74), transparent);
+  height: 42%;
+  background: linear-gradient(to top, rgba(58, 58, 58, 0.7), transparent);
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: clamp(6rem, 12vw, 8rem) clamp(1.3rem, 5vw, 4rem) clamp(2.6rem, 5vw, 4rem);
-  color: #fff8f0;
-  text-align: left;
+  z-index: 2;
+  width: min(calc(100% - 2.4rem), var(--wide-width));
+  padding: clamp(7rem, 16vw, 10rem) 0 clamp(3rem, 7vw, 5rem);
+  text-align: center;
+  color: #fff;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 .hero h1 {
-  margin: 0 0 1.2rem;
-  max-width: 8ch;
+  margin: 0 0 clamp(2.5rem, 8vw, 7rem);
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3.1rem, 10vw, 6.2rem);
+  font-size: clamp(3.4rem, 10vw, 5.8rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
   line-height: 0.95;
-  letter-spacing: 0.03em;
-  text-shadow: 0 14px 28px rgba(0, 0, 0, 0.32);
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.5s ease-out 0.3s both;
 }
 
 .hero .subtitle {
   margin: 0;
-  max-width: 40ch;
-  font-size: clamp(1rem, 1.9vw, 1.28rem);
-  line-height: 1.65;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.12em;
   color: rgba(255, 248, 240, 0.9);
+  animation: fadeInUp 1.5s ease-out 0.6s both;
 }
 
 .home-section {
-  margin-top: 2.6rem;
-  padding: clamp(2.2rem, 5vw, 4.2rem) 0;
-  border-radius: 2rem;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: var(--shadow-soft);
+  padding: 8rem 0;
+  background: #fff;
 }
 
 .home-section h2 {
-  margin: 0 0 1.35rem;
+  margin: 0 0 2rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.3rem, 5vw, 3.5rem);
-  font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  font-weight: 400;
   color: var(--deep-terracotta);
-  line-height: 1.05;
+  letter-spacing: 0.05em;
 }
 
 .home-section p {
-  font-size: 1.06rem;
-  line-height: 1.85;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 300;
 }
 
 .about-block {
-  position: relative;
-  background:
-    radial-gradient(circle at 85% 15%, rgba(232, 196, 168, 0.36), transparent 42%),
-    rgba(255, 255, 255, 0.92);
-}
-
-.about-block .container {
-  max-width: 920px;
+  background: #fff;
 }
 
 .home-section .about-intro {
-  margin-bottom: 2rem;
-  font-size: clamp(1.85rem, 3.6vw, 2.5rem);
-  line-height: 1.25;
+  margin-bottom: 3rem;
+  font-size: clamp(1.9rem, 3vw, 2.2rem);
+  line-height: 1.4;
   font-style: italic;
   color: var(--burnt-orange);
   font-family: 'Cormorant Garamond', serif;
 }
 
 .pathways {
-  background:
-    linear-gradient(120deg, rgba(255, 248, 240, 0.95), rgba(232, 196, 168, 0.4)),
-    rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--desert-sand) 100%);
 }
 
 .pathway-cards,
 .teacher-list,
 .work-options {
   display: grid;
-  gap: 1.3rem;
-  margin-top: 2rem;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .pathway-cards {
@@ -126,97 +125,100 @@
 .pathway-card,
 .teacher-item,
 .work-option {
-  height: 100%;
-  padding: 1.8rem;
-  border-radius: var(--radius-card);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(168, 70, 50, 0.14);
-  box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
+  background: #fff;
+  padding: 2.25rem;
+  border-left: 4px solid var(--burnt-orange);
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow-soft);
 }
 
 .pathway-card h3,
 .teacher-item h3,
 .work-option h4 {
-  margin: 0 0 0.9rem;
+  margin: 0 0 1rem;
   font-family: 'Cormorant Garamond', serif;
   color: var(--deep-terracotta);
   font-size: 1.8rem;
 }
 
 .status-text {
-  color: var(--deep-terracotta);
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  color: var(--burnt-orange);
+  font-weight: 500;
 }
 
 .teacher-item .method {
-  margin: 0 0 0.8rem;
+  margin: 0 0 1rem;
   color: var(--burnt-orange);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
 .contact-section {
   text-align: center;
-  background:
-    radial-gradient(circle at 12% 16%, rgba(156, 168, 156, 0.2), transparent 30%),
-    rgba(255, 255, 255, 0.92);
 }
 
 .contact-panel {
-  max-width: 760px;
-  margin: 1.5rem auto 0;
-  padding: 2rem 1.8rem;
-  border-radius: 1.5rem;
-  background: linear-gradient(135deg, var(--burnt-orange), var(--deep-terracotta));
+  max-width: 700px;
+  margin: 2rem auto 0;
+  padding: 2.5rem;
+  background: var(--burnt-orange);
   color: var(--cream);
-  box-shadow: var(--shadow-card);
+  border-radius: 0.9rem;
 }
 
 .contact-panel p {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.25rem, 3vw, 1.6rem);
-  line-height: 1.55;
+  font-size: 1.3rem;
 }
 
 .contact-panel a {
   color: var(--cream);
-  font-weight: 700;
-  text-decoration: none;
+  font-weight: 500;
 }
 
-@keyframes heroDrift {
+@keyframes slowZoom {
   from {
-    transform: scale(1.02) translateY(0);
+    transform: scale(1);
   }
 
   to {
-    transform: scale(1.08) translateY(-10px);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 900px) {
   .hero {
-    min-height: 78dvh;
-    width: min(calc(100% - 1.2rem), var(--wide-width));
-    border-radius: 1.6rem;
+    min-height: 88dvh;
   }
 
   .hero-content {
-    padding: 6rem 1.2rem 2rem;
+    padding-top: 7rem;
   }
 
   .home-section {
-    margin-top: 1.4rem;
-    border-radius: 1.4rem;
+    padding: 5rem 0;
   }
 
   .pathway-cards,
   .teacher-list,
   .work-options {
     grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    margin-bottom: 2.5rem;
   }
 }
