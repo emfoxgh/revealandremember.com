@@ -3,8 +3,11 @@ import { site } from '../data/site';
 const currentPath = Astro.url.pathname;
 ---
 <header class="site-header">
-  <nav class="site-nav">
-    <a href="/" class="site-logo">R&amp;R</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/" class="site-logo">
+      <span class="site-logo-mark">R&amp;R</span>
+      <span class="site-logo-text">Reveal &amp; Remember</span>
+    </a>
     <div class="nav-actions">
       <ul id="nav-menu" class="nav-links">
         {site.nav.map((item) => (
@@ -26,10 +29,20 @@ const currentPath = Astro.url.pathname;
 
 <script>
   const button = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('#nav-menu');
   const actions = document.querySelector('.nav-actions');
+  const menu = document.querySelector('#nav-menu');
+  const header = document.querySelector('.site-header');
+  const closeMenu = () => {
+    if (!button || !menu || !actions) {
+      return;
+    }
+    button.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+    actions.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  };
 
-  if (button && menu && actions) {
+  if (button && actions && menu) {
     button.addEventListener('click', () => {
       const isOpen = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!isOpen));
@@ -37,5 +50,24 @@ const currentPath = Astro.url.pathname;
       actions.classList.toggle('is-open');
       document.body.classList.toggle('nav-open', !isOpen);
     });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        closeMenu();
+      }
+    });
+  }
+
+  if (header) {
+    const updateHeaderState = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 16);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 </script>

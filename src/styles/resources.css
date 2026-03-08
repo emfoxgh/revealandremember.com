@@ -3,43 +3,48 @@
 }
 
 .resources-section {
-  padding: 6rem 0;
+  margin-top: 2rem;
+  padding: clamp(2.2rem, 5vw, 4rem) 0;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
 }
 
 .section-intro {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .section-intro--spaced {
-  margin-top: 6rem;
+  margin-top: 4.5rem;
 }
 
 .section-intro h2,
 .books-title,
 .resource-card h4 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
-  color: var(--burnt-orange);
+  color: var(--deep-terracotta);
 }
 
 .section-intro h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 5vw, 3rem);
 }
 
 .podcasts-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto 5rem;
+  gap: 1.3rem;
+  max-width: 980px;
+  margin: 0 auto 4rem;
 }
 
 .podcast-card,
 .resource-card {
-  background: white;
-  border-left: 4px solid var(--burnt-orange);
-  box-shadow: var(--shadow-soft);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(168, 70, 50, 0.16);
+  box-shadow: 0 10px 30px rgba(58, 58, 58, 0.08);
 }
 
 .podcast-card {
@@ -55,13 +60,13 @@
   width: 175px;
   height: 175px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 0.8rem;
 }
 
 .podcast-card h3 {
-  margin: 1rem 0 0.75rem;
+  margin: 0.9rem 0 0.65rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   color: var(--deep-terracotta);
 }
 
@@ -70,7 +75,6 @@
 .section-intro p,
 .coming-soon p {
   line-height: 1.7;
-  font-weight: 300;
 }
 
 .podcast-card p {
@@ -78,37 +82,34 @@
 }
 
 .books-title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.3rem;
 }
 
 .resource-list {
   display: grid;
-  gap: 2rem;
+  gap: 1.2rem;
 }
 
 .resource-section-block {
-  margin-bottom: 4rem;
+  margin-bottom: 2.8rem;
 }
 
 .resource-card {
   display: flex;
-  gap: 2rem;
+  gap: 1.35rem;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 1.4rem;
 }
 
-.resource-card--podcast {
-  align-items: center;
-}
-
+.resource-card--podcast,
 .resource-card--center {
   align-items: center;
 }
 
 .resource-card:hover,
 .podcast-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-card);
 }
 
@@ -118,27 +119,27 @@
 }
 
 .resource-thumb {
-  width: 140px;
-  min-width: 140px;
-  height: 200px;
-  border-radius: 8px;
+  width: 132px;
+  min-width: 132px;
+  height: 188px;
+  border-radius: 0.8rem;
   background: linear-gradient(160deg, var(--desert-sand), var(--burnt-orange));
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   object-fit: cover;
 }
 
 .resource-thumb--square {
-  width: 200px;
-  min-width: 200px;
+  width: 180px;
+  min-width: 180px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 0.8rem;
 }
 
 .resource-thumb--podcast {
-  width: 120px;
-  min-width: 120px;
-  height: 120px;
-  border-radius: 8px;
+  width: 110px;
+  min-width: 110px;
+  height: 110px;
+  border-radius: 0.8rem;
   object-fit: cover;
 }
 
@@ -150,37 +151,44 @@
   color: var(--cream);
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.2;
 }
 
 .resource-card h4 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  line-height: 1.05;
   color: var(--deep-terracotta);
 }
 
 .resource-author {
-  margin: 0 0 1rem;
-  color: var(--sage);
+  margin: 0 0 0.65rem;
+  color: var(--moss);
   font-style: italic;
 }
 
 .coming-soon {
-  margin-top: 4rem;
-  padding: 4rem;
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+  border-radius: 1.4rem;
   text-align: center;
-  background: var(--charcoal);
+  background: linear-gradient(140deg, #3f3534, #2d2524);
   color: var(--cream);
 }
 
 .coming-soon h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.7rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--desert-sand);
 }
 
 @media (max-width: 900px) {
+  .resources-section {
+    margin-top: 1.2rem;
+    border-radius: 1.4rem;
+  }
+
   .podcasts-grid {
     grid-template-columns: 1fr;
   }
@@ -195,9 +203,5 @@
     min-width: 0;
     max-width: 240px;
     height: auto;
-  }
-
-  .coming-soon {
-    padding: 3rem 1.5rem;
   }
 }
