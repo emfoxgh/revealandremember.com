@@ -34,8 +34,8 @@ body {
 }
 
 p {
-  font-family: 'Montserrat', sans-serif !important;
-  color: var(--charcoal) !important;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--charcoal);
   font-weight: 300;
 }
 
@@ -252,6 +252,7 @@ button:focus-visible {
 
 .site-footer p {
   margin: 0;
+  color: inherit;
 }
 
 .footer-subtitle {
@@ -282,9 +283,11 @@ button:focus-visible {
 
 .quote-banner__quote {
   margin: 0 0 2rem;
-  font-size: clamp(2rem, 4vw, 2.4rem);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 2.2rem);
+  font-weight: 400;
   font-style: italic;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--deep-terracotta);
 }
 
@@ -295,7 +298,9 @@ button:focus-visible {
 
 .quote-banner__author {
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
+  font-weight: 400;
   letter-spacing: 0.08em;
 }
 
@@ -304,16 +309,15 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 1rem 2.2rem;
-  border-radius: 0.35rem;
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
   background: var(--burnt-orange);
   color: var(--cream);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.84rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 400;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
 

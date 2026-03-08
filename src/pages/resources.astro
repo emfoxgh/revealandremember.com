@@ -37,18 +37,21 @@ const podcasts = [
 const books = [
   {
     title: 'The Surrender Experiment',
+    author: 'by Michael A. Singer',
     description: 'A profound exploration of what happens when we stop fighting life and start surrendering to its flow',
     href: 'https://www.amazon.com/The-Surrender-Experiment-audiobook/dp/B00YOJ9RV6',
     image: '/images/surrender-experiment-book-cover.jpg'
   },
   {
     title: 'Abundant Ever After',
+    author: 'by Cathy Heller',
     description: 'For women ready to step into abundance — a beautiful guide to creating a life of purpose and joy.',
     href: 'https://www.amazon.com/Abundant-Ever-After-Creating-Prosperity/dp/B0D47QY1B9',
     image: '/images/abundant-ever-after-book-cover.jpg'
   },
   {
     title: 'Receive',
+    author: 'by Dr. Stephanie Rimka',
     description: 'A permission slip to slow down and embrace your feminine essence — a love story to the woman beneath the performance and an invitation to come home to yourself.',
     href: 'https://www.amazon.com/Receive-Dance-Feminine-Power-Forgot/dp/B0G2HPFYB3',
     image: '/images/receive-book-cover.png'
@@ -139,6 +142,7 @@ const tools = [
                   )}
                   <div>
                     <h4>{book.title}</h4>
+                    <p class="resource-author">{book.author}</p>
                     <p>{book.description}</p>
                   </div>
                 </article>
@@ -182,7 +186,6 @@ const tools = [
                 <img src={tool.image} alt={tool.title} class="resource-thumb resource-thumb--square" />
                 <div>
                   <h4>{tool.title}</h4>
-                  <p class="resource-author">{tool.author}</p>
                   <p>{tool.description}</p>
                 </div>
               </article>

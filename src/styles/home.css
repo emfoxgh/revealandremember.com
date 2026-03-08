@@ -99,6 +99,7 @@
   margin-bottom: 3rem;
   font-size: clamp(1.9rem, 3vw, 2.2rem);
   line-height: 1.4;
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--burnt-orange);
 }
@@ -126,7 +127,7 @@
   background: #fff;
   padding: 2.25rem;
   border-left: 4px solid var(--burnt-orange);
-  border-radius: 0.9rem;
+  border-radius: 0;
   box-shadow: var(--shadow-soft);
 }
 
@@ -161,7 +162,7 @@
   padding: 2.5rem;
   background: var(--burnt-orange);
   color: var(--cream);
-  border-radius: 0.9rem;
+  border-radius: 0;
 }
 
 .contact-panel p {

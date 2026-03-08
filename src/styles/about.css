@@ -74,7 +74,7 @@
   margin-top: 2rem;
   padding: 1.3rem;
   text-align: center;
-  border-radius: 0.35rem;
+  border-radius: 0;
   background: var(--burnt-orange);
   color: var(--cream);
   box-shadow: var(--shadow-card);
@@ -114,14 +114,17 @@
   font-size: clamp(1.9rem, 4vw, 2.5rem);
   font-weight: 700;
   font-style: italic;
-  letter-spacing: 0.08em;
-  color: var(--deep-terracotta) !important;
+  letter-spacing: 3px;
+  color: var(--burnt-orange) !important;
   font-family: 'Cormorant Garamond', serif !important;
 }
 
 .about-copy .pull-quote--medium {
   font-size: clamp(1.5rem, 3.4vw, 2rem);
   font-weight: 600;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--burnt-orange);
 }
 
 .cta-button--spaced {

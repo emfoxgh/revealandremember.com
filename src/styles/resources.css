@@ -1,3 +1,7 @@
+.resources-page.page-shell {
+  padding-top: 0;
+}
+
 .resources-page main {
   padding-bottom: 0;
 }
@@ -66,7 +70,7 @@
 
 .podcast-card,
 .resource-card {
-  border-radius: 0.75rem;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(168, 70, 50, 0.16);
   box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
@@ -77,6 +81,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
+  border-left: 4px solid var(--burnt-orange);
   text-align: center;
   height: 100%;
 }
@@ -85,7 +90,7 @@
   width: 175px;
   height: 175px;
   object-fit: contain;
-  border-radius: 0.6rem;
+  border-radius: 0;
 }
 
 .podcast-card h3 {
@@ -98,6 +103,9 @@
 .podcast-card p,
 .resource-card p,
 .coming-soon p {
+  font-size: 1.1rem;
+  color: var(--cream);
+  font-weight: 300;
   line-height: 1.7;
 }
 
@@ -120,8 +128,9 @@
 }
 
 .books-title {
-  font-size: 2.2rem;
-  margin-bottom: 1.3rem;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
 }
 
 .resource-list {
@@ -140,9 +149,21 @@
   padding: 1.4rem;
 }
 
+.resource-section-block .resource-card {
+  border-left: 4px solid var(--burnt-orange);
+}
+
+.resource-section-block .resource-list {
+  gap: 1.6rem;
+}
+
 .resource-card--podcast,
 .resource-card--center {
   align-items: center;
+}
+
+.resource-card--center {
+  border-left: 4px solid var(--burnt-orange);
 }
 
 .resource-card:hover,
@@ -160,7 +181,7 @@
   width: 132px;
   min-width: 132px;
   height: 188px;
-  border-radius: 0.6rem;
+  border-radius: 0;
   background: linear-gradient(160deg, var(--desert-sand), var(--burnt-orange));
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   object-fit: cover;
@@ -170,14 +191,14 @@
   width: 180px;
   min-width: 180px;
   height: auto;
-  border-radius: 0.6rem;
+  border-radius: 0;
 }
 
 .resource-thumb--podcast {
   width: 110px;
   min-width: 110px;
   height: 110px;
-  border-radius: 0.6rem;
+  border-radius: 0;
   object-fit: cover;
 }
 
@@ -198,12 +219,25 @@
   font-size: 1.8rem;
   line-height: 1.05;
   color: var(--deep-terracotta);
+  margin: 0 0 0.35rem;
+}
+
+.resource-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  font-weight: 300;
 }
 
 .resource-author {
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.75rem;
   color: var(--moss);
   font-style: italic;
+}
+
+.resource-author + p {
+  padding-top: 0.75rem;
 }
 
 .coming-soon {
