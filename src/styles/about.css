@@ -163,10 +163,12 @@
   margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.9rem;
+  font-weight: 500;
   color: var(--burnt-orange);
 }
 
 .credential strong {
+  font-weight: 600;
   color: var(--charcoal);
 }
 

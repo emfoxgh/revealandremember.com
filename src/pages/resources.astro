@@ -19,14 +19,16 @@ const podcasts = [
     alt: 'Guided Kundalini Podcast'
   },
   {
-    title: 'Wisdom for Wisdom Seekers (coming soon)',
+    title: 'Wisdom for Wisdom Seekers',
+    comingSoon: true,
     description: 'Conversations with alternative healers, practitioners, and guides.',
     href: 'https://open.spotify.com/show/1lyukuS3Xytao7UtPTUxOj?go=1',
     image: '/images/wisdom-for-wisdom-seekers.png',
     alt: 'Wisdom for Wisdom Seekers Podcast'
   },
   {
-    title: 'Basic Energetics (coming soon)',
+    title: 'Basic Energetics',
+    comingSoon: true,
     description: 'Energetic tools to support you in clearing your energy, holding energetic boundaries, and moving through life open and protected.',
     href: 'https://open.spotify.com/show/4x8gbDK481K1ssso7nWpzu?go=1',
     image: '/images/be-logo-transparent-background.png',
@@ -50,7 +52,7 @@ const books = [
     image: '/images/abundant-ever-after-book-cover.jpg'
   },
   {
-    title: 'Receive',
+    title: 'Receive: The Dance of Feminine Power',
     author: 'by Dr. Stephanie Rimka',
     description: 'A permission slip to slow down and embrace your feminine essence — a love story to the woman beneath the performance and an invitation to come home to yourself.',
     href: 'https://www.amazon.com/Receive-Dance-Feminine-Power-Forgot/dp/B0G2HPFYB3',
@@ -61,18 +63,21 @@ const books = [
 const bookshelfPodcasts = [
   {
     title: 'The David Ghiyam Podcast',
-    description: `'Ancient wisdom meets modern life — David's teachings on Kabbalah offer profound shifts in perspective.'`,
+    author: 'by David Ghiyam',
+    description: "Ancient wisdom meets modern life — David's teachings on Kabbalah offer profound shifts in perspective.",
     href: 'https://podcasts.apple.com/us/podcast/the-david-ghiyam-podcast/id1775548374',
     image: '/images/david-ghiyam-podcast.webp'
   },
   {
     title: 'Everything is Energy with Cathy Heller',
+    author: 'by Cathy Heller',
     description: "Inspiring conversations about building a meaningful life - Cathy's warmth and wisdom are infectious.",
     href: 'https://podcasts.apple.com/us/podcast/everything-is-energy-with-cathy-heller/id1460263362',
     image: '/images/everything-is-energy.png'
   },
   {
     title: 'Know Thyself',
+    author: 'by André Duqum',
     description: 'Deep dives into self-discovery and personal transformation — for those ready to look inward.',
     href: 'https://podcasts.apple.com/us/podcast/know-thyself/id1633725927',
     image: '/images/know-thyself-podcast.webp'
@@ -115,7 +120,10 @@ const tools = [
             <a href={podcast.href} target="_blank" rel="noreferrer" class="card-link">
               <article class="podcast-card">
                 <img src={podcast.image} alt={podcast.alt} />
-                <h3>{podcast.title}</h3>
+                <h3>
+                  {podcast.title}
+                  {podcast.comingSoon && <em class="coming-soon-label">(coming soon)</em>}
+                </h3>
                 <p>{podcast.description}</p>
               </article>
             </a>
@@ -164,6 +172,7 @@ const tools = [
                   )}
                   <div>
                     <h4>{podcast.title}</h4>
+                    <p class="resource-author">{podcast.author}</p>
                     <p>{podcast.description}</p>
                   </div>
                 </article>
@@ -186,6 +195,7 @@ const tools = [
                 <img src={tool.image} alt={tool.title} class="resource-thumb resource-thumb--square" />
                 <div>
                   <h4>{tool.title}</h4>
+                  <p class="resource-author">{tool.author}</p>
                   <p>{tool.description}</p>
                 </div>
               </article>
