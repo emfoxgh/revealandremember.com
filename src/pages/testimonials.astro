@@ -1,39 +1,35 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
 import { site } from '../data/site';
 import '../styles/testimonials.css';
 
 const floatingTestimonials = [
-  'A lot of things we spoke about... suddenly, it all seems so clear.',
-  'Emily has an intuitive sense for how energy moves through the body.',
-  "I feel an internal softness, spaciousness, and care that I didn't have before.",
-  "I've never felt this connected to myself or understood myself as deeply as I do now.",
-  "I've tried other therapists, but none have been as insightful or as helpful as the experience I had working with Emily.",
-  'Working with Emily is like being in a warm bath. She has such a welcoming presence, it really feels like I could never do or say the wrong thing.'
+  `"A lot of things we spoke about... suddenly, it all seems so clear."`,
+  `"Emily has an intuitive sense for how energy moves through the body."`,
+  `"I feel an internal softness, spaciousness, and care that I didn't have before."`,
+  `"I've never felt this connected to myself or understood myself as deeply as I do now."`,
+  `"I've tried other therapists, but none have been as insightful or as helpful as the experience I had working with Emily."`,
+  `"Working with Emily is like being in a warm bath. She has such a welcoming presence, it really feels like I could never do or say the wrong thing."`
 ];
 ---
 <BaseLayout title="Testimonials">
   <div class="testimonials-page page-shell">
-    <main>
+    <main id="main-content">
       <div class="page-header">
         <h1>Testimonials</h1>
         <p>Reflections from the journey</p>
       </div>
 
-      <div class="testimonials-landscape">
-        <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="" class="embedded-image image-1" />
-        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800&q=80" alt="" class="embedded-image image-2" />
-        <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=800&q=80" alt="" class="embedded-image image-3" />
-        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="" class="embedded-image image-4" />
-
-        <svg class="desert-element cactus-1" viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg"><path d="M 50 140 L 50 60 M 35 80 L 35 100 L 50 100 M 50 90 L 65 90 L 65 70" stroke="#D4663E" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
-        <svg class="desert-element sun-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" stroke="#A84632" stroke-width="3" fill="none"/><line x1="50" y1="10" x2="50" y2="20" stroke="#A84632" stroke-width="2"/><line x1="50" y1="80" x2="50" y2="90" stroke="#A84632" stroke-width="2"/><line x1="10" y1="50" x2="20" y2="50" stroke="#A84632" stroke-width="2"/><line x1="80" y1="50" x2="90" y2="50" stroke="#A84632" stroke-width="2"/></svg>
-        <svg class="desert-element mountain-1" viewBox="0 0 150 80" xmlns="http://www.w3.org/2000/svg"><path d="M 0 80 L 50 20 L 100 60 L 150 80" stroke="#D4663E" stroke-width="3" fill="none"/></svg>
-
-        {floatingTestimonials.map((item, index) => (
-          <div class={`testimonial-cloud cloud-${index + 1}`}>{item}</div>
-        ))}
-      </div>
+      <section class="testimonials-showcase" aria-label="Client reflections">
+        <div class="testimonials-grid">
+          {floatingTestimonials.map((item) => (
+            <article class="testimonial-card">
+              <p>{item}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section class="themed-testimonials">
         <div class="themed-container">
@@ -90,12 +86,12 @@ const floatingTestimonials = [
 
         <div class="client-quote">
           <blockquote>"I can jump higher because my feet are more firmly planted on the ground."</blockquote>
-          <p>Past Client</p>
+          <p>—Client Reflection</p>
         </div>
 
         <div class="client-quote">
           <blockquote>"I felt so seen by you, it made it easier to see myself."</blockquote>
-          <p>Past Client</p>
+          <p>—Past Client</p>
         </div>
       </section>
 
@@ -104,10 +100,11 @@ const floatingTestimonials = [
         <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
       </section>
 
-      <div class="featured-quote-section">
-        <p class="featured-quote">"And the time came when the risk to remain tight in a bud was more painful than the risk it took to blossom"</p>
-        <p class="quote-author">Anais Nin</p>
-      </div>
     </main>
+
+    <QuoteBanner
+      quote=`"And the time came when the risk to remain tight in a bud was more painful than the risk it took to blossom"`
+      author="— Anais Nin"
+    />
   </div>
 </BaseLayout>

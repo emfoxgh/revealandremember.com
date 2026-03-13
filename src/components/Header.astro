@@ -3,34 +3,70 @@ import { site } from '../data/site';
 const currentPath = Astro.url.pathname;
 ---
 <header class="site-header">
-  <nav class="site-nav">
-    <a href="/" class="site-logo">R&amp;R</a>
+  <nav class="site-nav" aria-label="Primary">
+    <a href="/" class="site-logo" aria-label="Reveal and Remember home">
+      <img src="/images/rr-logo-no-text-updated.png" alt="" loading="eager" decoding="async" />
+    </a>
+    <div class="nav-actions">
+      <ul id="nav-menu" class="nav-links">
+        {site.nav.map((item) => (
+          <li>
+            <a href={item.href} class={currentPath === item.href ? 'is-active' : undefined}>{item.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="header-contact">Schedule a Consult</a>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
       <span class="sr-only">Toggle navigation</span>
       <span></span>
       <span></span>
       <span></span>
     </button>
-    <ul id="nav-menu" class="nav-links">
-      {site.nav.map((item) => (
-        <li>
-          <a href={item.href} class={currentPath === item.href ? 'is-active' : undefined}>{item.label}</a>
-        </li>
-      ))}
-    </ul>
   </nav>
 </header>
 
 <script>
   const button = document.querySelector('.nav-toggle');
+  const actions = document.querySelector('.nav-actions');
   const menu = document.querySelector('#nav-menu');
+  const header = document.querySelector('.site-header');
+  const closeMenu = () => {
+    if (!button || !menu || !actions) {
+      return;
+    }
+    button.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+    actions.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  };
 
-  if (button && menu) {
+  if (button && actions && menu) {
     button.addEventListener('click', () => {
       const isOpen = button.getAttribute('aria-expanded') === 'true';
       button.setAttribute('aria-expanded', String(!isOpen));
       menu.classList.toggle('is-open');
+      actions.classList.toggle('is-open');
       document.body.classList.toggle('nav-open', !isOpen);
     });
+
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        closeMenu();
+      }
+    });
+  }
+
+  if (header) {
+    const updateHeaderState = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 16);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
   }
 </script>

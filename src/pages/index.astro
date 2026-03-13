@@ -5,9 +5,10 @@ import { site } from '../data/site';
 import '../styles/home.css';
 ---
 <BaseLayout>
-  <main class="page-shell">
+  <main id="main-content" class="page-shell">
     <section class="hero">
       <div class="hero-image"></div>
+      <div class="mountain-overlay"></div>
       <div class="hero-content wide-container">
         <h1>Remember Who You Are</h1>
         <p class="subtitle">Reveal &amp; Remember: Therapy and Guided Healing</p>
@@ -17,7 +18,7 @@ import '../styles/home.css';
     <section class="home-section about-block">
       <div class="container">
         <h2>You've done the work.<br />Now you're ready to live it.</h2>
-        <p class="about-intro">This is a space to remember what's already inside you and let it bloom.</p>
+        <p class="about-intro">This is a space to remember what's already inside of you... and let it bloom.</p>
         <p>
           Reveal &amp; Remember is a place to rest. A place to feel held and heard. A place to feel safe
           enough to finally remember who you've always been beneath the layers of conditioning,
@@ -34,7 +35,7 @@ import '../styles/home.css';
           <div class="pathway-card">
             <h3>Traditional Therapy</h3>
             <p>Licensed clinical work (PSY35370) for those needing the structure and support of evidence-based practice.</p>
-            <p style="color: var(--burnt-orange); font-weight: 500;">Waitlist currently closed | CA residents only</p>
+            <p class="status-text">Waitlist currently closed | CA residents only</p>
           </div>
           <div class="pathway-card">
             <h3>Guided Healing</h3>
@@ -43,7 +44,7 @@ import '../styles/home.css';
               exists outside the clinical frame and may integrate somatic practices, energy work, and
               alternative healing modalities.
             </p>
-            <p style="color: var(--burnt-orange); font-weight: 500;">Accepting new clients</p>
+            <p class="status-text">Accepting new clients</p>
           </div>
         </div>
       </div>
@@ -58,8 +59,10 @@ import '../styles/home.css';
             <h3>Dick Schwartz</h3>
             <p class="method">Internal Family Systems (IFS)</p>
             <p>
-              A revolutionary therapeutic approach that views the psyche as composed of multiple parts,
-              each with its own perspective and protective function.
+              A revolutionary therapeutic approach that views the psyche as composed of multiple "parts,"
+              each with its own perspective and protective function. IFS teaches us to approach our inner
+              world with curiosity rather than judgment, helping parts unburden and return to their natural,
+              valuable states.
             </p>
           </div>
           <div class="teacher-item">
@@ -67,7 +70,8 @@ import '../styles/home.css';
             <p class="method">Alchemy Somatics</p>
             <p>
               Body-centered work that recognizes the wisdom held in our physical form. Through somatic
-              practices, we access memories, emotions, and patterns stored beneath conscious awareness.
+              practices, we access memories, emotions, and patterns stored beneath conscious awareness,
+              allowing transformation at the cellular level.
             </p>
           </div>
           <div class="teacher-item">
@@ -75,14 +79,15 @@ import '../styles/home.css';
             <p class="method">Transformational NLP (tNLP)</p>
             <p>
               An evolution of traditional NLP that works with the unconscious mind to resolve limiting
-              beliefs and patterns at their root.
+              beliefs and patterns at their root. This approach recognizes that lasting change happens when
+              we address the underlying structure of our experience, not just surface symptoms.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section">
+    <section class="home-section work-section">
       <div class="container">
         <h2>Ways to Work With Me</h2>
         <p>Whether you're seeking traditional therapeutic support or are ready for guided healing, I offer several formats to meet you where you are.</p>
@@ -121,5 +126,5 @@ import '../styles/home.css';
     </section>
   </main>
 
-  <QuoteBanner quote="You are a masterpiece - a piece of the master." author="Rabbi David Aaron" />
+  <QuoteBanner quote=`"You are a masterpiece — a piece of the master."` author="— Rabbi David Aaron" />
 </BaseLayout>

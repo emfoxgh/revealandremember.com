@@ -1,134 +1,194 @@
-.about-page main section {
-  padding: 4rem 0;
+.about-page main > section {
+  padding: var(--section-space) 0;
 }
 
-.emily-section-wrapper,
-.beliefs-section {
+.about-page main > section:nth-of-type(even) {
+  background: var(--panel-2);
+}
+
+.about-page main > section:first-of-type {
   background: var(--desert-sand);
+}
+
+.about-page main > section:nth-of-type(odd):not(:first-of-type) {
+  background: var(--panel-3);
 }
 
 .emily-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 4rem;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3.6rem);
   align-items: start;
-  padding: 5rem 0;
 }
 
 .emily-photo {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: var(--shadow-soft);
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow-card);
+  object-fit: cover;
 }
 
 .emily-content h1,
 .about-copy h2,
 .beliefs-content h2,
 .education-content h2 {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.4rem, 5vw, 3rem);
-  font-weight: 300;
-  color: var(--charcoal);
-  letter-spacing: 1px;
+  font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+  font-weight: 500;
+  color: var(--deep-terracotta);
+  line-height: 1.05;
 }
 
 .emily-content .subtitle {
-  margin-bottom: 2rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  margin: 0 0 1.4rem;
+  font-size: 1.35rem;
   font-style: italic;
-  color: var(--deep-terracotta);
-  line-height: 1.8;
+  color: var(--burnt-orange);
+  line-height: 1.6;
 }
 
 .about-page p,
 .belief-item,
 .credential {
-  font-size: 1.05rem;
-  line-height: 1.9;
+  font-size: 1.04rem;
+  line-height: 1.82;
+}
+
+.emily-content p strong {
+  font-weight: 600;
 }
 
 .highlight {
-  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 2.8rem);
   color: var(--deep-terracotta);
 }
 
 .checklist-item {
   display: inline-block;
-  margin-left: 0.2rem;
+  margin-left: 0.25rem;
   padding: 2px 6px;
-  border-radius: 3px;
-  background: rgba(212, 102, 62, 0.2);
-  color: var(--burnt-orange);
+  border-radius: 0.25rem;
+  background: rgba(212, 102, 62, 0.18);
+  color: var(--deep-terracotta);
   font-size: 0.9rem;
 }
 
 .cta-box {
-  margin-top: 3rem;
-  padding: 2rem;
+  margin-top: 2rem;
+  padding: 1.3rem;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 0;
   background: var(--burnt-orange);
   color: var(--cream);
+  box-shadow: var(--shadow-card);
 }
 
 .cta-box p {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.65rem;
+  font-weight: 400;
   color: inherit;
 }
 
-.about-copy {
-  width: min(calc(100% - 3rem), 900px);
+.about-copy,
+.beliefs-content,
+.education-content {
+  width: min(calc(100% - 3rem), var(--content-width));
   margin: 0 auto;
 }
 
-.pull-quote {
-  margin: 1rem 0 0;
-  font-family: 'Cormorant Garamond', serif;
+.about-copy--center {
+  text-align: center;
+}
+
+.about-copy .pull-quote {
+  margin: 0.7rem 0 0;
   color: var(--deep-terracotta);
 }
 
-.left-rule {
-  margin: 2rem 0;
-  padding-left: 1.5rem;
-  border-left: 3px solid var(--desert-sand);
+.about-copy .pull-quote--strong {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-family: 'Cormorant Garamond', serif !important;
+  color: var(--deep-terracotta) !important;
 }
 
-.beliefs-content,
-.education-content {
-  width: min(calc(100% - 3rem), 900px);
-  margin: 0 auto;
+.about-copy .pull-quote--accent {
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: var(--burnt-orange) !important;
+  font-family: 'Cormorant Garamond', serif !important;
+}
+
+.about-copy .pull-quote--medium {
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  font-weight: 600;
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--burnt-orange);
+}
+
+.cta-button--spaced {
+  margin-top: 0.8rem;
+}
+
+.left-rule {
+  margin: 1.8rem 0;
+  padding-left: 1.2rem;
+  border-left: 3px solid rgba(212, 102, 62, 0.35);
 }
 
 .belief-item,
 .credential {
-  padding: 1rem 0;
-  border-bottom: 1px solid rgba(58, 58, 58, 0.08);
+  padding: 0.95rem 0;
+  border-bottom: 1px solid rgba(58, 58, 58, 0.1);
+}
+
+.belief-item strong {
+  font-weight: 700;
+  color: var(--burnt-orange);
 }
 
 .note {
-  color: var(--deep-terracotta);
+  color: var(--moss);
   font-size: 0.95rem;
 }
 
 .education-subsection h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: var(--burnt-orange);
+}
+
+.credential strong {
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.credential .note {
   color: var(--deep-terracotta);
+  font-style: italic;
 }
 
 .education-subsection + .education-subsection {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 900px) {
   .emily-section {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 3.5rem 0;
+  }
+
+  .about-copy,
+  .beliefs-content,
+  .education-content {
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 }

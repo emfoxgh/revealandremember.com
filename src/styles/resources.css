@@ -1,48 +1,96 @@
+.resources-page.page-shell {
+  padding-top: 0;
+}
+
 .resources-page main {
   padding-bottom: 0;
 }
 
+.resources-page .page-header {
+  background: var(--desert-sand);
+}
+
+.resources-page .page-header p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  max-width: 700px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
 .resources-section {
-  padding: 6rem 0;
+  padding: var(--section-space) 0;
+}
+
+.resources-section--panel-1 {
+  background: var(--panel-2);
+}
+
+.resources-section--panel-2 {
+  background: var(--panel-3);
+}
+
+.resources-section--panel-3 {
+  background: var(--panel-2);
+}
+
+.resources-section > * {
+  width: min(calc(100% - 3rem), var(--content-width));
+  margin-inline: auto;
 }
 
 .section-intro {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+}
+
+.section-intro--spaced {
+  margin-top: 2.8rem;
 }
 
 .section-intro h2,
-.books-title,
-.resource-card h4 {
-  margin: 0 0 1rem;
+.books-title {
+  margin: 0 0 0.8rem;
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
   color: var(--burnt-orange);
 }
 
 .section-intro h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 5vw, 3rem);
 }
 
 .podcasts-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
   gap: 2rem;
-  max-width: 900px;
+  width: min(calc(100% - 3rem), 800px);
   margin: 0 auto 5rem;
+}
+
+.podcasts-grid > .card-link {
+  display: block;
 }
 
 .podcast-card,
 .resource-card {
-  background: white;
-  border-left: 4px solid var(--burnt-orange);
-  box-shadow: var(--shadow-soft);
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(168, 70, 50, 0.16);
+  box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
 }
 
 .podcast-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem;
+  justify-content: flex-start;
+  padding: 1.25rem;
+  border-left: 4px solid var(--burnt-orange);
   text-align: center;
+  height: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .podcast-card img {
@@ -50,47 +98,97 @@
   height: 175px;
   object-fit: contain;
   border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
 .podcast-card h3 {
-  margin: 1rem 0 0.75rem;
+  margin: 0 0 0.75rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   color: var(--deep-terracotta);
+}
+
+.podcast-card .coming-soon-label {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--sage);
+  white-space: nowrap;
 }
 
 .podcast-card p,
 .resource-card p,
-.section-intro p,
 .coming-soon p {
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: var(--cream);
   font-weight: 300;
+  line-height: 1.7;
+}
+
+.section-intro p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--charcoal);
+  font-weight: 300;
+}
+
+.podcast-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 1rem;
+  font-weight: 300;
+  flex-grow: 1;
 }
 
 .books-title {
   font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 2rem;
 }
 
 .resource-list {
   display: grid;
-  gap: 2rem;
+  gap: 1.2rem;
+}
+
+.resource-section-block {
+  margin-bottom: 2rem;
 }
 
 .resource-card {
   display: flex;
-  gap: 2rem;
+  gap: 1.35rem;
   align-items: flex-start;
-  padding: 2rem;
+  padding: 1.4rem;
 }
 
+.resource-section-block .resource-card {
+  border-left: 4px solid var(--burnt-orange);
+}
+
+.resource-section-block .resource-list {
+  gap: 1.6rem;
+}
+
+.resource-card--podcast,
 .resource-card--center {
   align-items: center;
 }
 
+.resource-card--center {
+  border-left: 4px solid var(--burnt-orange);
+}
+
 .resource-card:hover,
 .podcast-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-card);
 }
 
@@ -100,20 +198,28 @@
 }
 
 .resource-thumb {
-  width: 140px;
-  min-width: 140px;
-  height: 200px;
-  border-radius: 8px;
+  width: 132px;
+  min-width: 132px;
+  height: 188px;
+  border-radius: 0;
   background: linear-gradient(160deg, var(--desert-sand), var(--burnt-orange));
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.14);
   object-fit: cover;
 }
 
 .resource-thumb--square {
-  width: 200px;
-  min-width: 200px;
+  width: 180px;
+  min-width: 180px;
   height: auto;
-  border-radius: 4px;
+  border-radius: 0;
+}
+
+.resource-thumb--podcast {
+  width: 110px;
+  min-width: 110px;
+  height: 110px;
+  border-radius: 0;
+  object-fit: cover;
 }
 
 .resource-thumb--text {
@@ -124,38 +230,59 @@
   color: var(--cream);
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   line-height: 1.2;
 }
 
 .resource-card h4 {
-  font-size: 1.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.05;
   color: var(--deep-terracotta);
+  margin: 0 0 0.35rem;
+}
+
+.resource-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--charcoal);
+  font-weight: 300;
 }
 
 .resource-author {
-  margin: 0 0 1rem;
-  color: var(--sage);
+  margin: 0 0 0.75rem;
+  color: var(--moss);
   font-style: italic;
 }
 
+.resource-author + p {
+  padding-top: 0.75rem;
+}
+
 .coming-soon {
-  margin-top: 4rem;
-  padding: 4rem;
+  margin-top: 2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
-  background: var(--charcoal);
+  background: linear-gradient(140deg, #3f3534, #2d2524);
   color: var(--cream);
 }
 
 .coming-soon h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.7rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--desert-sand);
 }
 
 @media (max-width: 900px) {
+  .resources-section > * {
+    width: min(calc(100% - 2rem), var(--content-width));
+  }
+
   .podcasts-grid {
+    width: min(calc(100% - 2rem), 800px);
     grid-template-columns: 1fr;
   }
 
@@ -169,9 +296,5 @@
     min-width: 0;
     max-width: 240px;
     height: auto;
-  }
-
-  .coming-soon {
-    padding: 3rem 1.5rem;
   }
 }
