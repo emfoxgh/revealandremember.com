@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | R&R: Reveal & Remember</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── GLOBAL TOKENS ── */
+    :root {
+      --burnt-orange: #d4663e;
+      --desert-sand: #e8c4a8;
+      --sage: #9ca89c;
+      --deep-terracotta: #a84632;
+      --cream: #fff8f0;
+      --charcoal: #3a3a3a;
+      --moss: #667b6d;
+      --shadow-soft: 0 10px 30px rgba(58,58,58,0.08);
+      --shadow-card: 0 12px 28px rgba(168,70,50,0.16);
+      --content-width: 1200px;
+      --wide-width: 1400px;
+      --panel-1: #fff8f0;
+      --panel-2: #fff8f0;
+      --panel-3: #f7ebe0;
+      --section-space: clamp(2.65rem, 4.4vw, 3.75rem);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--charcoal);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    p {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--charcoal);
+      font-weight: 300;
+    }
+    img { display: block; max-width: 100%; }
+
+    .wide-container {
+      width: min(calc(100% - 3rem), var(--wide-width));
+      margin-inline: auto;
+    }
+    .container {
+      width: min(calc(100% - 3rem), var(--content-width));
+      margin-inline: auto;
+    }
+
+    /* ── NAV ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212,102,62,0.2);
+      background: rgba(255,248,240,0.95);
+      backdrop-filter: blur(10px);
+    }
+    .site-nav {
+      width: min(calc(100% - 3rem), var(--wide-width));
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.22rem 0;
+    }
+    .site-logo img { height: 42px; width: auto; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--charcoal);
+      font-size: 0.9rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover, .nav-links a.is-active { color: var(--burnt-orange); }
+    .header-contact {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.78rem 1.35rem;
+      border-radius: 0.35rem;
+      background: var(--burnt-orange);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .header-contact:hover { background: var(--deep-terracotta); transform: translateY(-1px); }
+
+    /* ── PAGE SHELL ── */
+    .page-shell { padding-top: 86px; }
+
+    /* ── HERO SECTION — matches about.css exactly ── */
+    .about-page main > section {
+      padding: var(--section-space) 0;
+    }
+    .about-page main > section:first-of-type {
+      background: var(--desert-sand);
+    }
+    .about-page main > section:nth-of-type(even) {
+      background: var(--panel-2);
+    }
+    .about-page main > section:nth-of-type(odd):not(:first-of-type) {
+      background: var(--panel-3);
+    }
+
+    .emily-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(1.5rem, 4vw, 3.6rem);
+      align-items: center;
+    }
+    .emily-photo {
+      width: 100%;
+      border-radius: 0.9rem;
+      box-shadow: var(--shadow-card);
+      object-fit: cover;
+    }
+    .emily-content {
+      padding-top: 0;
+    }
+    .emily-content h1 {
+      margin: 0 0 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4.8vw, 3.5rem);
+      font-weight: 500;
+      color: var(--deep-terracotta);
+      line-height: 1.05;
+    }
+    .emily-content .subtitle {
+      margin: 0 0 1.4rem;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--burnt-orange);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .about-page p {
+      font-size: 1.04rem;
+      line-height: 1.82;
+    }
+    .emily-content p { margin-bottom: 0.9rem; }
+    .emily-content p:last-child { margin-bottom: 0; }
+    .emily-content p strong { font-weight: 600; }
+    .highlight {
+      font-size: 1.04rem !important;
+      color: var(--deep-terracotta) !important;
+      font-weight: 600 !important;
+    }
+    .checklist-item {
+      display: inline-block;
+      margin-left: 0.25rem;
+      padding: 2px 6px;
+      border-radius: 0.25rem;
+      background: rgba(212,102,62,0.18);
+      color: var(--deep-terracotta);
+      font-size: 0.9rem;
+    }
+    .cta-box {
+      margin-top: 2rem;
+      padding: 1.3rem;
+      text-align: center;
+      background: var(--burnt-orange);
+      color: var(--cream);
+      box-shadow: var(--shadow-card);
+    }
+    .cta-box a {
+      text-decoration: none;
+      color: var(--cream);
+    }
+    .cta-box p {
+      margin: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: inherit;
+    }
+
+    /* ── BODY SECTIONS ── */
+    .about-copy,
+    .beliefs-content,
+    .education-content {
+      width: min(calc(100% - 3rem), var(--content-width));
+      margin: 0 auto;
+    }
+
+    .about-copy h2,
+    .beliefs-content h2,
+    .education-content h2 {
+      margin: 0 0 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 500;
+      color: var(--deep-terracotta);
+      line-height: 1.1;
+    }
+
+    .about-copy p,
+    .beliefs-content p,
+    .education-content p {
+      font-size: 1.04rem;
+      line-height: 1.82;
+      margin-bottom: 0.9rem;
+    }
+    .about-copy p:last-child { margin-bottom: 0; }
+
+    /* section rule */
+    .section-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--burnt-orange);
+      opacity: 0.55;
+      margin-bottom: 1.8rem;
+    }
+
+    /* ── BELIEFS ── */
+    .belief-item {
+      font-size: 1.04rem;
+      line-height: 1.82;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid rgba(58,58,58,0.1);
+    }
+    .belief-item strong {
+      font-weight: 700;
+      color: var(--burnt-orange);
+    }
+    .note {
+      color: var(--moss);
+      font-size: 0.95rem;
+    }
+
+    /* ── EDUCATION ── */
+    .education-subsection h3 {
+      margin: 0 0 0.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+      color: var(--burnt-orange);
+    }
+    .education-subsection + .education-subsection {
+      margin-top: 2rem;
+    }
+    .credential {
+      font-size: 1.04rem;
+      line-height: 1.82;
+      padding: 0.95rem 0;
+      border-bottom: 1px solid rgba(58,58,58,0.1);
+    }
+    .credential strong {
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    .credential .note {
+      color: var(--deep-terracotta);
+      font-style: italic;
+    }
+
+    /* ── QUOTE BANNER ── */
+    .quote-banner {
+      width: 100%;
+      padding: 5rem 1.5rem;
+      text-align: center;
+      background: var(--desert-sand);
+    }
+    .quote-banner__inner {
+      width: min(calc(100% - 3rem), 980px);
+      margin: 0 auto;
+    }
+    .quote-banner__quote {
+      margin: 0 0 2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.2rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--deep-terracotta);
+    }
+    .quote-banner__author {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      width: 100%;
+      background: var(--charcoal);
+      color: var(--desert-sand);
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    .site-footer p { margin: 0; color: inherit; font-weight: 300; }
+    .footer-subtitle {
+      margin-top: 1rem !important;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+    }
+
+    .ready-text {
+      margin-top: 1.8rem !important;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem !important;
+      color: var(--charcoal);
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem 2.5rem;
+      border-radius: 4px;
+      background: var(--burnt-orange);
+      color: var(--cream);
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      margin-top: 0.8rem;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background: var(--deep-terracotta);
+      transform: translateY(-1px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .page-shell { padding-top: 78px; }
+      .emily-section { grid-template-columns: 1fr; }
+      .about-copy, .beliefs-content, .education-content {
+        width: min(calc(100% - 2rem), var(--content-width));
+      }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="https://www.revealandremember.com/" class="site-logo">
+        <img src="https://www.revealandremember.com/images/rr-logo-no-text-updated.png" alt="R&R Logo" />
+      </a>
+      <div class="nav-actions">
+        <ul class="nav-links">
+          <li><a href="https://www.revealandremember.com/">Home</a></li>
+          <li><a href="#" class="is-active">About Me</a></li>
+          <li><a href="https://www.revealandremember.com/about-you">About You</a></li>
+          <li><a href="https://www.revealandremember.com/resources">Resources</a></li>
+          <li><a href="https://www.revealandremember.com/testimonials">Testimonials</a></li>
+        </ul>
+        <a href="https://calendly.com/revealandremember/20min-consultation" class="header-contact" target="_blank" rel="noreferrer">
+          Schedule a Consult
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="about-page page-shell">
+    <main>
+
+      <!-- HERO -->
+      <section>
+        <div class="wide-container emily-section">
+          <div>
+            <img src="https://www.revealandremember.com/images/emily-photo.jpg" alt="Emily with turquoise earrings" class="emily-photo" />
+          </div>
+          <div class="emily-content">
+            <h1>Hi, I'm Emily.</h1>
+            <p class="subtitle">psychologist, healer, guide</p>
+            <p>
+              In the Fall of 2024, I had finally "done it". I'd completed the checklist:
+              fancy degree<span class="checklist-item">✓</span>
+              partner<span class="checklist-item">✓</span>
+              house<span class="checklist-item">✓</span>
+              career plan<span class="checklist-item">✓</span>. Then it hit me...
+            </p>
+            <p class="highlight"><strong>I'm not happy.</strong></p>
+            <p><em>That's when my real work started.</em></p>
+            <p>
+              I'm probably not your average clinical psychologist. I don't believe all the books.
+              I probably won't use the manual. I genuinely believe that, in your heart of hearts,
+              <em>you already know what you need to know.</em>
+            </p>
+            <p>
+              I can't give you the answers, but I have walked the path. Over the past year, I have
+              come home to myself. <strong>If you feel guided to do the same, walk with me. I'd love
+              to walk you home.</strong>
+            </p>
+            <p class="ready-text">Ready to drop the masks?</p>
+            <a href="https://calendly.com/revealandremember/20min-consultation" class="cta-button" target="_blank" rel="noreferrer">Schedule a Consult</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRAINING & PROFESSIONAL EXPERIENCE -->
+      <section>
+        <div class="about-copy">
+          <h2>Training &amp; Professional Experience</h2>
+          <div class="section-rule"></div>
+          <p><em>I'm more than the letters after my name — and so are you.</em></p>
+          <p>
+            Credentials are not the whole story, and they should never ask you to override your
+            own inner knowing. But I do believe training matters, because healing work asks for
+            real skill, discernment, and care.
+          </p>
+          <p>
+            I studied psychology at UC Berkeley, worked in neuropsychological assessment at UCSF,
+            and earned my doctorate at the PGSP-Stanford PsyD Consortium, affiliated with Stanford
+            University School of Medicine.
+          </p>
+          <p>
+            I spent years training in and practicing evidence-based therapy, including ACT, EFT,
+            CPT, CBT, DBT, EMDR, mindfulness-based approaches, and trauma-focused care. I have led
+            mindfulness groups at Stanford, created and led psychoeducational groups for couples,
+            and received specialty training in LGBTQ+ care, trauma/PTSD, and relationship distress.
+            Across individual, couples, and group work, I have supported more than 300 people in
+            their healing and recovery.
+          </p>
+          <p>
+            I mention this because, while my work has evolved, this is my background.
+            <strong>I know the manuals. I just also know from the inside what feels truer to me.</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- WHERE MY WORK LIVES NOW -->
+      <section>
+        <div class="about-copy">
+          <h2>Where My Work Lives Now</h2>
+          <div class="section-rule"></div>
+          <p>These days, my work lives at the intersection of <strong>psychology &amp; soul.</strong></p>
+          <p>
+            I draw most directly from Internal Family Systems, somatic healing, and Transformational
+            NLP, infused with my own intuition and energetics.
+          </p>
+          <p>What these approaches share is a belief I hold deeply: <strong>you are not broken.</strong></p>
+          <p>
+            Your deeper Self — your soul, essence, and inner knowing — remains whole and intact
+            beneath the trauma, conditioning, and survival strategies you've carried. My work is
+            about helping you reconnect with that wholeness, heal the young parts of you that got
+            stuck in the past, release what is no longer yours, and
+            <em>reclaim your power as the conscious co-creator of your life.</em>
+          </p>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <div class="education-content">
+          <h2>Education</h2>
+          <div class="section-rule"></div>
+          <div class="education-subsection">
+            <h3>Academic Credentials</h3>
+            <div class="credential"><strong>Bachelor of Arts in Psychology (BA)</strong> — University of California, Berkeley</div>
+            <div class="credential"><strong>Doctor of Clinical Psychology (PsyD)</strong> — PGSP-Stanford PsyD Consortium</div>
+          </div>
+          <div class="education-subsection">
+            <h3>Alternative Healing Credentials</h3>
+            <div class="credential"><strong>Master Level Transformational NLP Practitioner</strong> — NLP Marin</div>
+            <div class="credential"><strong>Advanced Somatic Healer</strong> — Alchemy Somatics</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SOME THINGS I BELIEVE -->
+      <section>
+        <div class="beliefs-content">
+          <h2>Some Things I Believe That Inform My Work</h2>
+          <div class="section-rule"></div>
+          <div class="belief-item">The universe is always <strong>conspiring for your highest good</strong></div>
+          <div class="belief-item">Most things worth knowing are a <strong>paradox</strong></div>
+          <div class="belief-item">What life presents to us is ultimately <em>for us</em></div>
+          <div class="belief-item">Life flows better when we <strong>surrender</strong> <span class="note">(note: this does not mean being passive)</span></div>
+          <div class="belief-item">We are <strong>co-creators</strong> with the divine</div>
+          <div class="belief-item">Our reality is a <strong>hologram</strong> of our internal world: as above, so below</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- QUOTE BANNER -->
+  <div class="quote-banner">
+    <div class="quote-banner__inner">
+      <p class="quote-banner__quote">"Courage is not the absence of fear. Courage is fear walking."</p>
+      <p class="quote-banner__author">— Susan David, PhD</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 R&R: Reveal & Remember | Emily Fox, PsyD</p>
+    <p class="footer-subtitle">Licensed Clinical Psychologist | CA License PSY35370 | Transformational Guide</p>
+  </footer>
+
+</body>
+</html>
