@@ -1,0 +1,343 @@
+.about-you-page main {
+  background: var(--cream);
+}
+
+.about-you-page .split-section,
+.about-you-page .mirror-section,
+.about-you-page .cta-section {
+  padding: var(--section-space) 0;
+}
+
+.about-you-page .split-section--cream,
+.about-you-page .mirror-section--cream,
+.about-you-page .cta-section {
+  background: var(--cream);
+}
+
+.about-you-page .split-section--panel,
+.about-you-page .mirror-section--white {
+  background: var(--panel-2);
+}
+
+.about-you-page .split-section--sand {
+  background: var(--desert-sand);
+}
+
+.about-you-page .split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: clamp(1.5rem, 4vw, 3.6rem);
+  align-items: stretch;
+}
+
+.about-you-page .split--reverse {
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
+}
+
+.about-you-page .split--reverse .split-text {
+  grid-column: 2;
+}
+
+.about-you-page .split--reverse .split-photo {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.about-you-page .split-text {
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+}
+
+.about-you-page .split-text-inner {
+  width: 100%;
+  max-width: 620px;
+}
+
+.about-you-page .split-photo {
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.9rem;
+  box-shadow: var(--shadow-card);
+}
+
+.about-you-page .split-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-you-page .split-photo--hunched img {
+  object-position: center 62%;
+}
+
+.about-you-page .split-photo--lookback img {
+  object-position: center 55%;
+}
+
+.about-you-page .split-photo--free img {
+  object-position: center 18%;
+}
+
+.about-you-page h1,
+.about-you-page h2 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.12;
+}
+
+.about-you-page h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.6rem, 5.3vw, 4rem);
+}
+
+.about-you-page h1 em {
+  color: var(--burnt-orange);
+}
+
+.about-you-page h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.9rem, 3.4vw, 2.55rem);
+}
+
+.about-you-page p,
+.about-you-page li {
+  font-size: 1.04rem;
+  line-height: 1.82;
+}
+
+.about-you-page p {
+  margin: 0 0 1rem;
+}
+
+.about-you-page p:last-child {
+  margin-bottom: 0;
+}
+
+.about-you-page strong {
+  font-weight: 600;
+}
+
+.about-you-page .statement {
+  margin-top: 1.1rem;
+  margin-bottom: 1.45rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.6vw, 2.45rem);
+  font-weight: 500;
+  color: var(--burnt-orange);
+  line-height: 1.25;
+}
+
+.about-you-page .section-label {
+  margin: 0 0 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+.about-you-page .section-rule {
+  width: 48px;
+  height: 2px;
+  margin-bottom: 2rem;
+  background: var(--burnt-orange);
+  opacity: 0.6;
+}
+
+.about-you-page .stacked-list,
+.about-you-page .threshold-list {
+  list-style: none;
+  margin: 1.25rem 0 1.6rem;
+  padding: 0;
+}
+
+.about-you-page .stacked-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-you-page .stacked-list li::before {
+  content: '◇';
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--burnt-orange);
+  font-size: 0.82rem;
+}
+
+.about-you-page .threshold-list li {
+  position: relative;
+  margin-bottom: 0.45rem;
+  padding-left: 1.35rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+.about-you-page .threshold-list li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  color: var(--burnt-orange);
+  font-style: normal;
+}
+
+.about-you-page .realization,
+.about-you-page .intro-callout {
+  margin-top: 0.6rem;
+  padding: 1.55rem 1.7rem;
+  background: rgba(255, 248, 240, 0.84);
+  border-left: 3px solid var(--burnt-orange);
+}
+
+.about-you-page .intro-callout {
+  max-width: 580px;
+  margin-top: 0;
+  padding: 1.35rem 1.5rem;
+  background: rgba(255, 255, 255, 0.42);
+  border-top: 1px solid rgba(212, 102, 62, 0.2);
+  border-right: 1px solid rgba(212, 102, 62, 0.16);
+  border-bottom: 1px solid rgba(212, 102, 62, 0.2);
+  box-shadow: 0 10px 24px rgba(58, 58, 58, 0.05);
+}
+
+.about-you-page .realization p,
+.about-you-page .intro-callout p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  font-style: italic;
+  line-height: 1.72;
+}
+
+.about-you-page .realization strong,
+.about-you-page .intro-callout strong {
+  color: var(--burnt-orange);
+  font-style: normal;
+}
+
+.about-you-page .inner {
+  width: min(calc(100% - 3rem), 760px);
+  margin-inline: auto;
+}
+
+.about-you-page .mirror-section {
+  text-align: center;
+}
+
+.about-you-page .mirror-section .section-rule {
+  margin-inline: auto;
+}
+
+.about-you-page .scene-line {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.55rem, 3vw, 1.85rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--moss);
+}
+
+.about-you-page .signal-callout {
+  max-width: 400px;
+  margin: 2.7rem auto 0;
+  padding: 1.7rem 1.5rem;
+  border-top: 1px solid rgba(212, 102, 62, 0.28);
+  border-bottom: 1px solid rgba(212, 102, 62, 0.28);
+}
+
+.about-you-page .signal-callout p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
+  color: var(--burnt-orange);
+}
+
+.about-you-page .question-pair {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.about-you-page .q-card {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 1.2rem 1.35rem;
+  background: var(--cream);
+  border-left: 3px solid rgba(212, 102, 62, 0.35);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.18rem;
+  font-style: italic;
+  line-height: 1.62;
+  color: var(--charcoal);
+}
+
+.about-you-page .q-card::before {
+  content: '"';
+  flex-shrink: 0;
+  margin-top: -0.25rem;
+  color: var(--burnt-orange);
+  font-size: 2.2rem;
+  line-height: 1;
+  opacity: 0.45;
+}
+
+.about-you-page .cta-section {
+  text-align: center;
+}
+
+.about-you-page .cta-section h2 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about-you-page .split,
+  .about-you-page .split--reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .about-you-page .split--reverse .split-text,
+  .about-you-page .split--reverse .split-photo {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .about-you-page .split-text {
+    min-height: auto;
+  }
+
+  .about-you-page .split-photo {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-you-page .inner {
+    width: min(calc(100% - 2rem), 760px);
+  }
+
+  .about-you-page .split {
+    width: min(calc(100% - 2rem), var(--wide-width));
+  }
+
+  .about-you-page .split-photo {
+    min-height: 320px;
+  }
+
+  .about-you-page .realization,
+  .about-you-page .intro-callout,
+  .about-you-page .q-card {
+    padding: 1.1rem 1.2rem;
+  }
+}

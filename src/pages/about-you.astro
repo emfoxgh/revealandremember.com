@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import { site } from '../data/site';
+import '../styles/about-you.css';
+---
+
+<BaseLayout title="About You">
+  <div class="about-you-page page-shell">
+    <main id="main-content">
+      <section class="split-section split-section--cream">
+        <div class="wide-container split split--intro">
+          <div class="split-text">
+            <div class="split-text-inner">
+              <h1>Your life looks right,<br />but <em>feels</em> wrong.</h1>
+              <p>You've done your work, practically and emotionally. You're successful on paper. But for some reason, something just doesn't feel right.</p>
+              <p>You're almost ready to admit it...</p>
+              <p class="statement">You might hate your perfect life.</p>
+              <div class="intro-callout">
+                <p>You need help clearing the noise, tending the hurt, and recognizing the difference between <strong>fear and truth</strong>, so you can stop outsourcing your knowing and start living from the signal inside you.</p>
+              </div>
+            </div>
+          </div>
+          <div class="split-photo split-photo--hunched">
+            <img src="/images/about-you-1.jpg" alt="Folded inward, not yet listening" />
+          </div>
+        </div>
+      </section>
+
+      <section class="mirror-section mirror-section--white">
+        <div class="inner">
+          <p class="scene-line">You wake up next to your partner in the middle of the night going... <em>"I'm supposed to feel different, aren't I?"</em></p>
+          <p class="scene-line">You stare at your laptop in the middle of the day going, <em>"This was my dream, right?"</em></p>
+          <p>When you read a new self-help book or listen to a new podcast, the feeling eases for a moment, but it always comes back.</p>
+          <p>That whisper that says:</p>
+          <div class="signal-callout">
+            <p>This. Ain't. It.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="split-section split-section--panel">
+        <div class="wide-container split split--reverse">
+          <div class="split-text">
+            <div class="split-text-inner">
+              <p class="section-label">Who I Work With</p>
+              <h2>The high-functioning woman who did everything she was supposed to do.</h2>
+              <div class="section-rule"></div>
+              <ul class="stacked-list">
+                <li>Built the career.</li>
+                <li>Made the responsible choices.</li>
+                <li>Stayed thoughtful, kind, capable, and self-aware.</li>
+                <li>Created a life that works on paper.</li>
+              </ul>
+              <p>And is starting to realize:</p>
+              <div class="realization">
+                <p>
+                  <em>Something about this life isn't actually mine.</em><br /><br />
+                  Not because you're broken, because your body is trying to tell you something.
+                  Because some <strong>deeper signal</strong> is finally getting loud enough to hear.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="split-photo split-photo--lookback">
+            <img src="/images/about-you-2.jpg" alt="Looking back in a moment of recognition" />
+          </div>
+        </div>
+      </section>
+
+      <section class="mirror-section mirror-section--cream">
+        <div class="inner">
+          <p class="section-label">The Real Question</p>
+          <h2>Knowing something feels off is the easy part.</h2>
+          <div class="section-rule"></div>
+          <p>The hardest part is figuring out what the signal means.</p>
+          <div class="question-pair">
+            <div class="q-card">Is this my trauma talking? Or is this my deeper knowing?</div>
+            <div class="q-card">Is this my body saying, "Please heal this old wound" or "Please stop building a life around something that is not you"?</div>
+          </div>
+          <p><strong>This is the work.</strong></p>
+          <p>Not forcing yourself to blow up your life. Not convincing yourself to stay grateful for a life that is quietly draining you.</p>
+          <p>Not bypassing the discomfort with another podcast, another reframe, another <em>"maybe I'm just being dramatic."</em></p>
+          <p>But learning how to listen to your body, your desire, the places in you that are hurt, and the places in you that are already wise.</p>
+        </div>
+      </section>
+
+      <section class="split-section split-section--sand">
+        <div class="wide-container split">
+          <div class="split-text">
+            <div class="split-text-inner">
+              <p class="section-label">Why Now?</p>
+              <h2>Because the signal keeps getting louder.</h2>
+              <div class="section-rule"></div>
+              <p>It might be time to get engaged... or leave. To sign the contract... or quit. To finally create the thing you keep saying you want to create.</p>
+              <p>Not because you need to rush. But because something in you is ready to stop pretending.</p>
+              <ul class="threshold-list">
+                <li>Maybe the signal has been pinging for a while.</li>
+                <li>Maybe you've had good reasons to snooze it.</li>
+                <li>But it keeps coming back.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="split-photo split-photo--free">
+            <img src="/images/about-you-3.jpg" alt="Face to the sky, sensing what becomes possible" />
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="inner">
+          <h2>Ready to finally hear your signal?</h2>
+          <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
+        </div>
+      </section>
+    </main>
+
+    <QuoteBanner quote={`"Until you make the unconscious conscious, it will direct your life and you will call it fate."`} author="— C.G. Jung" />
+  </div>
+</BaseLayout>
