@@ -8,7 +8,7 @@ export const site = {
   calendlyUrl: 'https://calendly.com/revealandremember/20min-consultation',
   nav: [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Me & You' },
+    { href: '/about-me', label: 'About Me' },
     { href: '/resources', label: 'Resources' },
     { href: '/testimonials', label: 'Testimonials' }
   ]

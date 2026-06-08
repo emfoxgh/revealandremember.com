@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import { site } from '../data/site';
+import '../styles/about.css';
+---
+
+<BaseLayout title="About Me">
+  <div class="about-page page-shell">
+    <main id="main-content">
+      <section>
+        <div class="wide-container emily-section">
+          <div>
+            <img src="/images/emily-photo.jpg" alt="Emily with turquoise earrings" class="emily-photo" />
+          </div>
+          <div class="emily-content">
+            <h1>Hi, I'm Emily.</h1>
+            <p class="subtitle">psychologist, healer, guide</p>
+            <p>
+              In the Fall of 2024, I had finally "done it". I'd completed the checklist:
+              fancy degree<span class="checklist-item">✓</span>
+              partner<span class="checklist-item">✓</span>
+              house<span class="checklist-item">✓</span>
+              career plan<span class="checklist-item">✓</span>. Then it hit me...
+            </p>
+            <p class="highlight"><strong>I'm not happy.</strong></p>
+            <p><em>That's when my real work started.</em></p>
+            <p>
+              I'm probably not your average clinical psychologist. I don't believe all the books.
+              I probably won't use the manual. I genuinely believe that, in your heart of hearts,
+              <em>you already know what you need to know.</em>
+            </p>
+            <p>
+              I can't give you the answers, but I have walked the path. Over the past year, I have
+              come home to myself. <strong>If you feel guided to do the same, walk with me. I'd love
+              to walk you home.</strong>
+            </p>
+            <p class="ready-text">Ready to drop the masks?</p>
+            <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-copy">
+          <h2>Training &amp; Professional Experience</h2>
+          <div class="section-rule"></div>
+          <p><em>I'm more than the letters after my name &mdash; and so are you.</em></p>
+          <p>
+            Credentials are not the whole story, and they should never ask you to override your
+            own inner knowing. But I do believe training matters, because healing work asks for
+            real skill, discernment, and care.
+          </p>
+          <p>
+            I studied psychology at UC Berkeley, worked in neuropsychological assessment at UCSF,
+            and earned my doctorate at the PGSP-Stanford PsyD Consortium, affiliated with Stanford
+            University School of Medicine.
+          </p>
+          <p>
+            I spent years training in and practicing evidence-based therapy, including ACT, EFT,
+            CPT, CBT, DBT, EMDR, mindfulness-based approaches, and trauma-focused care. I have led
+            mindfulness groups at Stanford, created and led psychoeducational groups for couples,
+            and received specialty training in LGBTQ+ care, trauma/PTSD, and relationship distress.
+            Across individual, couples, and group work, I have supported more than 300 people in
+            their healing and recovery.
+          </p>
+          <p>
+            I mention this because, while my work has evolved, this is my background.
+            <strong>I know the manuals. I just also know from the inside what feels truer to me.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="about-copy">
+          <h2>Where My Work Lives Now</h2>
+          <div class="section-rule"></div>
+          <p>These days, my work lives at the intersection of <strong>psychology &amp; soul.</strong></p>
+          <p>
+            I draw most directly from Internal Family Systems, somatic healing, and Transformational
+            NLP, infused with my own intuition and energetics.
+          </p>
+          <p>What these approaches share is a belief I hold deeply: <strong>you are not broken.</strong></p>
+          <p>
+            Your deeper Self &mdash; your soul, essence, and inner knowing &mdash; remains whole and intact
+            beneath the trauma, conditioning, and survival strategies you've carried. My work is
+            about helping you reconnect with that wholeness, heal the young parts of you that got
+            stuck in the past, release what is no longer yours, and
+            <em>reclaim your power as the conscious co-creator of your life.</em>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="education-content">
+          <h2>Education</h2>
+          <div class="section-rule"></div>
+          <div class="education-subsection">
+            <h3>Academic Credentials</h3>
+            <div class="credential"><strong>Bachelor of Arts in Psychology (BA)</strong> &mdash; University of California, Berkeley</div>
+            <div class="credential"><strong>Doctor of Clinical Psychology (PsyD)</strong> &mdash; PGSP-Stanford PsyD Consortium</div>
+          </div>
+          <div class="education-subsection">
+            <h3>Alternative Healing Credentials</h3>
+            <div class="credential"><strong>Master Level Transformational NLP Practitioner</strong> &mdash; NLP Marin</div>
+            <div class="credential"><strong>Advanced Somatic Healer</strong> &mdash; Alchemy Somatics</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="beliefs-content">
+          <h2>Some Things I Believe That Inform My Work</h2>
+          <div class="section-rule"></div>
+          <div class="belief-item">The universe is always <strong>conspiring for your highest good</strong></div>
+          <div class="belief-item">Most things worth knowing are a <strong>paradox</strong></div>
+          <div class="belief-item">What life presents to us is ultimately <em>for us</em></div>
+          <div class="belief-item">Life flows better when we <strong>surrender</strong> <span class="note">(note: this does not mean being passive)</span></div>
+          <div class="belief-item">We are <strong>co-creators</strong> with the divine</div>
+          <div class="belief-item">Our reality is a <strong>hologram</strong> of our internal world: as above, so below</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <QuoteBanner quote={`"Courage is not the absence of fear. Courage is fear walking."`} author="— Susan David, PhD" />
+</BaseLayout>
