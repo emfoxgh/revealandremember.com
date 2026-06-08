@@ -25,6 +25,7 @@
 
 .about-you-page .split {
   display: grid;
+  width: min(calc(100% - 3rem), var(--content-width));
   grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
   gap: clamp(1.5rem, 4vw, 3.6rem);
   align-items: stretch;
@@ -86,29 +87,32 @@
 .about-you-page h2 {
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 400;
-  color: var(--charcoal);
+  font-weight: 500;
+  color: var(--deep-terracotta);
   line-height: 1.12;
 }
 
 .about-you-page h1 {
   margin-bottom: 1.5rem;
-  font-size: clamp(2.6rem, 5.3vw, 4rem);
+  font-size: clamp(2.6rem, 5.3vw, 3.8rem);
 }
 
 .about-you-page h1 em {
+  font-style: italic;
   color: var(--burnt-orange);
 }
 
 .about-you-page h2 {
-  margin-bottom: 0.75rem;
-  font-size: clamp(1.9rem, 3.4vw, 2.55rem);
+  margin-bottom: 1rem;
+  font-size: clamp(1.85rem, 3vw, 2.4rem);
 }
 
 .about-you-page p,
 .about-you-page li {
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.04rem;
   line-height: 1.82;
+  font-weight: 300;
 }
 
 .about-you-page p {
@@ -134,13 +138,12 @@
 }
 
 .about-you-page .section-label {
-  margin: 0 0 0.75rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--moss);
+  margin: 0 0 0.85rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--burnt-orange);
 }
 
 .about-you-page .section-rule {
@@ -177,10 +180,10 @@
   position: relative;
   margin-bottom: 0.45rem;
   padding-left: 1.35rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.18rem;
-  font-style: italic;
-  line-height: 1.65;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.04rem;
+  font-style: normal;
+  line-height: 1.82;
 }
 
 .about-you-page .threshold-list li::before {
@@ -212,16 +215,15 @@
 
 .about-you-page .realization p,
 .about-you-page .intro-callout p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.18rem;
-  font-style: italic;
-  line-height: 1.72;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.02rem;
+  font-style: normal;
+  line-height: 1.78;
 }
 
 .about-you-page .realization strong,
 .about-you-page .intro-callout strong {
   color: var(--burnt-orange);
-  font-style: normal;
 }
 
 .about-you-page .inner {
@@ -233,16 +235,27 @@
   text-align: center;
 }
 
+.about-you-page .mirror-section .section-label {
+  margin-bottom: 0.9rem;
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  color: var(--deep-terracotta);
+}
+
 .about-you-page .mirror-section .section-rule {
   margin-inline: auto;
 }
 
 .about-you-page .scene-line {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.55rem, 3vw, 1.85rem);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.08rem;
+  font-style: normal;
+  line-height: 1.85;
+  color: var(--charcoal);
+}
+
+.about-you-page .scene-line em {
   font-style: italic;
-  line-height: 1.6;
-  color: var(--moss);
+  color: var(--burnt-orange);
 }
 
 .about-you-page .signal-callout {
@@ -276,10 +289,11 @@
   padding: 1.2rem 1.35rem;
   background: var(--cream);
   border-left: 3px solid rgba(212, 102, 62, 0.35);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.18rem;
-  font-style: italic;
-  line-height: 1.62;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.75;
   color: var(--charcoal);
 }
 
@@ -328,7 +342,7 @@
   }
 
   .about-you-page .split {
-    width: min(calc(100% - 2rem), var(--wide-width));
+    width: min(calc(100% - 2rem), var(--content-width));
   }
 
   .about-you-page .split-photo {
