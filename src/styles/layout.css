@@ -1,0 +1,96 @@
+/* Layout: page offsets, content widths, section spacing and section backgrounds. */
+
+@layer global {
+  /* Pushes content below the fixed header. Only needed on pages that start
+     without a PageHeader or full-bleed hero (PageHeader has its own top padding). */
+  .page-shell {
+    padding-top: var(--header-height);
+  }
+
+  /* ---- Content widths ---- */
+
+  /* Centered content column with a fixed 1.5rem gutter on each side. */
+  .container {
+    width: min(calc(100% - 3rem), var(--content-width));
+    margin-inline: auto;
+  }
+
+  /* Wider column (header nav, hero, About intro). */
+  .wide-container {
+    width: min(calc(100% - 3rem), var(--wide-width));
+    margin-inline: auto;
+  }
+
+  /* Centered content column whose gutter tightens to 1rem per side on mobile.
+     Preferred for new sections. */
+  .section-inner {
+    width: min(calc(100% - 3rem), var(--content-width));
+    margin-inline: auto;
+  }
+
+  .section-inner--narrow {
+    width: min(calc(100% - 3rem), var(--narrow-width));
+  }
+
+  /* ---- Section spacing ---- */
+
+  .section {
+    padding: var(--section-space) 0;
+  }
+
+  /* ---- Section backgrounds (alternate surface-base / surface-alt down a page) ---- */
+
+  .surface-base {
+    background: var(--surface-base);
+  }
+
+  .surface-alt {
+    background: var(--surface-alt);
+  }
+
+  .surface-sand {
+    background: var(--surface-sand);
+  }
+
+  .surface-dark {
+    background: var(--surface-dark);
+    color: var(--cream);
+  }
+
+  .surface-dark p {
+    color: var(--cream);
+  }
+
+  .surface-dark .heading-section {
+    color: var(--desert-sand);
+  }
+
+  /* ---- Small utilities ---- */
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* Short decorative rule under a heading. */
+  .section-rule {
+    width: 48px;
+    height: 2px;
+    margin-bottom: 1.8rem;
+    background: var(--burnt-orange);
+    opacity: 0.55;
+  }
+
+  @media (max-width: 900px) {
+    .section--compact-mobile {
+      padding: var(--section-space-tight) 0;
+    }
+
+    .section-inner {
+      width: min(calc(100% - 2rem), var(--content-width));
+    }
+
+    .section-inner--narrow {
+      width: min(calc(100% - 2rem), var(--narrow-width));
+    }
+  }
+}

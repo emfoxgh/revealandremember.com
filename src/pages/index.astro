@@ -5,7 +5,7 @@ import { site } from '../data/site';
 import '../styles/home.css';
 ---
 <BaseLayout>
-  <main id="main-content" class="page-shell">
+  <main id="main-content" class="home-page page-shell">
     <section class="hero">
       <div class="hero-image"></div>
       <div class="mountain-overlay"></div>
@@ -15,9 +15,9 @@ import '../styles/home.css';
       </div>
     </section>
 
-    <section class="home-section about-block">
+    <section class="section section--compact-mobile surface-base prose-lg">
       <div class="container">
-        <h2>You've done the work.<br />Now you're ready to live it.</h2>
+        <h2 class="heading-section">You've done the work.<br />Now you're ready to live it.</h2>
         <p class="about-intro">This is a space to remember what's already inside of you... and let it bloom.</p>
         <p>
           Reveal &amp; Remember is a place to rest. A place to feel held and heard. A place to feel safe
@@ -27,18 +27,18 @@ import '../styles/home.css';
       </div>
     </section>
 
-    <section class="home-section pathways">
+    <section class="section section--compact-mobile surface-alt prose-lg">
       <div class="container">
-        <h2>Two Pathways</h2>
+        <h2 class="heading-section">Two Pathways</h2>
         <p>I offer two distinct ways of working, each serving different needs and stages of the journey.</p>
         <div class="pathway-cards">
-          <div class="pathway-card">
-            <h3>Traditional Therapy</h3>
+          <div class="pathway-card accent-border">
+            <h3 class="heading-card">Traditional Therapy</h3>
             <p>Licensed clinical work (PSY35370) for those needing the structure and support of evidence-based practice.</p>
             <p class="status-text">Accepting new clients | CA residents only</p>
           </div>
-          <div class="pathway-card">
-            <h3>Guided Healing</h3>
+          <div class="pathway-card accent-border">
+            <h3 class="heading-card">Guided Healing</h3>
             <p>
               For high-functioning individuals ready to move beyond maintenance into expansion. This work
               exists outside the clinical frame and may integrate somatic practices, energy work, and
@@ -50,13 +50,13 @@ import '../styles/home.css';
       </div>
     </section>
 
-    <section class="home-section">
+    <section class="section section--compact-mobile surface-base prose-lg">
       <div class="container">
-        <h2>My Teachers</h2>
+        <h2 class="heading-section">My Teachers</h2>
         <p>The methods that shape my work come from pioneers who've dared to see healing differently.</p>
         <div class="teacher-list">
           <div class="teacher-item">
-            <h3>Dick Schwartz</h3>
+            <h3 class="heading-card text-accent">Dick Schwartz</h3>
             <p class="method">Internal Family Systems (IFS)</p>
             <p>
               A revolutionary therapeutic approach that views the psyche as composed of multiple "parts,"
@@ -66,7 +66,7 @@ import '../styles/home.css';
             </p>
           </div>
           <div class="teacher-item">
-            <h3>Stacy Matulis</h3>
+            <h3 class="heading-card text-accent">Stacy Matulis</h3>
             <p class="method">Alchemy Somatics</p>
             <p>
               Body-centered work that recognizes the wisdom held in our physical form. Through somatic
@@ -75,7 +75,7 @@ import '../styles/home.css';
             </p>
           </div>
           <div class="teacher-item">
-            <h3>Carl Buchheit</h3>
+            <h3 class="heading-card text-accent">Carl Buchheit</h3>
             <p class="method">Transformational NLP (tNLP)</p>
             <p>
               An evolution of traditional NLP that works with the unconscious mind to resolve limiting
@@ -87,23 +87,23 @@ import '../styles/home.css';
       </div>
     </section>
 
-    <section class="home-section work-section">
+    <section class="section section--compact-mobile surface-dark prose-lg work-section">
       <div class="container">
-        <h2>Ways to Work With Me</h2>
+        <h2 class="heading-section">Ways to Work With Me</h2>
         <p>Whether you're seeking traditional therapeutic support or are ready for guided healing, I offer several formats to meet you where you are.</p>
         <div class="work-options">
           <div class="work-option">
-            <h4>Individual Sessions</h4>
+            <h4 class="heading-card heading-card--sm text-accent">Individual Sessions</h4>
             <p>One-on-one work tailored to your unique journey, available in both therapy and guided healing formats.</p>
           </div>
           <div class="work-option">
-            <h4>Group Offerings</h4>
+            <h4 class="heading-card heading-card--sm text-accent">Group Offerings</h4>
             <p>One-time workshops and ongoing groups exploring specific themes through embodied practice.</p>
             <p><em>(Coming soon)</em></p>
           </div>
           <a href="/resources" class="card-link">
             <div class="work-option">
-              <h4>Resources</h4>
+              <h4 class="heading-card heading-card--sm text-accent">Resources</h4>
               <p>Meditations, energetic tools, movement practices, and interviews with alternative healers available through my Spotify podcasts.</p>
             </div>
           </a>
@@ -111,9 +111,9 @@ import '../styles/home.css';
       </div>
     </section>
 
-    <section class="home-section contact-section">
+    <section class="section section--compact-mobile surface-base prose-lg text-center">
       <div class="container">
-        <h2>Begin the Conversation</h2>
+        <h2 class="heading-section">Begin the Conversation</h2>
         <p>Curious if we're a fit? I offer free 20-minute consults so we can feel into what's right.</p>
         <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">SCHEDULE A CONSULT</a>
       </div>

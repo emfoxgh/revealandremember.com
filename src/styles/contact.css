@@ -1,31 +1,13 @@
-.contact-page.page-shell {
-  padding-top: 0;
-}
+/*
+ * Contact page only (src/pages/contact.astro).
+ * Page header, section spacing/backgrounds, the .card look, .text-eyebrow,
+ * body text (.prose) and .cta-button come from the global classes.
+ */
 
-.contact-page main {
-  padding-bottom: 0;
-}
-
-.contact-page .page-header {
-  background: var(--desert-sand);
-}
-
-.contact-page .page-header p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  color: var(--charcoal);
-  max-width: 700px;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-.contact-section {
-  padding: var(--section-space) 0;
-}
+/* ---- Intro: photo + "A Note on Consults" ---- */
 
 .contact-intro {
   padding: clamp(2.75rem, 4vw, 4rem) 0 clamp(4.5rem, 7vw, 7rem);
-  background: var(--panel-3);
 }
 
 .contact-intro__grid {
@@ -50,23 +32,6 @@
   object-position: center top;
 }
 
-.section-eyebrow {
-  margin: 0 0 1.75rem;
-  color: var(--burnt-orange);
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.25rem, 2vw, 1.45rem);
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  line-height: 1.4;
-  text-transform: uppercase;
-}
-
-.contact-card__body p,
-.audio-nudge p {
-  font-size: 1.04rem;
-  line-height: 1.82;
-}
-
 .contact-intro__copy {
   max-width: 620px;
 }
@@ -80,19 +45,10 @@
 .contact-intro__copy p:last-child {
   margin: 1.75rem 0 0;
   color: var(--deep-terracotta);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.55rem, 2.4vw, 1.9rem);
   font-style: italic;
   line-height: 1.45;
-}
-
-.contact-options {
-  background: var(--panel-2);
-}
-
-.contact-options__inner {
-  width: min(calc(100% - 3rem), 780px);
-  margin-inline: auto;
 }
 
 .contact-accordion {
@@ -102,10 +58,6 @@
 
 .contact-card {
   overflow: hidden;
-  border: 1px solid rgba(168, 70, 50, 0.16);
-  border-left: 4px solid var(--burnt-orange);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
@@ -140,7 +92,7 @@
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  background: var(--panel-3);
+  background: var(--surface-alt);
 }
 
 .contact-card__icon svg {
@@ -160,7 +112,7 @@
 
 .contact-card__title {
   color: var(--deep-terracotta);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.1;
@@ -169,7 +121,7 @@
 .contact-card__subtitle {
   margin-top: 0.15rem;
   color: var(--sage);
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.82rem;
   font-weight: 300;
   letter-spacing: 0.03em;
@@ -189,7 +141,7 @@
 }
 
 .contact-card__panel {
-  border-top: 1px solid rgba(212, 102, 62, 0.16);
+  border-top: var(--divider);
 }
 
 .contact-card__body,
@@ -226,7 +178,7 @@
   outline: none;
   background: var(--cream);
   color: var(--charcoal);
-  font: 300 0.95rem 'Montserrat', sans-serif;
+  font: 300 var(--text-sm) var(--font-sans);
   transition: border-color 0.2s ease;
 }
 
@@ -290,7 +242,7 @@
 .form-success__title {
   margin: 0 0 0.65rem;
   color: var(--deep-terracotta);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 5vw, 2.6rem);
   font-weight: 500;
   line-height: 1.1;
@@ -311,26 +263,15 @@
   border-bottom: 1px solid currentColor;
   background: transparent;
   color: var(--deep-terracotta);
-  font: 500 0.82rem 'Montserrat', sans-serif;
+  font: 500 var(--text-xs) var(--font-sans);
   letter-spacing: 0.06em;
   cursor: pointer;
 }
 
-.contact-page .cta-button {
-  border: 0;
-  cursor: pointer;
-}
-
-.contact-page .cta-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-  transform: none;
-}
-
-.contact-placeholder {
-  margin: 0.9rem 0 0 !important;
+.contact-page .contact-placeholder {
+  margin: 0.9rem 0 0;
   color: var(--moss);
-  font-size: 0.84rem !important;
+  font-size: 0.84rem;
   font-style: italic;
 }
 
@@ -369,10 +310,6 @@
     height: auto;
     object-fit: initial;
     object-position: initial;
-  }
-
-  .contact-options__inner {
-    width: min(calc(100% - 2rem), 780px);
   }
 }
 

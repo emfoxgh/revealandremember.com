@@ -1,64 +1,23 @@
-.resources-page.page-shell {
-  padding-top: 0;
-}
-
-.resources-page main {
-  padding-bottom: 0;
-}
-
-.resources-page .page-header {
-  background: var(--desert-sand);
-}
-
-.resources-page .page-header p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.2rem;
-  color: var(--charcoal);
-  max-width: 700px;
-  line-height: 1.8;
-  font-weight: 300;
-}
-
-.resources-section {
-  padding: var(--section-space) 0;
-}
-
-.resources-section--panel-1 {
-  background: var(--panel-2);
-}
-
-.resources-section--panel-2 {
-  background: var(--panel-3);
-}
-
-.resources-section--panel-3 {
-  background: var(--panel-2);
-}
-
-.resources-section > * {
-  width: min(calc(100% - 3rem), var(--content-width));
-  margin-inline: auto;
-}
+/*
+ * Resources page only (src/pages/resources.astro).
+ * Page header, section spacing/backgrounds, headings, the .card look and the
+ * hover lift (.card-link) come from the global classes.
+ */
 
 .section-intro {
   margin-bottom: 3rem;
 }
 
-.section-intro--spaced {
-  margin-top: 2.8rem;
-}
-
-.section-intro h2,
+/* "Books" / "Podcasts" sub-headings inside Emily's Bookshelf */
 .books-title {
-  margin: 0 0 0.8rem;
-  font-family: 'Cormorant Garamond', serif;
+  margin: 0 0 2rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
   font-weight: 400;
   color: var(--burnt-orange);
 }
 
-.section-intro h2 {
-  font-size: clamp(2.2rem, 5vw, 3rem);
-}
+/* ---- Spotify podcast tiles ---- */
 
 .podcasts-grid {
   display: grid;
@@ -73,21 +32,12 @@
   display: block;
 }
 
-.podcast-card,
-.resource-card {
-  border-radius: 0;
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(168, 70, 50, 0.16);
-  box-shadow: 0 8px 24px rgba(58, 58, 58, 0.07);
-}
-
 .podcast-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   padding: 1.25rem;
-  border-left: 4px solid var(--burnt-orange);
   text-align: center;
   height: 100%;
   aspect-ratio: 1 / 1;
@@ -103,7 +53,7 @@
 
 .podcast-card h3 {
   margin: 0 0 0.75rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--deep-terracotta);
@@ -112,44 +62,24 @@
 .podcast-card .coming-soon-label {
   display: block;
   margin-top: 0.15rem;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
   font-style: italic;
   font-weight: 300;
   color: var(--sage);
   white-space: nowrap;
 }
 
-.podcast-card p,
-.resource-card p,
-.coming-soon p {
-  font-size: 1.1rem;
-  color: var(--cream);
-  font-weight: 300;
-  line-height: 1.7;
-}
-
-.section-intro p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--charcoal);
-  font-weight: 300;
-}
-
 .podcast-card p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   line-height: 1.5;
-  color: var(--charcoal);
   margin: 0 0 1rem;
-  font-weight: 300;
   flex-grow: 1;
 }
 
-.books-title {
-  font-size: 2rem;
-  font-weight: 400;
+/* ---- Book / podcast / tool rows ---- */
+
+.resource-section-block {
   margin-bottom: 2rem;
 }
 
@@ -158,8 +88,8 @@
   gap: 1.2rem;
 }
 
-.resource-section-block {
-  margin-bottom: 2rem;
+.resource-section-block .resource-list {
+  gap: 1.6rem;
 }
 
 .resource-card {
@@ -169,32 +99,9 @@
   padding: 1.4rem;
 }
 
-.resource-section-block .resource-card {
-  border-left: 4px solid var(--burnt-orange);
-}
-
-.resource-section-block .resource-list {
-  gap: 1.6rem;
-}
-
 .resource-card--podcast,
 .resource-card--center {
   align-items: center;
-}
-
-.resource-card--center {
-  border-left: 4px solid var(--burnt-orange);
-}
-
-.resource-card:hover,
-.podcast-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
-}
-
-.resource-card,
-.podcast-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .resource-thumb {
@@ -211,17 +118,15 @@
   width: 180px;
   min-width: 180px;
   height: auto;
-  border-radius: 0;
 }
 
 .resource-thumb--podcast {
   width: 110px;
   min-width: 110px;
   height: 110px;
-  border-radius: 0;
-  object-fit: cover;
 }
 
+/* Fallback cover when an item has no image (coverText) */
 .resource-thumb--text {
   display: flex;
   align-items: center;
@@ -229,14 +134,14 @@
   padding: 1rem;
   color: var(--cream);
   text-align: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.4rem;
   line-height: 1.2;
 }
 
 .resource-card h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
+  font-family: var(--font-serif);
+  font-size: var(--text-card);
   font-weight: 600;
   line-height: 1.05;
   color: var(--deep-terracotta);
@@ -245,21 +150,19 @@
 
 .resource-card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   line-height: 1.6;
-  color: var(--charcoal);
-  font-weight: 300;
 }
 
 .resource-author {
-  margin: 0 0 0.75rem;
-  color: var(--moss);
   font-style: italic;
 }
 
 .resource-author + p {
   padding-top: 0.75rem;
 }
+
+/* ---- "More Resources Coming Soon" dark panel ---- */
 
 .coming-soon {
   margin-top: 2rem;
@@ -271,16 +174,18 @@
 
 .coming-soon h3 {
   margin: 0 0 0.7rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 2.2rem;
   color: var(--desert-sand);
 }
 
-@media (max-width: 900px) {
-  .resources-section > * {
-    width: min(calc(100% - 2rem), var(--content-width));
-  }
+.coming-soon p {
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
+  color: var(--cream);
+}
 
+@media (max-width: 900px) {
   .podcasts-grid {
     width: min(calc(100% - 2rem), 800px);
     grid-template-columns: 1fr;
