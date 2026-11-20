@@ -1,0 +1,71 @@
+/*
+ * Design tokens: the single source of truth for colors, fonts, sizes and spacing.
+ * Use these variables instead of hard-coding values in page or component CSS.
+ * See STYLE_GUIDE.md for when to use each one.
+ */
+
+@layer global {
+  :root {
+    /* ---- Brand colors ---- */
+    --burnt-orange: #d4663e;      /* accent: links, highlights, accent borders, buttons */
+    --deep-terracotta: #a84632;   /* headings, button hover */
+    --desert-sand: #e8c4a8;       /* warm feature backgrounds, headings on dark */
+    --sage: #9ca89c;              /* muted secondary text, quote banner */
+    --moss: #667b6d;              /* muted labels and notes */
+    --charcoal: #3a3a3a;          /* body text, dark sections, footer */
+    --cream: #fff8f0;             /* page background, text on dark */
+    --white: #fff;
+
+    /* ---- Section surfaces (backgrounds) ---- */
+    --surface-base: var(--cream);
+    --surface-alt: #f7ebe0;
+    --surface-sand: var(--desert-sand);
+    --surface-dark: var(--charcoal);
+    --card-bg: rgba(255, 255, 255, 0.95);
+
+    /* ---- Lines and shadows ---- */
+    --border-accent: 4px solid var(--burnt-orange);
+    --border-subtle: 1px solid rgba(168, 70, 50, 0.16);
+    --divider: 1px solid rgba(212, 102, 62, 0.16);
+    --shadow-rest: 0 8px 24px rgba(58, 58, 58, 0.07);
+    --shadow-soft: 0 10px 30px rgba(58, 58, 58, 0.08);
+    --shadow-card: 0 12px 28px rgba(168, 70, 50, 0.16);
+    --focus-ring: 3px solid rgba(168, 70, 50, 0.45);
+
+    /* ---- Fonts ---- */
+    --font-serif: 'Cormorant Garamond', serif;   /* headings, quotes, decorative italics */
+    --font-sans: 'Montserrat', sans-serif;       /* body copy, labels, buttons, nav */
+
+    /* ---- Type scale ---- */
+    --text-display: clamp(3.1rem, 7vw, 4.8rem);  /* page titles */
+    --text-section: clamp(2.4rem, 5vw, 3rem);    /* section headings */
+    --text-card: 1.8rem;                         /* card / item headings */
+    --text-card-sm: 1.5rem;                      /* smaller card headings */
+    --text-quote: 2rem;                          /* pull quotes */
+    --text-lead: 1.2rem;                         /* intro line under a page title */
+    --text-body-lg: 1.1rem;                      /* default body copy in sections */
+    --text-body: 1.04rem;                        /* long-form reading copy */
+    --text-sm: 0.95rem;                          /* card descriptions, buttons */
+    --text-xs: 0.82rem;                          /* small labels, captions */
+
+    --leading-body-lg: 1.8;
+    --leading-body: 1.82;
+
+    --tracking-wide: 0.05em;
+    --tracking-wider: 0.08em;
+
+    /* ---- Layout ---- */
+    --content-width: 1200px;
+    --wide-width: 1400px;
+    --narrow-width: 780px;
+    --header-height: 86px;
+    --section-space: clamp(2.65rem, 4.4vw, 3.75rem);
+    --section-space-tight: clamp(1.95rem, 3.5vw, 2.65rem);
+  }
+
+  @media (max-width: 900px) {
+    :root {
+      --header-height: 78px;
+    }
+  }
+}

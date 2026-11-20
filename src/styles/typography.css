@@ -1,0 +1,99 @@
+/*
+ * Typography roles. Put these classes on headings and text instead of writing
+ * new font rules in page CSS. See STYLE_GUIDE.md for the full list.
+ */
+
+@layer global {
+  /* Page title (used by the PageHeader component). */
+  .text-display {
+    margin: 0 0 1.3rem;
+    font-family: var(--font-serif);
+    font-size: var(--text-display);
+    font-weight: 400;
+    color: var(--deep-terracotta);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* Section heading (h2). The base class is the house style; prefer it for new sections. */
+  .heading-section {
+    margin: 0 0 2rem;
+    font-family: var(--font-serif);
+    font-size: var(--text-section);
+    font-weight: 400;
+    color: var(--deep-terracotta);
+    letter-spacing: var(--tracking-wide);
+  }
+
+  /* Existing per-page variants, kept so the site looks exactly as before. */
+  .heading-section--accent {
+    margin-bottom: 0.8rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
+    color: var(--burnt-orange);
+    letter-spacing: normal;
+  }
+
+  .heading-section--large {
+    margin-bottom: 0.95rem;
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    font-weight: 500;
+    letter-spacing: normal;
+  }
+
+  .heading-section--compact {
+    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: normal;
+  }
+
+  /* Card / list-item heading (h3 or h4 inside a card). */
+  .heading-card {
+    margin: 0 0 1rem;
+    font-family: var(--font-serif);
+    font-size: var(--text-card);
+    color: var(--deep-terracotta);
+  }
+
+  .heading-card--sm {
+    font-size: var(--text-card-sm);
+  }
+
+  /* Small uppercase label above content. */
+  .text-eyebrow {
+    margin: 0 0 1.75rem;
+    color: var(--burnt-orange);
+    font-family: var(--font-sans);
+    font-size: clamp(1.25rem, 2vw, 1.45rem);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  /* Pull quote (serif italic). */
+  .text-quote {
+    font-family: var(--font-serif);
+    font-size: var(--text-quote);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--deep-terracotta);
+  }
+
+  /* Body copy containers: set size and line height for every <p> inside. */
+  .prose-lg p {
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+  }
+
+  .prose p {
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+  }
+
+  /* Color utilities (kept last so they override the role defaults above). */
+  .text-accent {
+    color: var(--burnt-orange);
+  }
+}

@@ -17,7 +17,7 @@ When you talk to Emily:
 
 ## Stack (quick reference)
 
-- [Astro](https://astro.build), static output (`dist/`). See `README.md` for project structure and where content and styles live.
+- [Astro](https://astro.build), static output (`dist/`). See `README.md` for project structure and where content lives, and **`STYLE_GUIDE.md` for how styling works**.
 - Hosted on **Vercel**, connected to this GitHub repo (`emfoxgh/revealandremember.com`).
   - Every pushed branch gets an automatic **preview deployment** at its own URL.
   - `master` is **production**: whatever is on `master` is live at https://revealandremember.com.
@@ -46,6 +46,7 @@ When Emily asks for any change to the site (text, images, styling, new page, etc
 ### 2. Making the change
 
 - Make the edit and check it on the local dev server (`npm run dev`), on both **desktop and mobile widths**. The site has responsive layouts (collapsing nav, stacking columns); don't break them.
+- **Follow `STYLE_GUIDE.md` for every visual change.** Build new sections and pages from the shared tokens and classes (section backgrounds, heading and text classes, cards, buttons, `PageHeader`). Don't hard-code colors, fonts or font sizes, and don't restyle one page in a way that makes it differ from the others. If Emily asks for a look that the shared classes can't produce, say whether it should apply site-wide or only to that spot before you build it.
 - Keep changes focused on what Emily asked for. If you notice something else worth fixing, mention it to her instead of quietly bundling it in.
 - Put images in `public/images/` with sensible lowercase, hyphenated filenames, and always write meaningful `alt` text.
 - Don't add, remove or upgrade dependencies, change `astro.config.mjs`, or touch Vercel/DNS settings unless Emily specifically asks. If a request seems to need any of that, explain it to her in plain terms and suggest she check with Colton first.
