@@ -9,20 +9,14 @@
 
   /* ---- Content widths ---- */
 
-  /* Centered content column with a fixed 1.5rem gutter on each side. */
-  .container {
-    width: min(calc(100% - 3rem), var(--content-width));
-    margin-inline: auto;
-  }
-
   /* Wider column (header nav, hero, About intro). */
   .wide-container {
     width: min(calc(100% - 3rem), var(--wide-width));
     margin-inline: auto;
   }
 
-  /* Centered content column whose gutter tightens to 1rem per side on mobile.
-     Preferred for new sections. */
+  /* Centered 1200px content column (1.5rem side gutters, 1rem on mobile).
+     Use this inside every section. */
   .section-inner {
     width: min(calc(100% - 3rem), var(--content-width));
     margin-inline: auto;

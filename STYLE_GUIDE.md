@@ -64,10 +64,9 @@ A typical section:
 | `.surface-base` / `.surface-alt` | Cream / warm-linen backgrounds. **Alternate them down the page.** |
 | `.surface-sand` | Desert-sand feature background (About intro). |
 | `.surface-dark` | Charcoal background. `<p>` turns cream and `.heading-section` turns sand automatically. |
-| `.section-inner` | Centered 1200px column; the gutter tightens on mobile. **Prefer this for new sections.** |
+| `.section-inner` | Centered 1200px content column (the gutter tightens on mobile). **Use it inside every section.** |
 | `.section-inner--narrow` | Same, but 780px wide (Contact options). |
-| `.container` | Centered 1200px column with a fixed gutter (Home, Contact intro). |
-| `.wide-container` | Centered 1400px column. |
+| `.wide-container` | Centered 1400px column (home hero, About intro). |
 | `.page-shell` | Pushes content below the fixed header. Only for pages that don't start with `PageHeader` or a hero (currently About). |
 | `.section-rule` | Short accent line under a heading (About). |
 
@@ -89,13 +88,16 @@ A typical section:
 3. Only if the page needs something unique, add `src/styles/<name>.css`, import it in the page, and scope rules under `.<name>-page`.
 4. Add the page to `site.nav` in `src/data/site.ts` if it belongs in the menu, and update the Routes list in `README.md`.
 
+## How the cascade works
+
+All shared CSS sits inside `@layer global`. Page stylesheets are not layered, so **a rule in a page stylesheet always beats a shared rule, whatever its specificity.** That makes overrides predictable, and dev matches production (Astro's production build loads page CSS *before* the shared CSS, so plain source order can't be trusted). It also means a page rule like `.my-card { color: … }` will silently override a shared class on that page, which is another reason to keep page CSS limited to page-unique things.
+
 ## Known inconsistencies (kept on purpose for now)
 
 The CSS refactor preserved the site's appearance exactly, so these existing differences between pages are still there. **Don't copy them into new work; use the base classes.** Standardizing any of them would visibly change the site, so ask Emily before doing it.
 
 - **Section headings** use four sizes/weights/colors across pages (`.heading-section` on Home plus the `--compact`, `--large` and `--accent` variants).
 - **Card headings** vary in weight and spacing per page (Resources cards 600, Testimonials themes 500, Home cards bold).
-- **Content gutters:** `.container` keeps a 1.5rem side gutter on mobile while `.section-inner` tightens to 1rem.
 - **Home "Accepting new clients" status text** was written as medium weight (500), but a more specific rule made it render light (300). It's light today; the dead 500 was removed.
 - **Resources "by Author" lines** were written as moss green, but render charcoal for the same reason. They're charcoal today; the dead color was removed.
-- **Testimonial cards** use a slightly different shadow (`0 8px 22px`) from other cards (`--shadow-rest`, `0 8px 24px`).
+- **Home "Two Pathways" cards** use solid white, a larger soft shadow and no border, instead of the standard `.card`.

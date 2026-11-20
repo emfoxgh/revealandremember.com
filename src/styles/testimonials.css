@@ -14,8 +14,6 @@
 
 .testimonial-card {
   padding: 1.35rem;
-  background: var(--white);
-  box-shadow: 0 8px 22px rgba(58, 58, 58, 0.07);
 }
 
 .testimonial-card p {
