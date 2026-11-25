@@ -63,7 +63,7 @@
   animation: fadeInUp 1.5s ease-out;
 }
 
-.hero h1 {
+.hero .hero-title {
   margin: 0 0 8rem;
   font-family: var(--font-serif);
   font-size: 5rem;
@@ -96,66 +96,89 @@
   color: var(--burnt-orange);
 }
 
-/* ---- Card grids ---- */
+/* ---- Text links ("Read my story", "Read more reflections") ---- */
 
-.pathway-cards,
-.teacher-list,
+.home-page .text-link {
+  color: var(--burnt-orange);
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: var(--tracking-wide);
+}
+
+.home-page .text-link:hover {
+  color: var(--deep-terracotta);
+  text-decoration: underline;
+}
+
+/* ---- Is This You? ---- */
+
+.home-list {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.home-list li {
+  padding-left: 1.5rem;
+  border-left: var(--border-accent);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+}
+
+/* ---- Testimonial ---- */
+
+.home-testimonial {
+  max-width: var(--content-width);
+  margin: 2rem auto 2.5rem;
+}
+
+.home-testimonial blockquote {
+  margin: 0 0 1rem;
+}
+
+.home-testimonial figcaption {
+  color: var(--burnt-orange);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ---- Begin the Conversation steps ---- */
+
+.begin-steps {
+  max-width: var(--content-width);
+  margin: 2rem auto 2.5rem;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.begin-steps li {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+}
+
+.begin-steps li::marker {
+  color: var(--burnt-orange);
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+
+.begin-steps strong {
+  font-weight: 600;
+  color: var(--deep-terracotta);
+}
+
+/* ---- Guided Healing (dark section) ---- */
+
 .work-options {
   display: grid;
-  gap: 2rem;
-  margin-top: 2.2rem;
-}
-
-.pathway-cards {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.work-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
 }
-
-.teacher-list {
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-/* ---- Two Pathways ---- */
-
-.pathway-card {
-  background: var(--white);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-.status-text {
-  color: var(--burnt-orange);
-}
-
-/* ---- My Teachers ---- */
-
-.teacher-item {
-  border-bottom: 1px solid rgba(212, 102, 62, 0.35);
-  padding-bottom: 2rem;
-}
-
-.teacher-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.teacher-item h3 {
-  margin-bottom: 0.5rem;
-}
-
-.teacher-item .method {
-  margin: 0 0 1rem;
-  font-style: italic;
-  color: var(--sage);
-  font-weight: 300;
-}
-
-/* ---- Ways to Work With Me (dark section) ---- */
 
 .work-section .work-options {
   margin-top: 3rem;
@@ -167,10 +190,6 @@
   height: 100%;
 }
 
-.work-section .work-options > .card-link {
-  display: block;
-}
-
 .work-section .work-option {
   height: 100%;
   display: flex;
@@ -178,17 +197,20 @@
   padding: 2rem;
   background: rgba(255, 248, 240, 0.1);
   border: 1px solid rgba(232, 196, 168, 0.3);
-  transition: background 0.3s ease;
 }
 
-.work-section .work-option:hover {
-  background: rgba(255, 248, 240, 0.15);
+.work-section .work-tagline {
+  margin: 3rem 0 0.5rem;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: var(--text-lead);
+  color: var(--desert-sand);
 }
 
-/* Cards on the dark background brighten instead of lifting. */
-.work-section .card-link:hover .work-option {
-  transform: none;
-  box-shadow: none;
+.work-section .work-note {
+  margin: 0;
+  text-align: center;
 }
 
 @keyframes slowZoom {
@@ -222,13 +244,11 @@
     padding: clamp(5.25rem, 17vw, 7rem) 0 clamp(2.25rem, 7vw, 3rem);
   }
 
-  .pathway-cards,
-  .teacher-list,
   .work-options {
     grid-template-columns: 1fr;
   }
 
-  .hero h1 {
+  .hero .hero-title {
     margin-bottom: 2.5rem;
     font-size: 3rem;
   }
