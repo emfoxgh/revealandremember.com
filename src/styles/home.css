@@ -213,29 +213,6 @@
   border: 1px solid rgba(232, 196, 168, 0.3);
 }
 
-.work-section .work-quote {
-  max-width: var(--content-width);
-  margin: 3rem auto 0;
-  text-align: center;
-}
-
-.work-section .work-quote blockquote {
-  margin: 0 0 0.75rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: var(--text-quote);
-  line-height: 1.4;
-  color: var(--cream);
-}
-
-.work-section .work-quote figcaption {
-  color: var(--desert-sand);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: var(--text-sm);
-  font-weight: 500;
-}
-
 .work-section .work-tagline {
   margin: 3rem 0 0.5rem;
   text-align: center;
