@@ -44,7 +44,7 @@ const structuredData = {
     <main id="main-content">
       <PageHeader title="Get in Touch" subtitle="Let's find out if we're a fit." />
 
-      <section class="section surface-base contact-ways" aria-labelledby="contact-ways-title">
+      <section class="section surface-base contact-intro-section">
         <div class="section-inner">
           <div class="contact-intro text-center">
             <p class="contact-intro__lead">
@@ -53,7 +53,11 @@ const structuredData = {
             </p>
             <a class="cta-button" href={site.calendlyUrl} target="_blank" rel="noreferrer">SCHEDULE A CONSULT</a>
           </div>
+        </div>
+      </section>
 
+      <section class="section surface-alt contact-ways" aria-labelledby="contact-ways-title">
+        <div class="section-inner">
           <h2 id="contact-ways-title" class="text-eyebrow text-center contact-ways__label">Other Ways to Connect</h2>
           <div class="contact-tiles">
             {phoneHref && (
@@ -123,14 +127,10 @@ const structuredData = {
                 </div>
           </div>
 
-          <p class="contact-ways__extras">
-            Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
-            If something connects, we may be a good fit.
-          </p>
         </div>
       </section>
 
-      <section class="section surface-alt contact-note">
+      <section class="section surface-base contact-note">
         <div class="section-inner section-inner--narrow text-center">
           <h2 class="text-eyebrow">A Note on Consults</h2>
           <p>
@@ -141,6 +141,10 @@ const structuredData = {
           <p>There is no pressure to convince yourself into a yes. In fact, that is part of the work.</p>
           <p class="contact-note__closing">We are listening for what is true.</p>
           <a class="cta-button contact-note__button" href={site.calendlyUrl} target="_blank" rel="noreferrer">SCHEDULE A CONSULT</a>
+          <p class="contact-note__extras">
+            Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
+            If something connects, we may be a good fit.
+          </p>
         </div>
       </section>
 
