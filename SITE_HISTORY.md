@@ -12,6 +12,16 @@ You can also roll back yourself in the Vercel dashboard: **Deployments**, pick t
 
 ---
 
+## November 25, 2026 (late evening): New contact page
+
+- **Bookmark:** `live-2026-11-25-3`
+- **See it:** https://revealandremember-5ljkfxo4i-emfoxghs-projects.vercel.app/contact (may ask you to sign in to Vercel)
+- **What changed:**
+  - Contact page redesigned: Emily's photo removed, an opening line about the free 20-minute consult with a Schedule a Consult button, and a second button after "A Note on Consults"
+  - "Other Ways to Connect" section with three tiles: Call Me, Email Me (opens the private message form) and Join the Mailing List, plus a note not to send sensitive or emergency information by voicemail or email
+  - Small print at the bottom: consults by phone, sessions over Zoom, open to women anywhere, replies within 1-5 business days, and crisis info (988, 911)
+  - Schedule a Consult buttons now look the same on every page (all capitals, same size)
+
 ## November 25, 2026 (evening): Guided-healing homepage
 
 - **Bookmark:** `live-2026-11-25-2`
