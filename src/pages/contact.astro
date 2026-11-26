@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import QuoteBanner from '../components/QuoteBanner.astro';
 import { site } from '../data/site';
 import '../styles/contact.css';
@@ -41,19 +42,18 @@ const structuredData = {
   <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <div class="contact-page">
     <main id="main-content">
-      <section class="contact-hero">
-        <div class="contact-hero__inner">
-          <h1 class="text-display contact-hero__title">Get in Touch</h1>
-          <p class="contact-hero__lead">
-            The easiest way to begin is a free 20-minute consult with me, Emily Fox, PsyD, by phone.
-            We'll talk about what's happening for you and whether guided healing feels right.
-          </p>
-          <a class="cta-button contact-hero__button" href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a Consult</a>
-        </div>
-      </section>
+      <PageHeader title="Get in Touch" subtitle="Let's find out if we're a fit." />
 
       <section class="section surface-base contact-ways" aria-labelledby="contact-ways-title">
         <div class="section-inner">
+          <div class="contact-intro text-center">
+            <p class="contact-intro__lead">
+              The easiest way to begin is a free 20-minute consult with me, Emily Fox, PsyD, by phone.
+              We'll talk about what's happening for you and whether guided healing feels right.
+            </p>
+            <a class="cta-button" href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a Consult</a>
+          </div>
+
           <h2 id="contact-ways-title" class="sr-only">Ways to get in touch</h2>
           <div class="contact-tiles">
             <a class="contact-tile" href={site.calendlyUrl} target="_blank" rel="noreferrer">

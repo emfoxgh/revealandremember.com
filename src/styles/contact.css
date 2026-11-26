@@ -4,46 +4,17 @@
  * come from the global classes.
  */
 
-/* ---- Hero: mountain photo with a warm wash ---- */
+/* ---- Opening line + consult button ---- */
 
-.contact-hero {
-  position: relative;
-  padding: clamp(8.5rem, 16vw, 11rem) 1.5rem clamp(4rem, 8vw, 6rem);
-  text-align: center;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(212, 102, 62, 0.82) 0%,
-      rgba(168, 70, 50, 0.72) 55%,
-      rgba(58, 58, 58, 0.55) 100%
-    ),
-    url('/images/mountain-home-page.jpg') center 70% / cover no-repeat;
-}
-
-.contact-hero__inner {
+.contact-intro {
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0 auto clamp(2.5rem, 5vw, 3.5rem);
 }
 
-.contact-hero__title {
-  margin: 0 0 1.25rem;
-  color: var(--cream);
-}
-
-.contact-hero__lead {
-  margin: 0 0 2.25rem;
-  color: var(--cream);
+.contact-intro__lead {
+  margin: 0 0 2rem;
   font-size: var(--text-lead);
   line-height: var(--leading-body-lg);
-}
-
-.contact-page .contact-hero__button {
-  background: var(--cream);
-  color: var(--deep-terracotta);
-}
-
-.contact-page .contact-hero__button:hover {
-  background: var(--white);
 }
 
 /* ---- Three ways to reach out ---- */
