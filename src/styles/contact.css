@@ -19,6 +19,11 @@
 
 /* ---- Three ways to reach out ---- */
 
+.contact-ways__label {
+  margin-bottom: 1.25rem;
+  font-size: var(--text-sm);
+}
+
 .contact-tiles {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
