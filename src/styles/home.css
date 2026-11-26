@@ -145,19 +145,14 @@
 
 .home-testimonial {
   max-width: var(--content-width);
-  margin: 2rem auto 2.5rem;
+  margin: 0 auto 2rem;
 }
 
+/* Smaller than the standard pull quote so a longer quote stays easy to read. */
 .home-testimonial blockquote {
-  margin: 0 0 1rem;
-}
-
-.home-testimonial figcaption {
-  color: var(--burnt-orange);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 500;
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  line-height: 1.5;
 }
 
 /* ---- Begin the Conversation steps ---- */
