@@ -96,6 +96,20 @@
   color: var(--burnt-orange);
 }
 
+/* Byline under the intro line, styled like testimonial attributions. */
+.home-page .about-intro:has(+ .intro-byline) {
+  margin-bottom: 0.75rem;
+}
+
+.home-page .intro-byline {
+  margin: 0 0 3rem;
+  color: var(--burnt-orange);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
 /* ---- Text links ("Read my story", "Read more reflections") ---- */
 
 .home-page .text-link {
