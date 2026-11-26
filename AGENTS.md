@@ -85,6 +85,7 @@ When Emily says **"push it live"**, "make it live", "publish", "put it on my web
    ```bash
    gh pr checks <number>
    ```
+   Then add an entry to the top of `SITE_HISTORY.md` on the branch (see "Site history and bookmarks" below), commit it and push.
 2. Squash-merge the PR and delete the branch **on GitHub and locally** (squash is this repo's existing convention):
    ```bash
    gh pr merge <number> --squash --delete-branch
@@ -95,8 +96,33 @@ When Emily says **"push it live"**, "make it live", "publish", "put it on my web
    ```
    Confirm the feature branch no longer exists locally (`git branch`) or on the remote (`git branch -r`). Delete it by hand if `gh` didn't.
 4. Confirm the production deployment succeeded (same deployments API as above, using the new `master` commit SHA; the environment will be `Production`). Then tell Emily it's live at https://revealandremember.com. Mention that her browser may need a refresh to show it.
+5. Bookmark the new live version with a dated tag on the new `master` commit, and push the tag (tags don't change the site):
+   ```bash
+   git tag -a live-YYYY-MM-DD -m "<plain-language summary>" && git push origin live-YYYY-MM-DD
+   ```
+   If that date's tag already exists, add `-2`, `-3`, etc. The tag name must match the `SITE_HISTORY.md` entry.
 
 Only merge when Emily has **clearly asked for it to go live**. Never merge on your own initiative, and never treat "save", "push", "commit" or "preview" as permission to go live.
+
+### 5. Site history and bookmarks
+
+`SITE_HISTORY.md` is Emily's plain-language record of every version that has gone live, newest first. Every go-live gets one entry, written in step 4.1 before merging:
+
+- **Heading:** the date and a short name for the version (e.g. "November 26, 2026: Guided-healing homepage").
+- **Bookmark:** the tag name you will create in step 4.5 (`live-YYYY-MM-DD`).
+- **See it:** the Vercel preview link for the branch's latest site change (it shows the same site that is about to go live, and stays available).
+- **What changed:** 2–5 plain-language bullets about what a visitor would notice. No file names or code terms.
+
+**Restoring an old version.** When Emily says something like "put the site back to how it looked on November 25th":
+
+1. Find the matching entry and bookmark in `SITE_HISTORY.md` (or `git tag -l 'live-*'`). If the date is ambiguous, show her the closest entries and ask which one.
+2. Start a fresh branch from `master` (e.g. `feature-restore-2026-11-25`) and bring back that version's site files, keeping the current agent instructions and history:
+   ```bash
+   git restore --source live-2026-11-25 -- src public astro.config.mjs package.json package-lock.json
+   ```
+3. Build, then go through the normal preview step and give her the preview link. Only go live when she asks, and add a new `SITE_HISTORY.md` entry for it ("Restored the November 25 version").
+
+If Emily needs it back immediately, she can also use **Instant Rollback** in the Vercel dashboard (Deployments, then pick the version). If she does, bring `master` back in line afterwards with the restore steps above, so the next change doesn't undo her rollback.
 
 ## Interpreting what Emily says
 
@@ -106,6 +132,7 @@ Only merge when Emily has **clearly asked for it to go live**. Never merge on yo
 | "Save this", "Push it", "Let me see it", "Can I see a preview?" | Commit, push the branch, open/update the PR, give her the **preview** link (step 3). **Not** live. |
 | "Push it live", "Make it live", "Publish", "Put it on my site" | Merge the PR into `master`, delete the branch locally and on GitHub, confirm production (step 4). |
 | "Undo that", "Go back" | Revert on the feature branch if it's not live yet. If it's already live, make a new branch that reverts the change and go through preview → live again. Never rewrite `master` history. |
+| "Put it back to how it looked on <date>", "Restore the <date> version" | Follow "Restoring an old version" in section 5: new branch, preview first, live only when she asks. |
 | "Start over" / "Forget this change" | Ask before discarding anything. If she confirms, close the PR and delete the branch locally and on GitHub. |
 
 If "push" is genuinely ambiguous, ask: *"Do you want to see a preview first, or make it live on revealandremember.com now?"*
