@@ -59,6 +59,15 @@
     color: var(--desert-sand);
   }
 
+  .surface-sage {
+    background: var(--surface-sage);
+    color: var(--cream);
+  }
+
+  .surface-sage .heading-section {
+    color: var(--cream);
+  }
+
   /* ---- Small utilities ---- */
 
   .text-center {
