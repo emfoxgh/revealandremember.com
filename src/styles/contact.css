@@ -156,11 +156,15 @@
 }
 
 .contact-facts p {
-  max-width: 640px;
-  margin: 0 auto 0.6rem;
+  max-width: 1040px;
+  margin: 0 auto;
   color: var(--moss);
   font-size: var(--text-sm);
   line-height: 1.7;
+}
+
+.contact-facts p + p {
+  margin-top: 1.25rem;
 }
 
 /* ---- Message form (inside the "Send a Message" panel) ---- */
