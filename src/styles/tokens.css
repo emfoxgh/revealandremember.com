@@ -20,7 +20,6 @@
     --surface-base: var(--cream);
     --surface-alt: #f7ebe0;
     --surface-sand: var(--desert-sand);
-    --surface-sage: #e3e6d5;      /* soft, warm sage feature background */
     --surface-dark: var(--charcoal);
     --card-bg: rgba(255, 255, 255, 0.95);
 

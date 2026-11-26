@@ -46,10 +46,6 @@
     background: var(--surface-sand);
   }
 
-  .surface-sage {
-    background: var(--surface-sage);
-  }
-
   .surface-dark {
     background: var(--surface-dark);
     color: var(--cream);
