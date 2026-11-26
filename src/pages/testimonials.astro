@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import QuoteBanner from '../components/QuoteBanner.astro';
 import { site } from '../data/site';
 import '../styles/testimonials.css';
@@ -14,30 +15,27 @@ const floatingTestimonials = [
 ];
 ---
 <BaseLayout title="Testimonials">
-  <div class="testimonials-page page-shell">
+  <div class="testimonials-page">
     <main id="main-content">
-      <div class="page-header">
-        <h1>Testimonials</h1>
-        <p>Reflections from the journey</p>
-      </div>
+      <PageHeader title="Testimonials" subtitle="Reflections from the journey" />
 
-      <section class="testimonials-showcase" aria-label="Client reflections">
-        <div class="testimonials-grid">
+      <section class="section surface-base" aria-label="Client reflections">
+        <div class="section-inner testimonials-grid">
           {floatingTestimonials.map((item) => (
-            <article class="testimonial-card">
+            <article class="card testimonial-card">
               <p>{item}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section class="themed-testimonials">
-        <div class="themed-container">
-          <h2>What Shifts</h2>
-          <p class="themed-intro">The specifics vary, but the themes are clear: relief, clarity, and a return to self.</p>
+      <section class="section surface-alt">
+        <div class="section-inner prose-lg">
+          <h2 class="heading-section heading-section--large text-center">What Shifts</h2>
+          <p class="text-center">The specifics vary, but the themes are clear: relief, clarity, and a return to self.</p>
 
-          <div class="theme-group">
-            <h3>I finally feel calm and clear.</h3>
+          <div class="theme-group accent-border">
+            <h3 class="heading-card text-accent">I finally feel calm and clear.</h3>
             <ul>
               <li>The anxiety I used to live with daily - it's just not running the show anymore.</li>
               <li>I stopped blaming myself for the assault. I feel peace in my body again.</li>
@@ -45,8 +43,8 @@ const floatingTestimonials = [
             </ul>
           </div>
 
-          <div class="theme-group">
-            <h3>My relationship changed - or I left, and I'm okay.</h3>
+          <div class="theme-group accent-border">
+            <h3 class="heading-card text-accent">My relationship changed - or I left, and I'm okay.</h3>
             <ul>
               <li>We were on the brink of divorce. Now we're connected again.</li>
               <li>I finally left the relationship that was draining me. I feel at home in myself.</li>
@@ -54,8 +52,8 @@ const floatingTestimonials = [
             </ul>
           </div>
 
-          <div class="theme-group">
-            <h3>I understand what was driving me.</h3>
+          <div class="theme-group accent-border">
+            <h3 class="heading-card text-accent">I understand what was driving me.</h3>
             <ul>
               <li>No one could get through to this stuck place - but this work did.</li>
               <li>I saw how old trauma with my dad was playing out with every man I dated.</li>
@@ -65,8 +63,8 @@ const floatingTestimonials = [
         </div>
       </section>
 
-      <section class="heart-section">
-        <h2>The Heart of This Work</h2>
+      <section class="section surface-base prose-lg text-center heart-section">
+        <h2 class="heading-section heading-section--large">The Heart of This Work</h2>
         <p class="heart-copy">
           The real gift of this work isn't just the outcomes, it's how it feels to come home to yourself.
           Clients often arrive carrying pain, confusion, or disconnection, and leave feeling clear, rooted,
@@ -85,17 +83,17 @@ const floatingTestimonials = [
         </ul>
 
         <div class="client-quote">
-          <blockquote>"I can jump higher because my feet are more firmly planted on the ground."</blockquote>
+          <blockquote class="text-quote">"I can jump higher because my feet are more firmly planted on the ground."</blockquote>
           <p>—Client Reflection</p>
         </div>
 
         <div class="client-quote">
-          <blockquote>"I felt so seen by you, it made it easier to see myself."</blockquote>
+          <blockquote class="text-quote">"I felt so seen by you, it made it easier to see myself."</blockquote>
           <p>—Past Client</p>
         </div>
       </section>
 
-      <section class="cta-strip">
+      <section class="cta-strip text-center">
         <p>Ready to start your journey?</p>
         <a href={site.calendlyUrl} target="_blank" rel="noreferrer" class="cta-button">Schedule a Consult</a>
       </section>

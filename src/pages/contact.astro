@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import QuoteBanner from '../components/QuoteBanner.astro';
 import { site } from '../data/site';
 import '../styles/contact.css';
@@ -12,15 +13,12 @@ const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g
   title="Contact"
   description="Get in touch with Emily at Reveal & Remember. Call, send a message, or join the mailing list."
 >
-  <div class="contact-page page-shell">
+  <div class="contact-page">
     <main id="main-content">
-      <div class="page-header">
-        <h1>Get in Touch</h1>
-        <p>Let's find out if we're a fit.</p>
-      </div>
+      <PageHeader title="Get in Touch" subtitle="Let's find out if we're a fit." />
 
-      <section class="contact-section contact-intro">
-        <div class="container contact-intro__grid">
+      <section class="contact-intro surface-alt">
+        <div class="section-inner contact-intro__grid">
           <div class="contact-intro__photo-frame">
             <img
               src="/images/emily-smiling-in-sunlight-web.jpg"
@@ -31,7 +29,7 @@ const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g
             />
           </div>
           <div class="contact-intro__copy">
-            <h2 class="section-eyebrow">A Note on Consults</h2>
+            <h2 class="text-eyebrow">A Note on Consults</h2>
             <p>A consult is not a sales call. It is a mutual discernment space.</p>
             <p>
               You get to feel whether my presence, my way of working, and the field of this work
@@ -45,12 +43,12 @@ const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g
         </div>
       </section>
 
-      <section class="contact-section contact-options" aria-labelledby="contact-options-title">
-        <div class="contact-options__inner">
+      <section class="section surface-base" aria-labelledby="contact-options-title">
+        <div class="section-inner section-inner--narrow">
           <h2 id="contact-options-title" class="sr-only">Ways to get in touch</h2>
 
           <div class="contact-accordion">
-            <article class="contact-card">
+            <article class="card contact-card">
               <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="call-panel">
                 <span class="contact-card__heading">
                   <span class="contact-card__icon" aria-hidden="true">
@@ -61,7 +59,7 @@ const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g
                 <span class="contact-card__toggle" aria-hidden="true">+</span>
               </button>
               <div class="contact-card__panel" id="call-panel" hidden>
-                <div class="contact-card__body">
+                <div class="contact-card__body prose">
                   <p>I’d love to hear your voice.
 
 Of note: this line is not appropriate for sensitive clinical information and is not monitored for emergencies.</p>
@@ -74,7 +72,7 @@ Of note: this line is not appropriate for sensitive clinical information and is 
               </div>
             </article>
 
-            <article class="contact-card">
+            <article class="card contact-card">
               <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="email-panel">
                 <span class="contact-card__heading">
                   <span class="contact-card__icon" aria-hidden="true">
@@ -118,7 +116,7 @@ Of note: this line is not appropriate for sensitive clinical information and is 
               </div>
             </article>
 
-            <article class="contact-card">
+            <article class="card contact-card">
               <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="mailing-list-panel">
                 <span class="contact-card__heading">
                   <span class="contact-card__icon" aria-hidden="true">
@@ -129,7 +127,7 @@ Of note: this line is not appropriate for sensitive clinical information and is 
                 <span class="contact-card__toggle" aria-hidden="true">+</span>
               </button>
               <div class="contact-card__panel" id="mailing-list-panel" hidden>
-                <div class="contact-card__body">
+                <div class="contact-card__body prose">
                   <p>
                     Want to stay connected? Join the mailing list for updates
                     on group offerings, workshops, live events, and new resources.
@@ -144,7 +142,7 @@ Of note: this line is not appropriate for sensitive clinical information and is 
             </article>
           </div>
 
-          <div class="audio-nudge">
+          <div class="audio-nudge prose">
             <p>
               Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
               If something connects, we may be a good fit. If it doesn't land—I wish you well on your

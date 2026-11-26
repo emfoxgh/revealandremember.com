@@ -1,0 +1,385 @@
+/* Shared components used on more than one page. */
+
+@layer global {
+  /* =========================================================
+     Page header (src/components/PageHeader.astro)
+     ========================================================= */
+
+  .page-header {
+    width: 100%;
+    margin: 0;
+    padding: clamp(7.2rem, 14vw, 9.2rem) 1.5rem clamp(2.1rem, 3.6vw, 3rem);
+    text-align: center;
+    background: var(--surface-sand);
+  }
+
+  .page-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: var(--text-lead);
+    line-height: var(--leading-body-lg);
+  }
+
+  /* =========================================================
+     Site header and navigation (src/components/Header.astro)
+     ========================================================= */
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 102, 62, 0.2);
+    background: rgba(255, 248, 240, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .site-header.is-scrolled {
+    box-shadow: 0 8px 22px rgba(58, 58, 58, 0.12);
+  }
+
+  .site-nav {
+    width: min(calc(100% - 3rem), var(--wide-width));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.22rem 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    z-index: 2000;
+    padding: 0.85rem 1.1rem;
+    background: var(--deep-terracotta);
+    color: var(--cream);
+    text-decoration: none;
+    border-radius: 0.35rem;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .site-logo img {
+    display: block;
+    width: auto;
+    height: 42px;
+    max-width: min(22vw, 160px);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-family: var(--font-sans);
+    color: var(--charcoal);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: var(--tracking-wide);
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.is-active {
+    color: var(--burnt-orange);
+  }
+
+  .header-contact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.78rem 1.35rem;
+    border-radius: 0.35rem;
+    background: var(--burnt-orange);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .header-contact:hover {
+    background: var(--deep-terracotta);
+    transform: translateY(-1px);
+  }
+
+  .nav-toggle {
+    display: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--charcoal);
+    margin: 5px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* =========================================================
+     Footer (src/components/Footer.astro)
+     ========================================================= */
+
+  .site-footer {
+    width: 100%;
+    margin: 0;
+    background: var(--charcoal);
+    color: var(--desert-sand);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .site-footer p {
+    margin: 0;
+    color: inherit;
+  }
+
+  .site-footer .footer-subtitle {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: var(--tracking-wider);
+  }
+
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.5rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid rgba(232, 220, 196, 0.45);
+    border-radius: 999px;
+    color: inherit;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .footer-social-link:hover {
+    background: rgba(232, 220, 196, 0.12);
+    border-color: var(--desert-sand);
+    transform: translateY(-2px);
+  }
+
+  .footer-social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+  }
+
+  .footer-social-icon circle:last-child {
+    fill: currentColor;
+    stroke: none;
+  }
+
+  /* =========================================================
+     Quote banner (src/components/QuoteBanner.astro)
+     ========================================================= */
+
+  .quote-banner {
+    width: 100%;
+    margin: 0;
+    padding: 5rem 1.5rem;
+    text-align: center;
+  }
+
+  .quote-banner--sand {
+    background: var(--desert-sand);
+  }
+
+  .quote-banner--sage {
+    background: var(--sage);
+  }
+
+  .quote-banner__inner {
+    width: min(calc(100% - 3rem), 980px);
+    margin: 0 auto;
+  }
+
+  .quote-banner__quote {
+    margin: 0 0 2rem;
+    font-size: clamp(2rem, 4vw, 2.2rem);
+  }
+
+  .quote-banner--sage .quote-banner__quote,
+  .quote-banner--sage .quote-banner__author {
+    color: var(--cream);
+  }
+
+  .quote-banner__author {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: var(--tracking-wider);
+  }
+
+  /* =========================================================
+     Buttons
+     ========================================================= */
+
+  /* Primary call-to-action. Works on <a> and <button>. */
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    border: 0;
+    border-radius: 4px;
+    background: var(--burnt-orange);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    letter-spacing: var(--tracking-wider);
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background: var(--deep-terracotta);
+    transform: translateY(-1px);
+  }
+
+  .cta-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+    transform: none;
+  }
+
+  /* =========================================================
+     Cards
+     ========================================================= */
+
+  /* Left accent stripe used on every card-like block on the site. */
+  .accent-border {
+    border-left: var(--border-accent);
+  }
+
+  /* Standard white card: subtle border, accent stripe, soft shadow. */
+  .card {
+    background: var(--card-bg);
+    border: var(--border-subtle);
+    border-left: var(--border-accent);
+    box-shadow: var(--shadow-rest);
+  }
+
+  /* Wrap a card in <a class="card-link"> to make it clickable with a lift on hover. */
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-link article,
+  .card-link .work-option {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-link:hover article,
+  .card-link:hover .work-option {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Larger focus ring for prominent interactive elements. */
+  .card-link:focus-visible,
+  .cta-button:focus-visible,
+  .footer-social-link:focus-visible,
+  .header-contact:focus-visible,
+  .nav-links a:focus-visible,
+  .site-logo:focus-visible,
+  .nav-toggle:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: 4px;
+  }
+
+  /* =========================================================
+     Mobile navigation
+     ========================================================= */
+
+  @media (max-width: 900px) {
+    .site-nav {
+      width: min(calc(100% - 2rem), var(--wide-width));
+      padding: 1rem 0;
+    }
+
+    .nav-toggle {
+      display: inline-block;
+    }
+
+    .nav-actions {
+      position: absolute;
+      top: 100%;
+      left: 1rem;
+      right: 1rem;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.8rem;
+      padding: 1rem;
+      background: rgba(255, 248, 240, 0.98);
+      border: 1px solid rgba(212, 102, 62, 0.2);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .nav-actions:has(.nav-links.is-open),
+    .nav-actions.is-open {
+      display: flex;
+    }
+
+    .nav-links.is-open {
+      display: flex;
+    }
+
+    .header-contact {
+      width: 100%;
+    }
+  }
+}

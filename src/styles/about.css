@@ -1,18 +1,10 @@
-.about-page main > section {
-  padding: var(--section-space) 0;
-}
+/*
+ * About page only (src/pages/about-me.astro).
+ * Section spacing/backgrounds, headings (.heading-section--compact), the
+ * .section-rule divider and body text (.prose) come from the global classes.
+ */
 
-.about-page main > section:first-of-type {
-  background: var(--desert-sand);
-}
-
-.about-page main > section:nth-of-type(even) {
-  background: var(--panel-2);
-}
-
-.about-page main > section:nth-of-type(odd):not(:first-of-type) {
-  background: var(--panel-3);
-}
+/* ---- Intro: photo + "Hi, I'm Emily" ---- */
 
 .about-page .emily-section {
   display: grid;
@@ -28,13 +20,9 @@
   object-fit: cover;
 }
 
-.about-page .emily-content {
-  padding-top: 0;
-}
-
 .about-page .emily-content h1 {
   margin: 0 0 1rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4.8vw, 3.5rem);
   font-weight: 500;
   color: var(--deep-terracotta);
@@ -50,16 +38,12 @@
   font-weight: 300;
 }
 
-.about-page p {
-  font-size: 1.04rem;
-  line-height: 1.82;
-}
-
-.about-page .emily-content p {
+.about-page .emily-content p,
+.about-page .about-copy p {
   margin-bottom: 0.9rem;
 }
 
-.about-page .emily-content p:last-child {
+.about-page .about-copy p:last-child {
   margin-bottom: 0;
 }
 
@@ -68,9 +52,8 @@
 }
 
 .about-page .highlight {
-  font-size: 1.04rem !important;
-  color: var(--deep-terracotta) !important;
-  font-weight: 600 !important;
+  color: var(--deep-terracotta);
+  font-weight: 600;
 }
 
 .about-page .checklist-item {
@@ -84,10 +67,10 @@
 }
 
 .about-page .ready-text {
-  margin-top: 1.8rem !important;
-  font-family: 'Cormorant Garamond', serif;
+  margin-top: 1.8rem;
+  font-family: var(--font-serif);
   font-style: italic;
-  font-size: 1.2rem !important;
+  font-size: var(--text-lead);
   color: var(--charcoal);
 }
 
@@ -95,48 +78,12 @@
   margin-top: 0.8rem;
 }
 
-.about-page .about-copy,
-.about-page .beliefs-content,
-.about-page .education-content {
-  width: min(calc(100% - 3rem), var(--content-width));
-  margin: 0 auto;
-}
-
-.about-page .about-copy h2,
-.about-page .beliefs-content h2,
-.about-page .education-content h2 {
-  margin: 0 0 1rem;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 500;
-  color: var(--deep-terracotta);
-  line-height: 1.1;
-}
-
-.about-page .about-copy p,
-.about-page .beliefs-content p,
-.about-page .education-content p {
-  font-size: 1.04rem;
-  line-height: 1.82;
-  margin-bottom: 0.9rem;
-}
-
-.about-page .about-copy p:last-child {
-  margin-bottom: 0;
-}
-
-.about-page .section-rule {
-  width: 48px;
-  height: 2px;
-  margin-bottom: 1.8rem;
-  background: var(--burnt-orange);
-  opacity: 0.55;
-}
+/* ---- Education and beliefs lists ---- */
 
 .about-page .belief-item,
 .about-page .credential {
-  font-size: 1.04rem;
-  line-height: 1.82;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
   padding: 0.95rem 0;
   border-bottom: 1px solid rgba(58, 58, 58, 0.1);
 }
@@ -148,12 +95,12 @@
 
 .about-page .note {
   color: var(--moss);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
 }
 
 .about-page .education-subsection h3 {
   margin: 0 0 0.8rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-serif);
   font-size: 1.9rem;
   font-weight: 500;
   color: var(--burnt-orange);
@@ -168,19 +115,8 @@
   color: var(--charcoal);
 }
 
-.about-page .credential .note {
-  color: var(--deep-terracotta);
-  font-style: italic;
-}
-
 @media (max-width: 900px) {
   .about-page .emily-section {
     grid-template-columns: 1fr;
-  }
-
-  .about-page .about-copy,
-  .about-page .beliefs-content,
-  .about-page .education-content {
-    width: min(calc(100% - 2rem), var(--content-width));
   }
 }

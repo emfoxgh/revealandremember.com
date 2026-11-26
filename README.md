@@ -48,19 +48,20 @@ npm run preview
 public/
   images/            Static image assets copied directly to the build output
 src/
-  components/        Shared UI pieces like header, footer, quote sections
+  components/        Shared UI pieces: Header, Footer, PageHeader, QuoteBanner
   data/              Shared site data such as nav items and Calendly URL
   layouts/           Base page shell and shared document structure
   pages/             Route files
-  styles/            Global and page-specific CSS
+  styles/            Design tokens, shared CSS layers, and one stylesheet per page
 ```
 
 ## Routes
 
 - `/` -> home page
-- `/about` -> about page
+- `/about-me` -> about page
 - `/resources` -> resources page
 - `/testimonials` -> testimonials page
+- `/contact` -> contact page
 
 Astro generates static HTML into `dist/` during build.
 
@@ -71,9 +72,10 @@ Astro generates static HTML into `dist/` during build.
 For routine copy/content updates, start in:
 
 - `src/pages/index.astro`
-- `src/pages/about.astro`
+- `src/pages/about-me.astro`
 - `src/pages/resources.astro`
 - `src/pages/testimonials.astro`
+- `src/pages/contact.astro`
 - `src/data/site.ts`
 
 Use `src/data/site.ts` for anything shared across pages, especially:
@@ -84,22 +86,13 @@ Use `src/data/site.ts` for anything shared across pages, especially:
 
 ### Styling changes
 
-Global/shared styles:
+See **[STYLE_GUIDE.md](STYLE_GUIDE.md)** for the design tokens, shared classes, and rules for adding sections and pages.
 
-- `src/styles/global.css`
+In short:
 
-Page-specific styles:
-
-- `src/styles/home.css`
-- `src/styles/about.css`
-- `src/styles/resources.css`
-- `src/styles/testimonials.css`
-
-Preferred approach:
-
-- keep shared tokens and layout primitives in `global.css`
-- keep page-specific styling in the matching page stylesheet
-- avoid reintroducing large inline style blocks unless there is a strong reason
+- `src/styles/tokens.css` holds every color, font, font size, shadow and width as a CSS variable
+- `src/styles/global.css` imports the shared layers (`base`, `layout`, `typography`, `components`) and loads on every page
+- each page has its own stylesheet (`home.css`, `about.css`, `resources.css`, `testimonials.css`, `contact.css`) for styles unique to that page only
 
 ### Assets
 

@@ -1,0 +1,13 @@
+---
+// Title band at the top of an inner page (Resources, Testimonials, Contact).
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+<div class="page-header">
+  <h1 class="text-display">{title}</h1>
+  {subtitle && <p>{subtitle}</p>}
+</div>

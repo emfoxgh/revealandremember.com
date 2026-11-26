@@ -9,7 +9,7 @@ const { quote, author, tone = 'sand' } = Astro.props;
 ---
 <section class={`quote-banner quote-banner--${tone}`}>
   <div class="quote-banner__inner">
-    <p class="quote-banner__quote">{quote}</p>
+    <p class="quote-banner__quote text-quote">{quote}</p>
     <p class="quote-banner__author">{author}</p>
   </div>
 </section>

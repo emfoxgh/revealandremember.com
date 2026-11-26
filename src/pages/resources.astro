@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 import QuoteBanner from '../components/QuoteBanner.astro';
 import '../styles/resources.css';
 
@@ -102,23 +103,23 @@ const tools = [
 ];
 ---
 <BaseLayout title="Resources">
-  <div class="resources-page page-shell">
+  <div class="resources-page">
     <main id="main-content">
-      <div class="page-header">
-        <h1>Resources</h1>
-        <p>Tools for your journey - my audio offerings and the books and podcasts that have shaped my path.</p>
-      </div>
+      <PageHeader
+        title="Resources"
+        subtitle="Tools for your journey - my audio offerings and the books and podcasts that have shaped my path."
+      />
 
-      <section class="resources-section resources-section--panel-1">
-        <div class="section-intro">
-          <h2>Audio Resources on Spotify</h2>
+      <section class="section surface-base">
+        <div class="section-inner section-intro prose-lg">
+          <h2 class="heading-section heading-section--accent">Audio Resources on Spotify</h2>
           <p>Each of these audio resources offers a distinct way to get in rapport with yourself, whether through meditation, movement, energetic tools, or new perspectives.</p>
         </div>
 
         <div class="podcasts-grid">
           {podcasts.map((podcast) => (
             <a href={podcast.href} target="_blank" rel="noreferrer" class="card-link">
-              <article class="podcast-card">
+              <article class="card podcast-card">
                 <img src={podcast.image} alt={podcast.alt} />
                 <h3>
                   {podcast.title}
@@ -131,18 +132,18 @@ const tools = [
         </div>
       </section>
 
-      <section class="resources-section resources-section--panel-2">
-        <div class="section-intro">
-          <h2>Emily's Bookshelf</h2>
+      <section class="section surface-alt">
+        <div class="section-inner section-intro prose-lg">
+          <h2 class="heading-section heading-section--accent">Emily's Bookshelf</h2>
           <p>Books and podcasts that have deeply informed my journey and continue to inspire the work I do.</p>
         </div>
 
-        <div class="resource-section-block">
+        <div class="section-inner resource-section-block">
           <h3 class="books-title">Books</h3>
           <div class="resource-list">
             {books.map((book) => (
               <a href={book.href} target="_blank" rel="noreferrer" class="card-link">
-                <article class="resource-card">
+                <article class="card resource-card">
                   {book.image ? (
                     <img src={book.image} alt={book.title} class="resource-thumb" />
                   ) : (
@@ -159,12 +160,12 @@ const tools = [
           </div>
         </div>
 
-        <div class="resource-section-block">
+        <div class="section-inner resource-section-block">
           <h3 class="books-title">Podcasts</h3>
           <div class="resource-list">
             {bookshelfPodcasts.map((podcast) => (
               <a href={podcast.href} target="_blank" rel="noreferrer" class="card-link">
-                <article class="resource-card resource-card--podcast">
+                <article class="card resource-card resource-card--podcast">
                   {podcast.image ? (
                     <img src={podcast.image} alt={podcast.title} class="resource-thumb resource-thumb--podcast" />
                   ) : (
@@ -182,16 +183,16 @@ const tools = [
         </div>
       </section>
 
-      <section class="resources-section resources-section--panel-3">
-        <div class="section-intro">
-          <h2>Tools for Practice</h2>
+      <section class="section surface-base">
+        <div class="section-inner section-intro prose-lg">
+          <h2 class="heading-section heading-section--accent">Tools for Practice</h2>
           <p>Resources I love, rely on, and would recommend to anyone.</p>
         </div>
 
-        <div class="resource-list">
+        <div class="section-inner resource-list">
           {tools.map((tool) => (
             <a href={tool.href} target="_blank" rel="noreferrer" class="card-link">
-              <article class="resource-card resource-card--center">
+              <article class="card resource-card resource-card--center">
                 <img src={tool.image} alt={tool.title} class="resource-thumb resource-thumb--square" />
                 <div>
                   <h4>{tool.title}</h4>
@@ -203,7 +204,7 @@ const tools = [
           ))}
         </div>
 
-        <div class="coming-soon">
+        <div class="section-inner coming-soon">
           <h3>More Resources Coming Soon</h3>
           <p>Additional tools, writings, and offerings are in development. Subscribe to stay connected.</p>
         </div>
