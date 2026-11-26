@@ -12,7 +12,6 @@
     --desert-sand: #e8c4a8;       /* warm feature backgrounds, headings on dark */
     --sage: #9ca89c;              /* muted secondary text, quote banner */
     --moss: #667b6d;              /* muted labels and notes */
-    --muted-sage: #8e9a83;        /* feature section background (Home "Guided Healing") */
     --charcoal: #3a3a3a;          /* body text, dark sections, footer */
     --cream: #fff8f0;             /* page background, text on dark */
     --white: #fff;
@@ -22,7 +21,6 @@
     --surface-alt: #f7ebe0;
     --surface-sand: var(--desert-sand);
     --surface-dark: var(--charcoal);
-    --surface-sage: var(--muted-sage);
     --card-bg: rgba(255, 255, 255, 0.95);
 
     /* ---- Lines and shadows ---- */

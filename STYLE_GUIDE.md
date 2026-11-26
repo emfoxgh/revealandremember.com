@@ -63,7 +63,6 @@ A typical section:
 | `.section--compact-mobile` | Tighter padding under 900px (used on Home). |
 | `.surface-base` / `.surface-alt` | Cream / warm-linen backgrounds. **Alternate them down the page.** |
 | `.surface-sand` | Desert-sand feature background (About intro). |
-| `.surface-sage` | Muted sage feature background (Home "Guided Healing"). Heading turns cream; put body text on cream panels. |
 | `.surface-dark` | Charcoal background. `<p>` turns cream and `.heading-section` turns sand automatically. |
 | `.section-inner` | Centered 1200px content column (the gutter tightens on mobile). **Use it inside every section.** |
 | `.section-inner--narrow` | Same, but 780px wide (Contact options). |

@@ -207,11 +207,8 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background: rgba(255, 248, 240, 0.9);
-}
-
-.work-section .work-option p {
-  color: var(--charcoal);
+  background: rgba(255, 248, 240, 0.1);
+  border: 1px solid rgba(232, 196, 168, 0.3);
 }
 
 .work-section .work-tagline {
@@ -221,13 +218,12 @@
   font-style: italic;
   font-size: clamp(1.4rem, 2.2vw, 1.65rem);
   line-height: 1.4;
-  color: var(--cream);
+  color: var(--desert-sand);
 }
 
 .work-section .work-note {
   margin: 0;
   text-align: center;
-  color: var(--cream);
 }
 
 @keyframes slowZoom {
