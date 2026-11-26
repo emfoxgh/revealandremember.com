@@ -130,11 +130,23 @@
 }
 
 .home-list li {
+  position: relative;
   font-weight: 300;
-  padding-left: 1.5rem;
-  border-left: var(--border-accent);
+  padding-left: 1.75rem;
   font-size: var(--text-body-lg);
   line-height: var(--leading-body-lg);
+}
+
+/* Small burnt-orange dot instead of a bullet character. */
+.home-list li::before {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  top: 0.7em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--burnt-orange);
 }
 
 /* ---- Testimonial ---- */
