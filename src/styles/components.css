@@ -175,6 +175,14 @@
     letter-spacing: var(--tracking-wider);
   }
 
+  .site-footer .footer-disclaimer {
+    max-width: var(--content-width);
+    margin: 1.25rem auto 0;
+    font-size: var(--text-xs);
+    line-height: 1.6;
+    opacity: 0.85;
+  }
+
   .footer-social-link {
     display: inline-flex;
     align-items: center;

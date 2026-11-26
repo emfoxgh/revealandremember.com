@@ -12,6 +12,17 @@ You can also roll back yourself in the Vercel dashboard: **Deployments**, pick t
 
 ---
 
+## November 25, 2026 (evening): Guided-healing homepage
+
+- **Bookmark:** `live-2026-11-25-2`
+- **See it:** https://revealandremember-gt0il0llr-emfoxghs-projects.vercel.app (may ask you to sign in to Vercel)
+- **What changed:**
+  - Homepage is now about guided healing only: subtitle "Reveal & Remember: Guided Healing for Women," new one-liner "Deep, meditative healing for women who want more than talk therapy. Guided online by Emily Fox, PsyD."
+  - New homepage sections: This May Be for You If…, Why I Do This Work, Guided Healing (What It Is / Main Methods / Format), a client quote, and Begin the Conversation with 3 steps
+  - Two Pathways and Ways to Work With Me removed; My Teachers moved to the About page
+  - Footer now reads "Emily Fox, PsyD | Guided Healing for Women," with a short non-clinical and crisis (988, 911) note on every page
+  - Behind the scenes: tidier styling so all pages share the same fonts, colors and spacing
+
 ## November 25, 2026: Therapy and Guided Healing version
 
 - **Bookmark:** `live-2026-11-25`
