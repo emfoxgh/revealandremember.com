@@ -279,6 +279,7 @@
     font-family: var(--font-sans);
     font-size: var(--text-sm);
     font-weight: 400;
+    line-height: normal;
     letter-spacing: var(--tracking-wider);
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.3s ease;
