@@ -96,15 +96,6 @@
   color: var(--burnt-orange);
 }
 
-/* Byline under the intro line: plain body text, just tucked close. */
-.home-page .about-intro:has(+ .intro-byline) {
-  margin-bottom: 0.5rem;
-}
-
-.home-page .intro-byline {
-  margin: 0 0 3rem;
-}
-
 /* ---- Text links ("Read my story", "Read more reflections") ---- */
 
 .home-page .text-link {
