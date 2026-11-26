@@ -12,6 +12,16 @@ You can also roll back yourself in the Vercel dashboard: **Deployments**, pick t
 
 ---
 
+## November 25, 2026 (night): Resources page refresh
+
+- **Bookmark:** `live-2026-11-25-4`
+- **See it:** https://revealandremember-ibreelppv-emfoxghs-projects.vercel.app/resources (may ask you to sign in to Vercel)
+- **What changed:**
+  - Basic Energetics and Wisdom for Wisdom Seekers removed from the audio shows (not live yet); Mindful Energetics and Guided Kundalini remain
+  - Audio intro now reads "…whether through meditation or movement."
+  - Out of Our Minds shows Nikki's new name (Nikki Meyers) and the show's new cover art
+  - Audio show boxes and that section no longer have extra empty space
+
 ## November 25, 2026 (late evening): New contact page
 
 - **Bookmark:** `live-2026-11-25-3`
