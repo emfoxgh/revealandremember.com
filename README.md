@@ -2,6 +2,8 @@
 
 Developer documentation for the Astro version of Emily's site.
 
+See `SITE_HISTORY.md` for every version that has gone live (with dated `live-YYYY-MM-DD` bookmarks), and `AGENTS.md` for the go-live and restore workflow.
+
 ## Stack
 
 - Astro
