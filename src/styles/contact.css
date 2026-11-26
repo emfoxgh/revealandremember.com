@@ -136,6 +136,10 @@
   line-height: 1.45;
 }
 
+.contact-note__button {
+  margin-top: 2rem;
+}
+
 /* ---- Practical facts + crisis line ---- */
 
 .contact-facts {

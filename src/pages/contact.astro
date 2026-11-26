@@ -56,13 +56,6 @@ const structuredData = {
 
           <h2 id="contact-ways-title" class="sr-only">Ways to get in touch</h2>
           <div class="contact-tiles">
-            <a class="contact-tile" href={site.calendlyUrl} target="_blank" rel="noreferrer">
-              <span class="contact-tile__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="1" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
-              </span>
-              <span class="contact-tile__title">Book a Consult</span>
-              <span class="contact-tile__detail">Schedule your 20min free initial consultation</span>
-            </a>
             {phoneHref && (
               <a class="contact-tile" href={phoneHref}>
                 <span class="contact-tile__icon" aria-hidden="true">
@@ -79,6 +72,15 @@ const structuredData = {
               <span class="contact-tile__title">Email Me</span>
               <span class="contact-tile__detail">Send me a brief message with any questions and I will respond as quickly as I am able.</span>
             </button>
+            {mailingListUrl && (
+              <a class="contact-tile" href={mailingListUrl} target="_blank" rel="noopener noreferrer">
+                <span class="contact-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+                </span>
+                <span class="contact-tile__title">Join the Mailing List</span>
+                <span class="contact-tile__detail">Updates on group offerings, workshops, live events, and new resources.</span>
+              </a>
+            )}
           </div>
 
           <p class="contact-caution">
@@ -122,9 +124,8 @@ const structuredData = {
           </div>
 
           <p class="contact-ways__extras">
-            Not sure yet? Start with the <a href="/resources">audio resources</a>{mailingListUrl && (
-              <> or <a href={mailingListUrl} target="_blank" rel="noopener noreferrer">join the mailing list</a></>
-            )}.
+            Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
+            If something connects, we may be a good fit.
           </p>
         </div>
       </section>
@@ -139,6 +140,7 @@ const structuredData = {
           </p>
           <p>There is no pressure to convince yourself into a yes. In fact, that is part of the work.</p>
           <p class="contact-note__closing">We are listening for what is true.</p>
+          <a class="cta-button contact-note__button" href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a Consult</a>
         </div>
       </section>
 
