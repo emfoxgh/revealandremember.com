@@ -64,12 +64,8 @@
     color: var(--cream);
   }
 
-  .surface-sage p {
-    color: var(--cream);
-  }
-
   .surface-sage .heading-section {
-    color: var(--light-sage);
+    color: var(--cream);
   }
 
   /* ---- Small utilities ---- */
