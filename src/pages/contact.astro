@@ -7,83 +7,94 @@ import '../styles/contact.css';
 
 const { googleVoiceNumber, web3FormsAccessKey, mailingListUrl } = site.contact;
 const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g, '')}` : undefined;
+
+// Structured data so Google and AI tools can read the contact facts directly.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.siteUrl}/#emily`,
+      name: 'Emily Fox',
+      honorificSuffix: 'PsyD',
+      jobTitle: 'Guided Healing Practitioner',
+      url: `${site.siteUrl}/about-me`,
+      worksFor: { '@id': `${site.siteUrl}/#practice` }
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${site.siteUrl}/#practice`,
+      name: 'Reveal & Remember',
+      url: site.siteUrl,
+      ...(googleVoiceNumber && { telephone: `+1-${googleVoiceNumber}` }),
+      description: 'Virtual guided healing for women, offered over Zoom to women anywhere.',
+      areaServed: 'Worldwide',
+      founder: { '@id': `${site.siteUrl}/#emily` }
+    }
+  ]
+};
 ---
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with Emily at Reveal & Remember. Call, send a message, or join the mailing list."
+  description="Contact Emily Fox, PsyD at Reveal & Remember. Book a free 20-minute phone consult, call, or send a private message. Virtual guided healing over Zoom for women anywhere."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <div class="contact-page">
     <main id="main-content">
       <PageHeader title="Get in Touch" subtitle="Let's find out if we're a fit." />
 
-      <section class="contact-intro surface-alt">
-        <div class="section-inner contact-intro__grid">
-          <div class="contact-intro__photo-frame">
-            <img
-              src="/images/emily-smiling-in-sunlight-web.jpg"
-              alt="Emily smiling outdoors in golden afternoon light"
-              class="contact-intro__photo"
-              width="1600"
-              height="2400"
-            />
-          </div>
-          <div class="contact-intro__copy">
-            <h2 class="text-eyebrow">A Note on Consults</h2>
-            <p>A consult is not a sales call. It is a mutual discernment space.</p>
-            <p>
-              You get to feel whether my presence, my way of working, and the field of this work
-              feel right for your system. I get to feel whether I am the right person to support you.
+      <section class="section surface-base contact-intro-section">
+        <div class="section-inner">
+          <div class="contact-intro text-center">
+            <p class="contact-intro__lead">
+              The easiest way to begin is to schedule a free 20-minute consult with me, Emily Fox, PsyD.
+              We'll talk about what's happening for you and whether guided healing feels right.
             </p>
-            <p>
-              There is no pressure to convince yourself into a yes. In fact, that is part of the work.
-            </p>
-            <p>We are listening for what is true.</p>
+            <a class="cta-button" href={site.calendlyUrl} target="_blank" rel="noreferrer">SCHEDULE A CONSULT</a>
           </div>
         </div>
       </section>
 
-      <section class="section surface-base" aria-labelledby="contact-options-title">
-        <div class="section-inner section-inner--narrow">
-          <h2 id="contact-options-title" class="sr-only">Ways to get in touch</h2>
-
-          <div class="contact-accordion">
-            <article class="card contact-card">
-              <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="call-panel">
-                <span class="contact-card__heading">
-                  <span class="contact-card__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z" /></svg>
-                  </span>
-                  <span><span class="contact-card__title">Call Me</span><span class="contact-card__subtitle">Reach me by phone</span></span>
+      <section class="section surface-alt contact-ways" aria-labelledby="contact-ways-title">
+        <div class="section-inner">
+          <h2 id="contact-ways-title" class="text-eyebrow text-center contact-ways__label">Other Ways to Connect</h2>
+          <div class="contact-tiles">
+            {phoneHref && (
+              <a class="contact-tile" href={phoneHref}>
+                <span class="contact-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.56 2.81.69A2 2 0 0 1 22 16.92z" /></svg>
                 </span>
-                <span class="contact-card__toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="contact-card__panel" id="call-panel" hidden>
-                <div class="contact-card__body prose">
-                  <p>I’d love to hear your voice.
-
-Of note: this line is not appropriate for sensitive clinical information and is not monitored for emergencies.</p>
-                  {phoneHref ? (
-                    <a class="cta-button" href={phoneHref}>{googleVoiceNumber}</a>
-                  ) : (
-                    <p class="contact-placeholder">Google Voice number will be added here.</p>
-                  )}
-                </div>
-              </div>
-            </article>
-
-            <article class="card contact-card">
-              <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="email-panel">
-                <span class="contact-card__heading">
-                  <span class="contact-card__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1" /><path d="m2 5 10 8 10-8" /></svg>
-                  </span>
-                  <span><span class="contact-card__title">Email Me</span><span class="contact-card__subtitle">Send a private message</span></span>
+                <span class="contact-tile__title">Call Me</span>
+                <span class="contact-tile__detail">Call me directly at {googleVoiceNumber}</span>
+              </a>
+            )}
+            <button class="contact-tile" type="button" aria-expanded="false" aria-controls="message-panel">
+              <span class="contact-tile__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="1" /><path d="m2 5 10 8 10-8" /></svg>
+              </span>
+              <span class="contact-tile__title">Email Me</span>
+              <span class="contact-tile__detail">Send me a brief message with any questions and I will respond as quickly as I am able.</span>
+            </button>
+            {mailingListUrl && (
+              <a class="contact-tile" href={mailingListUrl} target="_blank" rel="noopener noreferrer">
+                <span class="contact-tile__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
                 </span>
-                <span class="contact-card__toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="contact-card__panel" id="email-panel" hidden>
-                <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <span class="contact-tile__title">Join the Mailing List</span>
+                <span class="contact-tile__detail">Stay up-to-date on group offerings, workshops, live events, and new resources.</span>
+              </a>
+            )}
+          </div>
+
+          <p class="contact-caution">
+            Please do not include any clinically sensitive or emergency-related information via voicemail or email.
+            I do not provide emergency care services and will be unable to appropriately
+            attend to these messages.
+          </p>
+
+          <div class="card contact-message" id="message-panel" hidden>
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
                   <input type="hidden" name="access_key" value={web3FormsAccessKey} />
                   <input type="hidden" name="subject" value="New Reveal & Remember contact form message" />
                   <input type="hidden" name="from_name" value="Reveal & Remember Website" />
@@ -105,50 +116,45 @@ Of note: this line is not appropriate for sensitive clinical information and is 
                   <p class="form-status" role="status" aria-live="polite"></p>
                   {!web3FormsAccessKey && <p class="contact-placeholder">The form will be enabled when the Web3Forms access key is added.</p>}
                 </form>
-                <div class="form-success" hidden>
+            <div class="form-success" hidden>
                   <span class="form-success__icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg>
                   </span>
                   <h3 class="form-success__title" tabindex="-1">Message Sent</h3>
-                  <p>Thank you for reaching out. I’ll respond within a few business days.</p>
+                  <p>Thank you for reaching out. I’ll respond within 1-5 business days.</p>
                   <button class="form-success__reset" type="button">Send another message</button>
                 </div>
-              </div>
-            </article>
-
-            <article class="card contact-card">
-              <button class="contact-card__trigger" type="button" aria-expanded="false" aria-controls="mailing-list-panel">
-                <span class="contact-card__heading">
-                  <span class="contact-card__icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
-                  </span>
-                  <span><span class="contact-card__title">Join the Mailing List</span><span class="contact-card__subtitle">Stay in the loop</span></span>
-                </span>
-                <span class="contact-card__toggle" aria-hidden="true">+</span>
-              </button>
-              <div class="contact-card__panel" id="mailing-list-panel" hidden>
-                <div class="contact-card__body prose">
-                  <p>
-                    Want to stay connected? Join the mailing list for updates
-                    on group offerings, workshops, live events, and new resources.
-                  </p>
-                  {mailingListUrl ? (
-                    <a class="cta-button" href={mailingListUrl} target="_blank" rel="noopener noreferrer">Join the List</a>
-                  ) : (
-                    <p class="contact-placeholder">The Google Form link will be added here.</p>
-                  )}
-                </div>
-              </div>
-            </article>
           </div>
 
-          <div class="audio-nudge prose">
-            <p>
-              Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
-              If something connects, we may be a good fit. If it doesn't land—I wish you well on your
-              healing journey, wherever it leads.
-            </p>
-          </div>
+        </div>
+      </section>
+
+      <section class="section surface-base contact-note">
+        <div class="section-inner section-inner--narrow text-center">
+          <h2 class="text-eyebrow">A Note on Consults</h2>
+          <p>
+            A consult is not a sales call. It is a mutual discernment space. You get to feel whether
+            my presence and my way of working feel right for your system, and I get to feel whether
+            I am the right person to support you.
+          </p>
+          <p>There is no pressure to convince yourself into a yes. In fact, that is part of the work.</p>
+          <p class="contact-note__closing">We are listening for what is true.</p>
+          <a class="cta-button contact-note__button" href={site.calendlyUrl} target="_blank" rel="noreferrer">SCHEDULE A CONSULT</a>
+          <p class="contact-note__extras">
+            Not sure if this work is for you? Start with the <a href="/resources">audio resources</a>.
+            If something connects, we may be a good fit.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-facts">
+        <div class="section-inner text-center">
+          <p>Initial free consults are conducted by phone, while ongoing sessions are provided virtually over Zoom. Guided healing is open to women anywhere. For any inquiries, please expect a reply within 1-5 business days.</p>
+          <p>
+            If you are in crisis, please don't wait for a reply. Call or text <a href="tel:988">988</a>
+            (Suicide &amp; Crisis Lifeline), or call <a href="tel:911">911</a>.
+            Guided healing is a non-clinical service and not psychotherapy.
+          </p>
         </div>
       </section>
     </main>
@@ -158,24 +164,18 @@ Of note: this line is not appropriate for sensitive clinical information and is 
 </BaseLayout>
 
 <script>
-  const triggers = document.querySelectorAll<HTMLButtonElement>('.contact-card__trigger');
+  const messageTile = document.querySelector<HTMLButtonElement>('button.contact-tile');
+  const messagePanel = document.getElementById('message-panel');
 
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const shouldOpen = trigger.getAttribute('aria-expanded') !== 'true';
-
-      triggers.forEach((otherTrigger) => {
-        const panelId = otherTrigger.getAttribute('aria-controls');
-        const panel = panelId ? document.getElementById(panelId) : null;
-        otherTrigger.setAttribute('aria-expanded', 'false');
-        if (panel) panel.hidden = true;
-      });
-
-      const panelId = trigger.getAttribute('aria-controls');
-      const panel = panelId ? document.getElementById(panelId) : null;
-      trigger.setAttribute('aria-expanded', String(shouldOpen));
-      if (panel) panel.hidden = !shouldOpen;
-    });
+  messageTile?.addEventListener('click', () => {
+    if (!messagePanel) return;
+    const open = messageTile.getAttribute('aria-expanded') !== 'true';
+    messageTile.setAttribute('aria-expanded', String(open));
+    messagePanel.hidden = !open;
+    if (open) {
+      messagePanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      messagePanel.querySelector<HTMLInputElement>('#contact-name')?.focus({ preventScroll: true });
+    }
   });
 
   const contactForm = document.querySelector<HTMLFormElement>('.contact-form');
