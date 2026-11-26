@@ -7,44 +7,102 @@ import '../styles/contact.css';
 
 const { googleVoiceNumber, web3FormsAccessKey, mailingListUrl } = site.contact;
 const phoneHref = googleVoiceNumber ? `tel:${googleVoiceNumber.replace(/[^+\d]/g, '')}` : undefined;
+
+// Structured data so Google and AI tools can read the contact facts directly.
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site.siteUrl}/#emily`,
+      name: 'Emily Fox',
+      honorificSuffix: 'PsyD',
+      jobTitle: 'Guided Healing Practitioner',
+      url: `${site.siteUrl}/about-me`,
+      worksFor: { '@id': `${site.siteUrl}/#practice` }
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${site.siteUrl}/#practice`,
+      name: 'Reveal & Remember',
+      url: site.siteUrl,
+      ...(googleVoiceNumber && { telephone: `+1-${googleVoiceNumber}` }),
+      description: 'Virtual guided healing for women, offered over Zoom to women anywhere.',
+      areaServed: 'Worldwide',
+      founder: { '@id': `${site.siteUrl}/#emily` }
+    }
+  ]
+};
 ---
 
 <BaseLayout
   title="Contact"
-  description="Get in touch with Emily at Reveal & Remember. Call, send a message, or join the mailing list."
+  description="Contact Emily Fox, PsyD at Reveal & Remember. Book a free 20-minute consult, call, or send a private message. Virtual guided healing over Zoom for women anywhere."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   <div class="contact-page">
     <main id="main-content">
       <PageHeader title="Get in Touch" subtitle="Let's find out if we're a fit." />
 
       <section class="contact-intro surface-alt">
-        <div class="section-inner contact-intro__grid">
-          <div class="contact-intro__photo-frame">
-            <img
-              src="/images/emily-smiling-in-sunlight-web.jpg"
-              alt="Emily smiling outdoors in golden afternoon light"
-              class="contact-intro__photo"
-              width="1600"
-              height="2400"
-            />
-          </div>
-          <div class="contact-intro__copy">
-            <h2 class="text-eyebrow">A Note on Consults</h2>
-            <p>A consult is not a sales call. It is a mutual discernment space.</p>
-            <p>
-              You get to feel whether my presence, my way of working, and the field of this work
-              feel right for your system. I get to feel whether I am the right person to support you.
-            </p>
-            <p>
-              There is no pressure to convince yourself into a yes. In fact, that is part of the work.
-            </p>
-            <p>We are listening for what is true.</p>
-          </div>
+        <div class="section-inner section-inner--narrow text-center">
+          <p class="contact-intro__lead">
+            The easiest way to begin is a free 20-minute consult with me, Emily Fox, PsyD, over Zoom.
+            We'll talk about what's happening for you and whether guided healing feels like the right fit.
+          </p>
+          <a class="cta-button" href={site.calendlyUrl} target="_blank" rel="noreferrer">Schedule a Consult</a>
+        </div>
+
+        <div class="section-inner section-inner--narrow contact-intro__copy">
+          <h2 class="text-eyebrow">A Note on Consults</h2>
+          <p>A consult is not a sales call. It is a mutual discernment space.</p>
+          <p>
+            You get to feel whether my presence, my way of working, and the field of this work
+            feel right for your system. I get to feel whether I am the right person to support you.
+          </p>
+          <p>
+            There is no pressure to convince yourself into a yes. In fact, that is part of the work.
+          </p>
+          <p>We are listening for what is true.</p>
         </div>
       </section>
 
       <section class="section surface-base" aria-labelledby="contact-options-title">
         <div class="section-inner section-inner--narrow">
+          <div class="card contact-details">
+            <h2 class="text-eyebrow">Contact Details</h2>
+            <dl class="contact-details__list">
+              <div>
+                <dt>Free consult</dt>
+                <dd>20 minutes over Zoom. <a href={site.calendlyUrl} target="_blank" rel="noreferrer">Book a time online</a>.</dd>
+              </div>
+              {phoneHref && (
+                <div>
+                  <dt>Phone</dt>
+                  <dd><a href={phoneHref}>{googleVoiceNumber}</a></dd>
+                </div>
+              )}
+              <div>
+                <dt>Message</dt>
+                <dd>Use the private message form below.</dd>
+              </div>
+              <div>
+                <dt>Where I work</dt>
+                <dd>All sessions are virtual, over Zoom. Guided healing is open to women anywhere.</dd>
+              </div>
+              <div>
+                <dt>Response time</dt>
+                <dd>I reply to calls and messages within a few business days.</dd>
+              </div>
+            </dl>
+          </div>
+
+          <p class="contact-crisis accent-border">
+            If you are in crisis, please don't wait for a reply here. Call or text
+            <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline), or call <a href="tel:911">911</a>.
+            Guided healing is a non-clinical service and not psychotherapy.
+          </p>
+
           <h2 id="contact-options-title" class="sr-only">Ways to get in touch</h2>
 
           <div class="contact-accordion">
