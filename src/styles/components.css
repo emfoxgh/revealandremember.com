@@ -343,6 +343,188 @@
   }
 
   /* =========================================================
+     Lists
+     ========================================================= */
+
+  /* Bulleted list with small burnt-orange dots (Home, Community). */
+  .dot-list {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .dot-list li {
+    position: relative;
+    font-weight: 300;
+    padding-left: 1.75rem;
+    font-size: var(--text-body-lg);
+    line-height: var(--leading-body-lg);
+  }
+
+  .dot-list li::before {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.7em;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--burnt-orange);
+  }
+
+  /* =========================================================
+     Forms (Contact message form, Community waitlist)
+     ========================================================= */
+
+  .site-form .form-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .site-form label,
+  .site-form legend {
+    display: block;
+    margin-bottom: 0.5rem;
+    padding: 0;
+    color: var(--moss);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .site-form fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .site-form input[type='text'],
+  .site-form input[type='email'],
+  .site-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    border: 1px solid rgba(168, 70, 50, 0.25);
+    border-radius: 0;
+    outline: none;
+    background: var(--cream);
+    color: var(--charcoal);
+    font: 300 var(--text-sm) var(--font-sans);
+    transition: border-color 0.2s ease;
+  }
+
+  .site-form textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .site-form input:focus,
+  .site-form textarea:focus {
+    border-color: var(--burnt-orange);
+  }
+
+  /* A radio button or checkbox with its text, e.g. "I'm interested in…" choices. */
+  .site-form .form-choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin: 0 0 0.75rem;
+    color: var(--charcoal);
+    font-size: var(--text-sm);
+    font-weight: 300;
+    letter-spacing: normal;
+    line-height: 1.5;
+    text-transform: none;
+    cursor: pointer;
+  }
+
+  .site-form .form-choice input {
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0.1rem 0 0;
+    accent-color: var(--burnt-orange);
+  }
+
+  .site-form .form-note {
+    margin: 0.5rem 0 0;
+    color: var(--sage);
+    font-size: 0.82rem;
+    font-style: italic;
+  }
+
+  .site-form .form-status {
+    min-height: 1.5em;
+    margin: 0.85rem 0 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .site-form .form-status--error {
+    color: var(--deep-terracotta);
+  }
+
+  /* "Thank you" panel shown after a form is sent. */
+  .form-success {
+    padding: clamp(2rem, 6vw, 3rem);
+    border: 1px solid rgba(102, 123, 109, 0.38);
+    background: rgba(156, 168, 156, 0.18);
+    text-align: center;
+  }
+
+  .form-success__icon {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    margin: 0 auto 1.25rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--moss);
+    color: var(--cream);
+  }
+
+  .form-success__icon svg {
+    width: 32px;
+    height: 32px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .form-success__title {
+    margin: 0 0 0.65rem;
+    color: var(--deep-terracotta);
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    font-weight: 500;
+    line-height: 1.1;
+    outline: none;
+  }
+
+  .form-success p {
+    max-width: 32rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .form-success__reset {
+    margin-top: 1.5rem;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: transparent;
+    color: var(--deep-terracotta);
+    font: 500 var(--text-xs) var(--font-sans);
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  /* =========================================================
      Mobile navigation
      ========================================================= */
 

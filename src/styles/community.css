@@ -1,0 +1,231 @@
+/*
+ * Community page only (src/pages/community.astro).
+ * Sections, headings, .card, .dot-list, .cta-button and the waitlist form
+ * fields (.site-form) come from the global classes.
+ */
+
+/* Keep jump links from tucking the section title under the fixed header. */
+.community-anchor {
+  scroll-margin-top: var(--header-height);
+}
+
+/* ---- Intro ---- */
+
+.community-intro p {
+  margin: 0 0 1.1rem;
+}
+
+.community-intro .community-intro__closing {
+  margin: 1.75rem 0 0;
+  color: var(--deep-terracotta);
+  font-family: var(--font-serif);
+  font-size: var(--text-quote);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+/* Two cards that jump down to each offering. */
+.community-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.community-paths .card-link {
+  display: block;
+}
+
+.community-path {
+  height: 100%;
+  padding: 1.75rem 1.75rem 1.5rem;
+}
+
+.community-path .text-eyebrow {
+  margin: 0 0 0.4rem;
+}
+
+.community-path .heading-card {
+  margin: 0 0 0.6rem;
+}
+
+.community-path p {
+  margin: 0 0 1rem;
+}
+
+.community-path__more {
+  color: var(--burnt-orange);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ---- Shared section pieces ---- */
+
+.community-page .text-eyebrow {
+  margin: 0 0 0.4rem;
+}
+
+.community-page .heading-section {
+  margin: 0;
+}
+
+.community-tagline {
+  margin: 0.4rem 0 1.75rem;
+  color: var(--moss);
+  font-family: var(--font-serif);
+  font-size: var(--text-lead);
+  font-style: italic;
+}
+
+.community-lines p {
+  margin: 0 0 1.1rem;
+}
+
+.community-lines--narrow {
+  max-width: var(--narrow-width);
+  margin: 0 auto;
+}
+
+/* ---- Wake Up Call ---- */
+
+.community-page #wake-up-call .heading-card {
+  margin: 2.5rem 0 0;
+}
+
+.community-fit {
+  margin-top: 1.25rem;
+}
+
+.community-cta {
+  margin-top: 2.75rem;
+}
+
+.community-cta .community-cta__note {
+  max-width: 30rem;
+  margin: 1rem auto 0;
+  color: var(--moss);
+  font-size: var(--text-sm);
+  font-style: italic;
+}
+
+/* ---- Re-Membership tiers ---- */
+
+.community-tiers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2.5rem;
+}
+
+.community-tier {
+  padding: 2rem 1.9rem;
+}
+
+.community-tier--featured {
+  border-left-color: var(--deep-terracotta);
+}
+
+.community-tier .heading-card {
+  margin: 0;
+}
+
+.community-tier .community-tier__price {
+  margin: 0.35rem 0 1.5rem;
+  color: var(--moss);
+  font-size: var(--text-sm);
+}
+
+.community-tier__price span {
+  color: var(--burnt-orange);
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.community-tier .community-tier__includes {
+  margin: 0 0 1.25rem;
+  font-style: italic;
+}
+
+.community-features,
+.community-features ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.community-features > li {
+  padding: 1rem 0;
+  border-top: var(--divider);
+}
+
+.community-features strong,
+.community-features span {
+  display: block;
+}
+
+.community-features strong {
+  margin-bottom: 0.25rem;
+  color: var(--deep-terracotta);
+  font-weight: 500;
+}
+
+.community-features span,
+.community-features ul li {
+  font-size: var(--text-sm);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.community-features ul {
+  margin-top: 0.5rem;
+}
+
+.community-features ul li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-top: 0.35rem;
+}
+
+.community-features ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.65em;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--burnt-orange);
+}
+
+/* ---- Re-Membership waitlist ---- */
+
+.community-waitlist {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.community-waitlist .heading-card {
+  margin: 0 0 0.5rem;
+}
+
+.community-waitlist .community-waitlist__intro {
+  margin: 0 0 1.75rem;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 900px) {
+  .community-paths,
+  .community-tiers {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .community-tier,
+  .community-path {
+    padding: 1.5rem 1.25rem;
+  }
+}

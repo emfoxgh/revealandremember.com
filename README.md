@@ -61,6 +61,7 @@ src/
 - `/about-me` -> about page
 - `/resources` -> resources page
 - `/testimonials` -> testimonials page
+- `/community` -> community page (Wake Up Call group and Re-Membership waitlists)
 - `/contact` -> contact page
 
 Astro generates static HTML into `dist/` during build.
@@ -76,6 +77,7 @@ For routine copy/content updates, start in:
 - `src/pages/resources.astro`
 - `src/pages/testimonials.astro`
 - `src/pages/contact.astro`
+- `src/pages/community.astro`
 - `src/data/site.ts`
 
 Use `src/data/site.ts` for anything shared across pages, especially:
@@ -92,7 +94,7 @@ In short:
 
 - `src/styles/tokens.css` holds every color, font, font size, shadow and width as a CSS variable
 - `src/styles/global.css` imports the shared layers (`base`, `layout`, `typography`, `components`) and loads on every page
-- each page has its own stylesheet (`home.css`, `about.css`, `resources.css`, `testimonials.css`, `contact.css`) for styles unique to that page only
+- each page has its own stylesheet (`home.css`, `about.css`, `resources.css`, `testimonials.css`, `contact.css`, `community.css`) for styles unique to that page only
 
 ### Assets
 

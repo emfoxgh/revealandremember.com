@@ -11,11 +11,17 @@ export const site = {
     web3FormsAccessKey: 'ab375c09-b563-4c21-ab92-fa863317dfcb',
     mailingListUrl: 'https://forms.gle/KaLVDS8Xbk1Px362A'
   },
+  community: {
+    // Public link to the Wake Up Call Interest List (Google Form). Same list the flyer's QR code goes to.
+    wakeUpCallWaitlistUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLSewv2vKWAfJ0nkZZIzSaDUb7h_gv9J6q1fJP7JjfxzSQ7kADg/viewform'
+  },
   nav: [
     { href: '/', label: 'Home' },
     { href: '/about-me', label: 'About Me' },
     { href: '/resources', label: 'Resources' },
     { href: '/testimonials', label: 'Testimonials' },
+    { href: '/community', label: 'Community' },
     { href: '/contact', label: 'Contact' }
   ]
 };
