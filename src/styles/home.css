@@ -96,18 +96,13 @@
   color: var(--burnt-orange);
 }
 
-/* Byline under the intro line, styled like testimonial attributions. */
+/* Byline under the intro line: plain body text, just tucked close. */
 .home-page .about-intro:has(+ .intro-byline) {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .home-page .intro-byline {
   margin: 0 0 3rem;
-  color: var(--burnt-orange);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: var(--text-sm);
-  font-weight: 500;
 }
 
 /* ---- Text links ("Read my story", "Read more reflections") ---- */
@@ -135,6 +130,7 @@
 }
 
 .home-list li {
+  font-weight: 300;
   padding-left: 1.5rem;
   border-left: var(--border-accent);
   font-size: var(--text-body-lg);
@@ -148,11 +144,11 @@
   margin: 0 auto 2rem;
 }
 
-/* Smaller than the standard pull quote so a longer quote stays easy to read. */
+/* Same size as the italic intro line, so the page has one accent-italic size. */
 .home-testimonial blockquote {
   margin: 0;
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  line-height: 1.5;
+  font-size: clamp(1.4rem, 2.2vw, 1.65rem);
+  line-height: 1.4;
 }
 
 /* ---- Begin the Conversation steps ---- */
@@ -166,19 +162,14 @@
 }
 
 .begin-steps li {
+  font-weight: 300;
   font-size: var(--text-body-lg);
   line-height: var(--leading-body-lg);
 }
 
 .begin-steps li::marker {
   color: var(--burnt-orange);
-  font-family: var(--font-serif);
-  font-weight: 600;
-}
-
-.begin-steps strong {
-  font-weight: 600;
-  color: var(--deep-terracotta);
+  font-weight: 500;
 }
 
 /* ---- Guided Healing (dark section) ---- */
@@ -213,7 +204,8 @@
   text-align: center;
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: var(--text-lead);
+  font-size: clamp(1.4rem, 2.2vw, 1.65rem);
+  line-height: 1.4;
   color: var(--desert-sand);
 }
 
