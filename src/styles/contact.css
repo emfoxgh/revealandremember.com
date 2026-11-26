@@ -96,16 +96,6 @@
   line-height: 1.7;
 }
 
-.contact-caution__label {
-  display: block;
-  margin-bottom: 0.3rem;
-  color: var(--burnt-orange);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-}
-
 .contact-message {
   max-width: var(--narrow-width);
   margin: clamp(1.5rem, 3vw, 2rem) auto 0;
