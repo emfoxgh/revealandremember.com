@@ -111,33 +111,7 @@
 
 /* ---- Is This You? ---- */
 
-.home-list {
-  margin: 2rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 1.25rem;
-}
-
-.home-list li {
-  position: relative;
-  font-weight: 300;
-  padding-left: 1.75rem;
-  font-size: var(--text-body-lg);
-  line-height: var(--leading-body-lg);
-}
-
-/* Small burnt-orange dot instead of a bullet character. */
-.home-list li::before {
-  content: "";
-  position: absolute;
-  left: 0.25rem;
-  top: 0.7em;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--burnt-orange);
-}
+/* The list itself uses the shared .dot-list class (components.css). */
 
 /* ---- Testimonial ---- */
 

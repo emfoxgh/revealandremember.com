@@ -1,0 +1,275 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import QuoteBanner from '../components/QuoteBanner.astro';
+import { site } from '../data/site';
+import '../styles/community.css';
+
+const { web3FormsAccessKey } = site.contact;
+const { wakeUpCallWaitlistUrl } = site.community;
+
+const basicFeatures = [
+  {
+    title: 'A Monthly Contemplation',
+    text: 'A short audio exploring the month’s theme and how to open it up more in your life.'
+  },
+  {
+    title: 'A Monthly Meditation',
+    text: 'A short audio practice you can return to daily, to embody this opening and integrate it into your being.'
+  },
+  {
+    title: 'A Monthly Astrology Update',
+    text: 'A detailed video “weather forecast” on what’s happening in the sky and how it may be affecting you, with Delilah Abaya, master astrologer.'
+  },
+  {
+    title: 'New Moon & Full Moon Energy Updates',
+    text: 'Two brief videos each month on the energetics of the New Moon and Full Moon, and how to work with them, with Delilah Abaya.'
+  },
+  {
+    title: 'The R&R Telegram Community',
+    text: 'Perhaps the most special part of this offering:',
+    subItems: [
+      'A channel with my ongoing spontaneous teachings, transmissions, guidance, support and updates',
+      'A channel to connect with other like-minded women navigating similar transitions and challenges',
+      'A Q&A channel to ask your questions and receive guidance from me and the community'
+    ]
+  }
+];
+
+const advancedFeatures = [
+  {
+    title: 'Live Weekly Calls',
+    text: 'Gatherings dedicated to connection, presence, meditation and embodiment. They may include Q&A, spot coaching, guided practices, open sharing and more, shaped each week by what the group is needing and desiring.'
+  },
+  {
+    title: 'Weekly Call Recordings',
+    text: 'For the weeks you can’t make it live.'
+  },
+  {
+    title: 'Quarterly Astrology Live Workshop',
+    text: '“What will this season bring?”'
+  }
+];
+---
+
+<BaseLayout
+  title="Community"
+  description="Join a Reveal & Remember community: Wake Up Call, an 8-week group for women whose life looks right but feels wrong, and the Re-Membership, monthly practices and community with Emily Fox, PsyD."
+>
+  <div class="community-page">
+    <main id="main-content">
+      <PageHeader title="Community" subtitle="A space to feel held, welcomed, received and guided." />
+
+      <section class="section surface-base prose-lg" aria-labelledby="community-intro-title">
+        <div class="section-inner section-inner--narrow">
+          <h2 id="community-intro-title" class="sr-only">Why I created these spaces</h2>
+          <div class="community-intro">
+            <p>Early in my awakening journey, all I wanted, all I needed, was a space with people who felt like home.</p>
+            <p>Throughout my journey, aligned group spaces have been perhaps the biggest asset to my personal growth.</p>
+            <p>
+              With this in mind, I wanted to create spaces you can plug into. Spaces where you feel held,
+              welcomed, received and guided.
+            </p>
+            <p class="community-intro__closing">A place to reveal your true essence and remember who you truly are.</p>
+          </div>
+        </div>
+
+        <div class="section-inner">
+          <div class="community-paths">
+            <a class="card-link" href="#wake-up-call">
+              <article class="card community-path">
+                <p class="text-eyebrow">8-Week Group</p>
+                <h3 class="heading-card">Wake Up Call</h3>
+                <p>Focused support for when your life looks right but feels wrong, and you want to hear your own knowing again.</p>
+                <span class="community-path__more">Learn more &darr;</span>
+              </article>
+            </a>
+            <a class="card-link" href="#re-membership">
+              <article class="card community-path">
+                <p class="text-eyebrow">Monthly Membership &middot; Coming Soon</p>
+                <h3 class="heading-card">Re-Membership</h3>
+                <p>Ongoing practices, astrology and community, at your own pace, with the option of weekly live calls.</p>
+                <span class="community-path__more">Learn more &darr;</span>
+              </article>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="wake-up-call" class="section surface-alt prose-lg community-anchor" aria-labelledby="wake-up-call-title">
+        <div class="section-inner section-inner--narrow">
+          <p class="text-eyebrow text-center">An 8-Week Recurring Group</p>
+          <h2 id="wake-up-call-title" class="heading-section text-center">Wake Up Call</h2>
+          <p class="community-tagline text-center">For the woman whose life looks right but feels wrong</p>
+
+          <div class="community-lines text-center">
+            <p>You have built a beautiful life.<br />And yet something feels… off.</p>
+            <p>This is your invitation to wake up to the truth that’s already inside of you.</p>
+            <p>You already know.<br />Let’s clear the noise and tune your ear so you can hear yourself again.</p>
+          </div>
+
+          <h3 class="heading-card">This is for you if…</h3>
+          <ul class="dot-list community-fit">
+            <li>You’re in a long-term relationship, and something feels off, but you can’t tell whether it’s the relationship, you, or something else.</li>
+            <li>You’re in the career you once dreamed of, but you feel exhausted, disconnected, and unsure if it’s for you.</li>
+            <li>You swing between knowing and doubt: clear one day, questioning everything the next.</li>
+            <li>You long for clarity, but fear, obligation, grief, intuition, and desire all seem tangled together.</li>
+          </ul>
+
+          <div class="community-cta text-center">
+            <a class="cta-button" href={wakeUpCallWaitlistUrl} target="_blank" rel="noopener noreferrer">
+              Join the Wake Up Call Waitlist
+            </a>
+            <p class="community-cta__note">
+              You’ll get an email when the next group is forming, so you can help choose the dates and times.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="re-membership" class="section surface-base prose-lg community-anchor" aria-labelledby="re-membership-title">
+        <div class="section-inner">
+          <p class="text-eyebrow text-center">Coming Soon</p>
+          <h2 id="re-membership-title" class="heading-section text-center">Re-Membership</h2>
+          <p class="community-tagline text-center">Two ways to join</p>
+          <div class="community-lines text-center community-lines--narrow">
+            <p>
+              Each month we’ll explore a theme that is dear to my heart, that I am moving through,
+              or that is relevant to the current energetics of the collective.
+            </p>
+          </div>
+
+          <div class="community-tiers">
+            <article class="card community-tier">
+              <h3 class="heading-card">Basic Re-Membership</h3>
+              <p class="community-tier__price"><span>$15</span> / month</p>
+              <ul class="community-features">
+                {basicFeatures.map((feature) => (
+                  <li>
+                    <strong>{feature.title}</strong>
+                    <span>{feature.text}</span>
+                    {feature.subItems && (
+                      <ul>
+                        {feature.subItems.map((item) => <li>{item}</li>)}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            <article class="card community-tier community-tier--featured">
+              <h3 class="heading-card">Advanced Re-Membership</h3>
+              <p class="community-tier__price"><span>$44</span> / month</p>
+              <p class="community-tier__includes">Everything in the Basic Re-Membership, plus:</p>
+              <ul class="community-features">
+                {advancedFeatures.map((feature) => (
+                  <li>
+                    <strong>{feature.title}</strong>
+                    <span>{feature.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+
+          <div id="re-membership-waitlist" class="card community-waitlist">
+            <form class="site-form waitlist-form" action="https://api.web3forms.com/submit" method="POST">
+              <h3 class="heading-card text-center">Join the Re-Membership Waitlist</h3>
+              <p class="community-waitlist__intro text-center">
+                Re-Memberships are opening soon. Add your name and email, and I’ll let you know as soon as they go live.
+              </p>
+              <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+              <input type="hidden" name="subject" value="New Re-Membership waitlist signup" />
+              <input type="hidden" name="from_name" value="Reveal & Remember Website" />
+              <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" />
+              <div class="form-group">
+                <label for="waitlist-name">Your name</label>
+                <input id="waitlist-name" name="name" type="text" placeholder="First name" autocomplete="name" required />
+              </div>
+              <div class="form-group">
+                <label for="waitlist-email">Email address</label>
+                <input id="waitlist-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+              <fieldset class="form-group">
+                <legend>I’m interested in</legend>
+                <label class="form-choice">
+                  <input type="radio" name="interest" value="Basic Re-Membership ($15/month)" required />
+                  <span>The Basic Re-Membership ($15/month)</span>
+                </label>
+                <label class="form-choice">
+                  <input type="radio" name="interest" value="Advanced Re-Membership ($44/month)" />
+                  <span>The Advanced Re-Membership ($44/month, Basic plus live calls &amp; workshops)</span>
+                </label>
+                <label class="form-choice">
+                  <input type="radio" name="interest" value="Not sure yet / interested in both" />
+                  <span>I’m not sure yet, or I’m interested in both</span>
+                </label>
+              </fieldset>
+              <div class="text-center">
+                <button class="cta-button" type="submit" disabled={!web3FormsAccessKey}>Join the Waitlist</button>
+              </div>
+              <p class="form-status text-center" role="status" aria-live="polite"></p>
+            </form>
+            <div class="form-success" hidden>
+              <span class="form-success__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg>
+              </span>
+              <h3 class="form-success__title" tabindex="-1">You’re on the List</h3>
+              <p>Thank you. I’ll email you as soon as Re-Memberships go live.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <QuoteBanner quote={`"We're all just walking each other home."`} author="— Ram Dass" tone="sage" />
+</BaseLayout>
+
+<script>
+  const waitlistForm = document.querySelector<HTMLFormElement>('.waitlist-form');
+  const successPanel = document.querySelector<HTMLElement>('.community-waitlist .form-success');
+
+  waitlistForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const submitButton = waitlistForm.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const status = waitlistForm.querySelector<HTMLElement>('.form-status');
+    if (!submitButton || !status) return;
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+    status.textContent = '';
+    status.classList.remove('form-status--error');
+
+    try {
+      const response = await fetch(waitlistForm.action, {
+        method: 'POST',
+        body: new FormData(waitlistForm),
+        headers: { Accept: 'application/json' }
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to join the waitlist.');
+      }
+
+      waitlistForm.reset();
+      waitlistForm.hidden = true;
+      if (successPanel) {
+        successPanel.hidden = false;
+        successPanel.querySelector<HTMLElement>('.form-success__title')?.focus();
+        successPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    } catch (error) {
+      status.textContent = error instanceof Error
+        ? error.message
+        : 'Unable to join the waitlist. Please try again.';
+      status.classList.add('form-status--error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Join the Waitlist';
+    }
+  });
+</script>

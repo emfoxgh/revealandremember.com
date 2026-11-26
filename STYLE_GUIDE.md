@@ -6,7 +6,7 @@ How styling works on revealandremember.com. **Read this before changing any CSS 
 
 1. **Use tokens, never raw values.** Colors, fonts, font sizes, shadows and borders are CSS variables in `src/styles/tokens.css`. Write `color: var(--deep-terracotta)`, not `color: #a84632`. Write `font-family: var(--font-serif)`, not `'Cormorant Garamond'`.
 2. **Use the shared classes first.** Headings, body text, sections, backgrounds, cards and buttons all have global classes (listed below). A new section should be mostly global classes with little or no new CSS.
-3. **Page CSS is only for things unique to that page** (the home hero, the Resources podcast tiles, the Contact accordion). Scope it under the page's wrapper class (`.home-page`, `.about-page`, `.resources-page`, `.testimonials-page`, `.contact-page`) or a class only that page uses.
+3. **Page CSS is only for things unique to that page** (the home hero, the Resources podcast tiles, the Contact accordion). Scope it under the page's wrapper class (`.home-page`, `.about-page`, `.resources-page`, `.testimonials-page`, `.contact-page`, `.community-page`) or a class only that page uses.
 4. **If two pages need the same thing, move it to the global layer** (`typography.css`, `layout.css` or `components.css`) instead of copying it.
 5. **Don't add `!important`** and don't fight specificity with long selectors. If a shared class doesn't fit, add a modifier (`.heading-card--sm`) next to it in the global file.
 6. **Check desktop and mobile** (the main breakpoint is 900px) before pushing.
@@ -77,6 +77,8 @@ A typical section:
 | `<PageHeader title subtitle>` (`src/components/PageHeader.astro`) | Title band at the top of inner pages. Use it on any new page. |
 | `<QuoteBanner quote author tone>` (`src/components/QuoteBanner.astro`) | Full-width quote above the footer; `tone="sand"` (default) or `"sage"`. |
 | `.cta-button` | The primary button (consult, send, join). Works on `<a>` and `<button>`. |
+| `.dot-list` | Bulleted list with small burnt-orange dots (Home "This May Be for You If", Community). |
+| `.site-form` | Form fields: `.form-group`, labels, inputs, `.form-choice` radios, `.form-note`, `.form-status`, plus the `.form-success` thank-you panel (Contact, Community). |
 | `.card` | White card with a subtle border, burnt-orange left stripe and soft shadow. |
 | `.accent-border` | Just the burnt-orange left stripe, for blocks with their own background. |
 | `<a class="card-link">` around an `<article>` card | Makes the whole card clickable, with a lift on hover. |
